@@ -74,6 +74,3 @@ export const navContent: INavContent = {
     { linkText: 'Login', destination: '/login' },
   ],
 }
-
-export const navTextStyling =
-  'tracking-wide text-md md:text-lg lg:text-xl hover:text-green-500'

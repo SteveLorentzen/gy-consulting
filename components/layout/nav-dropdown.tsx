@@ -1,6 +1,5 @@
 import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button'
 import { IDropdown } from 'interfaces-and-types'
-import { navTextStyling } from 'my-constants'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 
@@ -17,9 +16,9 @@ export const NavDropdown: React.FC<IDropdown> = ({
         <>
           <MenuButton
             id={mainDestination.slice(1)}
-            className={`${navTextStyling}  ${isOpen ? 'text-green-400' : ''} ${
-              router.pathname === mainDestination ? 'text-green-400' : ''
-            }`}
+            className={`hover:text-green-500 tracking-wider  ${
+              isOpen ? 'text-green-500' : ''
+            } ${router.pathname === mainDestination ? 'text-green-500' : ''}`}
           >
             {dropdownTitle} <span aria-hidden>▾</span>
           </MenuButton>
@@ -32,10 +31,10 @@ export const NavDropdown: React.FC<IDropdown> = ({
                   onSelect={() => {
                     return
                   }}
-                  className="flex items-stretch h-9 hover:cursor-pointer hover:bg-slate-50 px-3 "
+                  className="flex items-stretch h-9 hover:cursor-pointer hover:bg-slate-50 px-3"
                 >
                   <Link href={navLink.destination}>
-                    <a className="flex items-center w-full ">
+                    <a className="flex items-center w-full">
                       {navLink.linkText}
                     </a>
                   </Link>
