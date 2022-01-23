@@ -7,6 +7,7 @@ module.exports = {
     extend: {
       animation: {
         descend: 'descend .2s ease-in',
+        slide: 'slide .2s ease-in',
       },
       keyframes: {
         descend: {
@@ -17,6 +18,14 @@ module.exports = {
           '100%': {
             opacity: 1,
             transform: 'translateY(0)',
+          },
+        },
+        slide: {
+          '0%': {
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            transform: 'translateX(0)',
           },
         },
       },
