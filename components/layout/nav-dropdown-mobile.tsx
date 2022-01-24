@@ -5,7 +5,6 @@ import {
 } from '@reach/accordion'
 import Link from 'next/link'
 import { IDropdown } from 'interfaces-and-types'
-import { useRouter } from 'next/router'
 
 type NavDropdownProps = {
   dropdownContent: IDropdown
@@ -13,11 +12,9 @@ type NavDropdownProps = {
 }
 
 export const NavDropdownMobile: React.FC<NavDropdownProps> = ({
-  dropdownContent: { dropdownOptions, dropdownTitle, mainDestination },
+  dropdownContent: { dropdownOptions, dropdownTitle },
   close,
 }) => {
-  const router = useRouter()
-
   return (
     <AccordionItem key={dropdownTitle} className="mx-auto mb-4">
       <h3>
