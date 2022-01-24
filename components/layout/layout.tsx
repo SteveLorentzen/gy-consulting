@@ -5,9 +5,7 @@ export const Layout: React.FC = ({ children }) => {
   return (
     <>
       <Header />
-      <div className="flex flex-col max-w-screen-2xl mx-auto relative">
-        {children}
-      </div>
+      <div className="flex flex-col  mx-auto relative">{children}</div>
     </>
   )
 }

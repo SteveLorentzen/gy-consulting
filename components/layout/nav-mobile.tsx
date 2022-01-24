@@ -3,7 +3,9 @@ import { navContent } from 'my-constants'
 import Link from 'next/link'
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 import { Accordion } from '@reach/accordion'
-import { NavDropdownMobile } from './nav-dropdown-mobile'
+import { NavDropdownMobile } from 'components/layout/nav-dropdown-mobile'
+import { BiMenu } from '@react-icons/all-files/bi/BiMenu'
+import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose'
 
 export const NavMobile: React.FC = () => {
   const [showDialog, setShowDialog] = React.useState(false)
@@ -12,7 +14,7 @@ export const NavMobile: React.FC = () => {
   return (
     <>
       <div className="sm:hidden active:text-green-500" onClick={open}>
-        Menu
+        <BiMenu className="text-4xl" />
       </div>
 
       <DialogOverlay
@@ -20,8 +22,8 @@ export const NavMobile: React.FC = () => {
         isOpen={showDialog}
         onDismiss={close}
       >
-        <p className="absolute top-5 right-7 text-4xl" onClick={close}>
-          X
+        <p className="absolute top-3 right-5 text-4xl" onClick={close}>
+          <AiOutlineClose className="text-5xl" />
         </p>
         <DialogContent
           aria-label="Navigation Menu"
