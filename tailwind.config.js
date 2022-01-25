@@ -49,6 +49,10 @@ module.exports = {
         144: '36rem',
         152: '38rem',
       },
+      colors: {
+        herotop: '#262626',
+        herobottom: '#dcd0ba',
+      },
     },
   },
   plugins: [],

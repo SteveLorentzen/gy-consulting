@@ -6,10 +6,10 @@ import { NavMobile } from './nav-mobile'
 export const Header: React.FC = () => {
   return (
     <>
-      <div className="fixed flex items-center w-full bg-white border-b-4 border-green-600 h-12 md:h-16 lg:h-20 z-30">
-        <div className="max-w-screen-2xl mx-auto flex justify-between items-stretch w-full px-4 sm:px-6 md:px-8">
+      <div className="fixed flex items-center w-full bg-white border-b-4 h-12 md:h-16 lg:h-20 z-30">
+        <div className="flex justify-between items-stretch w-full px-4 sm:px-6 md:px-12">
           <h1 className="flex items-center first-letter:sm:text-xl md:text-2xl lg:text-3xl font-semibold tracking-wider">
-            GY Consulting
+            <span className="text-green-600 font-bold">GY</span> Consulting
           </h1>
           <Nav />
           <NavMobile />

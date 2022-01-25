@@ -16,13 +16,13 @@ export const NavDropdown: React.FC<IDropdown> = ({
         <>
           <MenuButton
             id={mainDestination.slice(1)}
-            className={`hover:text-green-600 tracking-wider  ${
-              isOpen ? 'text-green-600' : ''
-            } ${router.pathname === mainDestination ? 'text-green-600' : ''}`}
+            className={`hover:text-green-500 tracking-wider  ${
+              isOpen ? 'text-green-500' : ''
+            } ${router.pathname === mainDestination ? 'text-green-500' : ''}`}
           >
             {dropdownTitle} <span aria-hidden>▾</span>
           </MenuButton>
-          <MenuList className="flex flex-col z-50 relative bg-white rounded shadow-md animate-descend">
+          <MenuList className="flex flex-col z-20 relative bg-white rounded shadow-md animate-descend">
             {dropdownOptions.map(navLink => {
               return (
                 <MenuItem
