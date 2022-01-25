@@ -22,8 +22,8 @@ export const Nav: React.FC = () => {
         return (
           <Link key={navLink.linkText} href={navLink.destination}>
             <a
-              className={` hover:text-green-500  ${
-                router.pathname === navLink.destination ? 'text-green-500' : ''
+              className={` text-white hover:text-cyan-200  ${
+                router.pathname === navLink.destination ? 'text-cyan-200' : ''
               }  `}
             >
               {navLink.linkText}

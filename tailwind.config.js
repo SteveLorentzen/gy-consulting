@@ -50,7 +50,7 @@ module.exports = {
         152: '38rem',
       },
       colors: {
-        herotop: '#262626',
+        herotop: '#d99b3d',
         herobottom: '#dcd0ba',
       },
     },

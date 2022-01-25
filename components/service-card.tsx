@@ -13,7 +13,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
   buttonAction,
 }) => {
   return (
-    <div className="flex flex-col justify-between items-center h-80 max-w-sm  px-5 py-6 text-green-600">
+    <div className="flex flex-col justify-between items-center h-80 max-w-sm  px-5 py-6 text-cyan-700">
       {children}
       <div className="flex flex-col justify-between text-gray-800  h-3/5">
         <h3 className="text-2xl font-bold h-1/3 ">{title}</h3>
@@ -21,7 +21,7 @@ export const ServiceCard: React.FC<ServiceCardProps> = ({
       </div>
 
       <button
-        className="text-xl  active:text-green-800 border-4 border-green-600 px-6 py-2 rounded hover:bg-green-50"
+        className="text-xl  active:text-green-800 border-4 border-cyan-700 px-6 py-2 rounded hover:bg-cyan-50"
         onClick={buttonAction}
       >
         {buttonText}

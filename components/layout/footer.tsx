@@ -12,7 +12,7 @@ export const Footer: React.FC = () => {
           </div>
 
           <div className="flex flex-col justify-between h-32 m-6 order-2">
-            <h5 className="text-2xl">Sign Up for GY's newsletter</h5>
+            <h5 className="text-2xl">Sign Up for GY&apos;s newsletter</h5>
             <input className="w-full" />
             <button className="border-2 mt-2 hover:bg-green-50 active:text-green-700 active:border-green-50">
               Submit

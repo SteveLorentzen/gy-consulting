@@ -7,10 +7,12 @@ export const WhyGYConsulting: React.FC = () => {
   return (
     <div
       id="why-gy-consulting"
-      className="relative bg-green-100 justify-around items-center py-10 lg:scroll-m-20"
+      className="relative bg-cyan-700 justify-around items-center py-10 lg:scroll-m-20"
     >
       <div className="max-w-screen-2xl mx-auto">
-        <h3 className="text-5xl font-light pb-12">Why GY Consulting?</h3>
+        <h3 className="text-5xl font-light text-white pb-12">
+          Why GY Consulting?
+        </h3>
         <div className="flex w-full flex-wrap justify-around">
           <Reason
             title="Knowledge"
