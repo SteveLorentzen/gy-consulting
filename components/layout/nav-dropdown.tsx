@@ -16,9 +16,9 @@ export const NavDropdown: React.FC<IDropdown> = ({
         <>
           <MenuButton
             id={mainDestination.slice(1)}
-            className={`hover:text-green-600 tracking-wider  ${
-              isOpen ? 'text-green-600' : ''
-            } ${router.pathname === mainDestination ? 'text-green-600' : ''}`}
+            className={`text-white hover:text-cyan-200 tracking-wider  ${
+              isOpen ? 'text-white' : ''
+            } ${router.pathname === mainDestination ? 'text-cyan-200' : ''}`}
           >
             {dropdownTitle} <span aria-hidden>▾</span>
           </MenuButton>
