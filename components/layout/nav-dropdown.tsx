@@ -22,26 +22,28 @@ export const NavDropdown: React.FC<IDropdown> = ({
           >
             {dropdownTitle} <span aria-hidden>▾</span>
           </MenuButton>
-          <MenuList className="flex flex-col z-50 relative bg-white rounded shadow-md animate-descend">
-            {dropdownOptions.map(navLink => {
-              return (
-                <MenuItem
-                  key={navLink.linkText}
-                  // requires onSelect prop but it isn't needed
-                  onSelect={() => {
-                    return
-                  }}
-                  className="flex items-stretch h-9 hover:cursor-pointer hover:bg-slate-50 px-3"
-                >
-                  <Link href={navLink.destination}>
-                    <a className="flex items-center w-full">
-                      {navLink.linkText}
-                    </a>
-                  </Link>
-                </MenuItem>
-              )
-            })}
-          </MenuList>
+          <div className="flex flex-col bg-green-200">
+            <MenuList className="flex flex-col z-50 relative border-2 border-white p-2 bg-cyan-900 rounded shadow-md translate-y-4 animate-descend">
+              {dropdownOptions.map(navLink => {
+                return (
+                  <MenuItem
+                    key={navLink.linkText}
+                    // requires onSelect prop but it isn't needed
+                    onSelect={() => {
+                      return
+                    }}
+                    className="flex items-stretch h-9 hover:cursor-pointer  px-3 text-white hover:text-cyan-200 transition-all ease-in duration-150"
+                  >
+                    <Link href={navLink.destination}>
+                      <a className="flex items-center w-full">
+                        {navLink.linkText}
+                      </a>
+                    </Link>
+                  </MenuItem>
+                )
+              })}
+            </MenuList>
+          </div>
         </>
       )}
     </Menu>

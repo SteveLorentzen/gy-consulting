@@ -9,23 +9,23 @@ export const Header: React.FC = () => {
   const yPosition = useScrollYPosition()
 
   React.useEffect(() => {
+    const calculatedOpacity = yPosition / 500
+
     if (yPosition < 501) {
-      setHeaderOpacity(
-        yPosition / 500 <= 0.1 ? yPosition / 500 - 0.1 : yPosition / 500,
-      )
-    } else if (yPosition >= 501 && headerOpacity !== 0.9) {
-      setHeaderOpacity(0.9)
+      setHeaderOpacity(calculatedOpacity)
+    } else if (headerOpacity !== 1) {
+      setHeaderOpacity(1)
     }
   }, [yPosition, headerOpacity])
 
   return (
     <>
-      <div className="fixed flex items-center w-full h-12 md:h-16 lg:h-20 z-40 ">
+      <div className="fixed flex items-center w-full h-12 md:h-16 lg:h-20 z-50 ">
         <div
           style={{
             opacity: headerOpacity,
           }}
-          className="absolute w-full h-full bg-cyan-900"
+          className="absolute w-full h-full bg-cyan-800"
         ></div>
         <div className="flex justify-between items-stretch w-full px-4 sm:px-6 md:px-12">
           <h1 className="flex items-center font-bold text-white first-letter:sm:text-xl md:text-2xl lg:text-6xl font-semibold tracking-wider z-10">
