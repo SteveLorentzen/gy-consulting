@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useAccordionContext } from '@reach/accordion'
 import { AiFillCaretDown } from '@react-icons/all-files/ai/AiFillCaretDown'
-import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretup'
+import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretUp'
 
 import {
   AccordionItem,
