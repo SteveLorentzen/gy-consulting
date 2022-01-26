@@ -9,23 +9,25 @@ export default function AboutUsPage() {
     <div className="text-center">
       <div className="relative">
         {/* <div className="absolute w-full h-full z-10 opacity-30 " /> */}
-        <div className="w-full h-full flex items-stretch justify-end border-b-2 border-cyan-800">
-          <div className="grow bg-gradient-to-l from-cyan-100 to-cyan-200 ">
-            <div className="flex justify-center h-full  text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl 2xl:text-9xl ml-20">
-              <h1 className="flex text-center items-center relative text-cyan-900 ">
-                Start your future today.
-              </h1>
-            </div>
-          </div>
-
-          <div className="w-full sm: md:w-7/12 lg:w-5/12 z-10 self-end">
+        <div className="w-full h-full flex flex-col sm:flex-row items-center sm:items-stretch justify-end bg-cyan-800">
+          <div className="w-full md:w-9/12 lg:w-5/12 z-20 self-end sm:-translate-x-14 md:-translate-x-10 lg:translate-x-20">
             <Image
-              alt="business woman"
-              src="/images/friends-cyan-100.jpg"
-              width={1500}
-              height={1150}
+              alt="smiling business man"
+              src="/images/handsome-man.png"
+              width={900}
+              height={600}
               layout="responsive"
             />
+          </div>
+          <div className="relative grow z-30 sm:z-0">
+            <div className="flex justify-center h-0 sm:h-full -translate-y-6 sm:-translate-y-0 sm:-translate-x-24 lg:-translate-x-12 text-cyan-800 max-w-xs sm:max-w-none font-bold sm:font-normal sm:text-white text-xl sm:text-5xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl">
+              <h1 className="flex text-center items-center relative  ">
+                Start your future today.
+              </h1>
+              <div className="flex">
+                <button className="enroll"></button>
+              </div>
+            </div>
           </div>
         </div>
       </div>

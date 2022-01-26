@@ -7,7 +7,7 @@ export const Nav: React.FC = () => {
   const router = useRouter()
 
   return (
-    <div className="hidden sm:flex sm:w-104 md:w-120 lg:w-152 justify-between space-between items-center tracking-wider text-md md:text-lg lg:text-xl">
+    <div className="hidden sm:flex sm:w-104 md:w-120 lg:w-152 justify-between space-between items-center tracking-wider text-md md:text-lg lg:text-xl z-50">
       {navContent.dropdowns.map(dropdown => {
         return (
           <NavDropdown

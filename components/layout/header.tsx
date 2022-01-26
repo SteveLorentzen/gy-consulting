@@ -6,7 +6,7 @@ import { NavMobile } from './nav-mobile'
 export const Header: React.FC = () => {
   return (
     <>
-      <div className="fixed flex items-center w-full bg-cyan-800 h-12 md:h-16 lg:h-20 z-50">
+      <div className="fixed flex items-center w-full bg-cyan-800 opacity-90 h-12 md:h-16 lg:h-20 z-20">
         <div className="flex justify-between items-stretch w-full px-4 sm:px-6 md:px-12">
           <h1 className="flex items-center font-bold text-white first-letter:sm:text-xl md:text-2xl lg:text-6xl font-semibold tracking-wider">
             GY
@@ -17,7 +17,7 @@ export const Header: React.FC = () => {
       </div>
 
       {/* A spacer with a height that matches the header's height.  This keeps contents from being hidden behind header*/}
-      <div className="h-12 md:h-16 lg:h-20"></div>
+      {/* <div className="h-12 md:h-16 lg:h-20"></div> */}
     </>
   )
 }
