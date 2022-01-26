@@ -18,7 +18,7 @@ export const NavDropdownMobile: React.FC<NavDropdownProps> = ({
   return (
     <AccordionItem key={dropdownTitle} className="mx-auto mb-4">
       <h3>
-        <AccordionButton className={`min-w-max `}>
+        <AccordionButton className={`min-w-max text-white`}>
           {dropdownTitle} <span aria-hidden>▾</span>
         </AccordionButton>
       </h3>
@@ -27,7 +27,7 @@ export const NavDropdownMobile: React.FC<NavDropdownProps> = ({
           {dropdownOptions.map(option => {
             return (
               <Link key={option.linkText} href={option.destination}>
-                <a className="text-2xl" onClick={close}>
+                <a className="text-2xl text-white" onClick={close}>
                   {option.linkText}
                 </a>
               </Link>
