@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { useAccordionContext } from '@reach/accordion'
-import { AiOutlineCaretDown } from '@react-icons/all-files/ai/AiOutlineCaretDown'
-import { AiOutlineCaretUp } from '@react-icons/all-files/ai/AiOutlineCaretup'
+import { AiFillCaretDown } from '@react-icons/all-files/ai/AiFillCaretDown'
+import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretup'
 
 import {
   AccordionItem,
@@ -42,9 +42,9 @@ export const NavDropdownMobile: React.FC<NavDropdownProps> = ({
           {dropdownTitle}
           <span aria-hidden>
             {openPanelIndex === index ? (
-              <AiOutlineCaretUp className="inline ml-2 text-2xl fill-white " />
+              <AiFillCaretUp className="inline ml-2 text-2xl fill-white " />
             ) : (
-              <AiOutlineCaretDown className="inline ml-2 text-2xl fill-white" />
+              <AiFillCaretDown className="inline ml-2 text-2xl fill-white" />
             )}
           </span>
         </AccordionButton>
