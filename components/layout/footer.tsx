@@ -2,7 +2,7 @@ import { BiCopyright } from '@react-icons/all-files/bi/BiCopyright'
 
 export const Footer: React.FC = () => {
   return (
-    <div className="w-full bg-gray-100">
+    <div className="w-full bg-gray-200">
       <div className="flex flex-col  flex-wrap justify-around items-center max-w-screen-2xl mx-auto p-10">
         <div className="flex flex-wrap justify-around w-full mb-14">
           <div className="flex flex-col items-center h-32 justify-between m-8 order-1">

@@ -6,22 +6,24 @@ import { Accordion } from '@reach/accordion'
 import { NavDropdownMobile } from 'components/layout/nav-dropdown-mobile'
 import { BiMenu } from '@react-icons/all-files/bi/BiMenu'
 import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose'
+import { useScrollYPosition } from 'react-use-scroll-position'
 
 export const NavMobile: React.FC = () => {
   const [showDialog, setShowDialog] = React.useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
+
   return (
     <>
       <div
         className="sm:hidden active:text-green-500"
         onClick={() => (showDialog ? close() : open())}
       >
-        <BiMenu className="text-4xl" />
+        <BiMenu className="text-4xl text-white" />
       </div>
 
       <DialogOverlay
-        className="flex sm:hidden justify-center pt-14 bg-green-400 min-h-screen w-full fixed top-0 left-0 z-30 animate-slide"
+        className="flex sm:hidden justify-center pt-14 bg-cyan-800 min-h-screen w-full fixed top-0 left-0 z-30 animate-slide"
         isOpen={showDialog}
         onDismiss={close}
       >
@@ -47,7 +49,7 @@ export const NavMobile: React.FC = () => {
             {navContent.navLinks.map(navLink => {
               return (
                 <Link key={navLink.linkText} href={navLink.destination}>
-                  <a className="mb-4" onClick={close}>
+                  <a className="mb-4 text-white" onClick={close}>
                     {navLink.linkText}
                   </a>
                 </Link>
