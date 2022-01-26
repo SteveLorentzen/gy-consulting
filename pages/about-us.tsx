@@ -9,7 +9,7 @@ export default function AboutUsPage() {
     <div className="text-center">
       <div className="relative">
         {/* <div className="absolute w-full h-full z-10 opacity-30 " /> */}
-        <div className="w-full h-full flex flex-col sm:flex-row items-center sm:items-stretch justify-end bg-cyan-800">
+        <div className="w-full h-full flex flex-col sm:flex-row items-center sm:items-stretch justify-end bg-gradient-to-l from-cyan-900 to-cyan-700">
           <div className="w-full md:w-9/12 lg:w-5/12 z-20 self-end sm:-translate-x-14 md:-translate-x-10 lg:translate-x-20">
             <Image
               alt="smiling business man"
