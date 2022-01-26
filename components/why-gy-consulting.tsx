@@ -7,7 +7,7 @@ export const WhyGYConsulting: React.FC = () => {
   return (
     <div
       id="why-gy-consulting"
-      className="relative bg-cyan-700 justify-around items-center py-10 lg:scroll-m-20"
+      className="relative bg-cyan-900 justify-around items-center py-10 lg:scroll-m-20"
     >
       <div className="max-w-screen-2xl mx-auto">
         <h3 className="text-5xl font-light text-white pb-12">

@@ -13,7 +13,10 @@ export const NavMobile: React.FC = () => {
   const close = () => setShowDialog(false)
   return (
     <>
-      <div className="sm:hidden active:text-green-500" onClick={open}>
+      <div
+        className="sm:hidden active:text-green-500"
+        onClick={() => (showDialog ? close() : open())}
+      >
         <BiMenu className="text-4xl" />
       </div>
 
@@ -22,9 +25,9 @@ export const NavMobile: React.FC = () => {
         isOpen={showDialog}
         onDismiss={close}
       >
-        <p className="absolute top-3 right-5 text-4xl" onClick={close}>
+        {/* <p className="absolute top-3 right-5 text-4xl" onClick={close}>
           <AiOutlineClose className="text-5xl" />
-        </p>
+        </p> */}
         <DialogContent
           aria-label="Navigation Menu"
           className="relative flex flex-col justify-start items-start  min-w-full min-h-full pl-14 tracking-wide text-4xl"
