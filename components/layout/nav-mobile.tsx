@@ -6,11 +6,13 @@ import { Accordion } from '@reach/accordion'
 import { NavDropdownMobile } from 'components/layout/nav-dropdown-mobile'
 import { BiMenu } from '@react-icons/all-files/bi/BiMenu'
 import { AiOutlineClose } from '@react-icons/all-files/ai/AiOutlineClose'
+import { useScrollYPosition } from 'react-use-scroll-position'
 
 export const NavMobile: React.FC = () => {
   const [showDialog, setShowDialog] = React.useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
+
   return (
     <>
       <div
