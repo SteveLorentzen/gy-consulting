@@ -8,7 +8,7 @@ export const TheTeam: React.FC = () => {
     >
       <h3 className="text-3xl sm:text-5xl font-light pb-12">Meet Our Team</h3>
       <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center">
-        <div className="w-72 sm:w-80 max-w-lg rounded-xl mb-10 lg:mr-10 bg-black">
+        <div className="w-60 xxs:w-72 sm:w-80 max-w-lg rounded-xl mb-10 lg:mr-10 bg-black">
           <Image
             className="max-w-lg"
             src="/images/professional.jpg"
