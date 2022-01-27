@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <div className="fixed flex items-center w-full h-12 md:h-16 lg:h-20 z-50 ">
+      <div className="fixed flex items-center w-full h-20 z-50 ">
         <div
           style={{
             opacity: headerOpacity,
@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
           className="absolute w-full h-full bg-cyan-800"
         ></div>
         <div className="flex justify-between items-stretch w-full px-4 sm:px-6 md:px-12">
-          <h1 className="flex items-center  text-white first-letter:sm:text-xl md:text-2xl lg:text-6xl font-semibold tracking-wider z-10">
+          <h1 className="flex items-center  text-white text-5xl font-semibold tracking-wider z-10">
             GY
           </h1>
           <Nav />
