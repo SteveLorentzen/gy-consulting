@@ -65,7 +65,7 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
   return (
     <div className="flex flex-col items-center w-full mx-auto mb-24">
       <div className="w-full">
-        <div className="relative w-full h-48 xxs:h-60 xs:h-72 sm:h-80 md:h-88 lg:h-96 xl:h-136">
+        <div className="relative w-full h-96 md:h-104 lg:h-120">
           <Image
             src={blog.photoURL}
             layout="fill"
@@ -116,7 +116,7 @@ export function GYBlogPage() {
   return (
     <>
       <section className="flex justify-center items-center bg-gradient-to-l from-cyan-900 to-cyan-700">
-        <h1 className="flex flex-col justify-end text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl h-24 sm:h-28 md:h-32 lg:h-40 p-6">
+        <h1 className="flex flex-col justify-end text-white text-5xl sm:text-6xl lg:text-7xl h-24 sm:h-28 md:h-32 lg:h-40 p-6">
           GY Blog
         </h1>
       </section>
@@ -130,19 +130,15 @@ export function GYBlogPage() {
         </div>
         <div className="md:flex flex-col items-stretch md:ml-10 lg:ml-20 md:w-4/12 xl:3/12 p-4 sm:p-0">
           <section className="flex flex-col items-stretch w-full text-cyan-900 rounded-md mx-auto mb-10 ">
-            <h2 className="md:text-2xl lg:text-3xl xl:text-4xl mb-2">
-              Search Blogs
-            </h2>
+            <h2 className="text-4xl mb-2">Search Blogs</h2>
             <input
               type="text"
               placeholder="self-care"
-              className=" border-2 border-cyan-900 px-2"
+              className=" border-2 border-cyan-900 rounded px-2 w-full"
             />
           </section>
           <section>
-            <h3 className="md:text-2xl lg:text-3xl xl:text-4xl mb-4 text-cyan-900">
-              Popular Posts
-            </h3>
+            <h3 className="text-4xl mb-4 text-cyan-900">Popular Posts</h3>
             <div className="w-full bg-cyan-900 p-4 rounded">
               <h4 className="text-xl text-white mb-4 hover:cursor-pointer hover:text-cyan-100">
                 Practice Self Care For An Energy Boost
@@ -162,13 +158,13 @@ export function GYBlogPage() {
             </div>
           </section>
           <section className="flex flex-col w-full my-12">
-            <h3 className="md:text-2xl lg:text-3xl xl:text-4xl mb-4 text-cyan-900 w-max">
+            <h3 className="text-4xl mb-4 text-cyan-900 w-max">
               Join Mailing List
             </h3>
             <input
               type="email"
               placeholder="yourEmail@yourProvider.com"
-              className=" border-2 border-cyan-900 px-2 w-full"
+              className=" border-2 rounded border-cyan-900 px-2 w-full"
             />
           </section>
         </div>

@@ -5,7 +5,7 @@ import { TheTeam } from './the-team.tsx/the-team'
 
 export function AboutUsPage() {
   return (
-    <div className="text-center">
+    <div className="text-center text-xl">
       <HeroImage />
 
       <WhoWeAre />

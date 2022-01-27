@@ -43,25 +43,27 @@ const NavDropdownMobile: React.FC<NavDropdownMobileProps> = ({
   console.log('accordion=', context, openPanelIndex, index)
 
   return (
-    <AccordionItem key={dropdownTitle} className="mx-auto mb-4">
+    <AccordionItem key={dropdownTitle} className="mx-auto mb-4 my-8">
       <h3>
-        <AccordionButton className={`flex items-center  min-w-max text-white`}>
+        <AccordionButton
+          className={`flex items-center min-w-max text-white text-6xl`}
+        >
           {dropdownTitle}
           <span aria-hidden>
             {openPanelIndex === index ? (
-              <AiFillCaretUp className="inline ml-2 text-2xl fill-white " />
+              <AiFillCaretUp className="inline ml-2 text-2xl" />
             ) : (
-              <AiFillCaretDown className="inline ml-2 text-2xl fill-white" />
+              <AiFillCaretDown className="inline ml-2 text-2xl" />
             )}
           </span>
         </AccordionButton>
       </h3>
-      <AccordionPanel className="mx-auto min-w-full animate-descendmenu">
+      <AccordionPanel className="mx-auto min-w-full animate-descendmenu ml-8">
         <div className="flex flex-col">
           {dropdownOptions.map(option => {
             return (
               <Link key={option.linkText} href={option.destination}>
-                <a className="text-xl text-white ml-2" onClick={close}>
+                <a className="text-4xl text-white" onClick={close}>
                   {option.linkText}
                 </a>
               </Link>
@@ -84,7 +86,7 @@ export const NavMobile: React.FC = () => {
         className="relative sm:hidden active:text-cyan-500"
         onClick={() => (showDialog ? close() : open())}
       >
-        <BiMenu className="text-4xl text-white" />
+        <BiMenu className="text-6xl text-white" />
       </div>
 
       <DialogOverlay
@@ -94,9 +96,12 @@ export const NavMobile: React.FC = () => {
       >
         <DialogContent
           aria-label="Navigation Menu"
-          className="relative flex flex-col justify-start items-start  min-w-full min-h-full pl-14 tracking-wide text-3xl"
+          className="relative flex flex-col justify-start items-start  min-w-full min-h-full px-16 tracking-wide text-3xl"
         >
-          <div className="flex flex-col justify-start ">
+          <button className="mx-auto my-12 bg-white px-24 py-3 rounded-md text-cyan-900 active:text-cyan-700 font-bold ">
+            Login
+          </button>
+          <div className="flex flex-col justify-start w-full">
             <Accordion collapsible className="w-full">
               {navContent.dropdowns.map((dropdown, index) => {
                 return (
@@ -112,7 +117,7 @@ export const NavMobile: React.FC = () => {
             {navContent.navLinks.map(navLink => {
               return (
                 <Link key={navLink.linkText} href={navLink.destination}>
-                  <a className="mb-4 text-white" onClick={close}>
+                  <a className="mb-4 my-4 text-white text-6xl" onClick={close}>
                     {navLink.linkText}
                   </a>
                 </Link>

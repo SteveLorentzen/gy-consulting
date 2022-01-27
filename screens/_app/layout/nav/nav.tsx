@@ -20,7 +20,7 @@ const NavDropdown: React.FC<IDropdown> = ({
         <>
           <MenuButton
             id={mainDestination.slice(1)}
-            className={`text-white hover:text-cyan-200 tracking-wider  ${
+            className={`text-white hover:text-cyan-200 tracking-wider whitespace-nowrap  ${
               isOpen ? 'text-white' : ''
             } ${router.pathname === mainDestination ? 'text-cyan-200' : ''}`}
           >
@@ -58,7 +58,7 @@ export const Nav: React.FC = () => {
   const router = useRouter()
 
   return (
-    <div className="hidden sm:flex sm:w-104 md:w-120 lg:w-152 justify-between space-between items-center tracking-wider text-md md:text-lg lg:text-xl z-20">
+    <div className="hidden sm:flex  w-152 sm:w-136 justify-between space-between items-center tracking-wider text-xl z-20">
       {navContent.dropdowns.map(dropdown => {
         return (
           <NavDropdown
