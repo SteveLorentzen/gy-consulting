@@ -1,3 +1,3 @@
-export default function GYBlogPage() {
-  return <h1>GY Blog</h1>
-}
+import { GYBlogPage } from 'screens/gy-blog/gy-blog'
+
+export default GYBlogPage

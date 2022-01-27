@@ -1,3 +1,3 @@
-export default function ConsultingPage() {
-  return <h1>Consulting</h1>
-}
+import { ConsultingPage } from 'screens/consulting/consulting'
+
+export default ConsultingPage

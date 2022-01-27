@@ -4,6 +4,7 @@ module.exports = {
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
+    './screens/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     screens: {
@@ -60,6 +61,11 @@ module.exports = {
         136: '34rem',
         144: '36rem',
         152: '38rem',
+        200: '50rem',
+        208: '52rem',
+        216: '54rem',
+        224: '56rem',
+        232: '58rem',
       },
       spacing: {
         88: '22rem',
