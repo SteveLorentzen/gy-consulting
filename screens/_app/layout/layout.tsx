@@ -1,6 +1,7 @@
 import * as React from 'react'
-import { Header } from 'components/layout/header'
-import { Footer } from './footer'
+
+import { Footer } from 'screens/_app/layout/footer/footer'
+import { Header } from 'screens/_app/layout/header/header'
 
 export const Layout: React.FC = ({ children }) => {
   return (

@@ -1,7 +1,3 @@
-export default function Home() {
-  return (
-    <div>
-      <h1>GY Consulting</h1>
-    </div>
-  )
-}
+import { AboutUsPage } from 'screens/about-us/about-us'
+
+export default AboutUsPage

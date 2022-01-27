@@ -1,3 +1,3 @@
-export default function HomestayPage() {
-  return <h1>Homestay</h1>
-}
+import { HomestayPage } from 'screens/homestay/homestay'
+
+export default HomestayPage
