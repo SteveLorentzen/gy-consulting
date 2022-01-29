@@ -1,4 +1,6 @@
 import * as React from 'react'
+
+import Link from 'next/link'
 import { useScrollYPosition } from 'react-use-scroll-position'
 
 import { Nav } from 'screens/_app/layout/nav/nav'
@@ -29,9 +31,12 @@ export const Header: React.FC = () => {
           className="absolute w-full h-full bg-cyan-800"
         ></div>
         <div className="flex justify-between items-stretch w-full px-4 sm:px-6 md:px-12">
-          <h1 className="flex items-center  text-white text-5xl font-semibold tracking-wider z-10">
-            GY
-          </h1>
+          <Link href="/">
+            <a className="flex items-center  text-white text-5xl font-semibold tracking-wider z-10">
+              GY
+            </a>
+          </Link>
+
           <Nav />
           <NavMobile />
         </div>
