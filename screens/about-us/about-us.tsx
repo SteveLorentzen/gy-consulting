@@ -1,18 +1,13 @@
-import { WhyGYConsulting } from 'screens/about-us/why-gy-consulting/why-gy-consulting'
-import { WhoWeAre } from 'screens/about-us/who-we-are/who-we-are'
-import { HeroImage } from 'screens/about-us/hero-image/hero-image'
-import { TheTeam } from './the-team.tsx/the-team'
+import { ContentContainerWithHeroImage } from 'components/content-container-with-hero-image'
 
 export function AboutUsPage() {
   return (
-    <div className="text-center text-xl">
-      <HeroImage />
-
-      <WhoWeAre />
-
-      <WhyGYConsulting />
-
-      <TheTeam />
-    </div>
+    <ContentContainerWithHeroImage
+      src="/images/hands-in.jpeg"
+      mainHeading="About Us"
+      subHeading="Meet the Global Youth family"
+    >
+      <h1 className="text-9xl w-full text-center my-152">Some Page Content!</h1>
+    </ContentContainerWithHeroImage>
   )
 }

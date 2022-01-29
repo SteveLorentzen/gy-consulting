@@ -1,3 +1,3 @@
-import { AboutUsPage } from 'screens/about-us/about-us'
+import { HomePage } from 'screens/home/home'
 
-export default AboutUsPage
+export default HomePage

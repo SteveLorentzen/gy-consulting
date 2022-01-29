@@ -2,10 +2,10 @@ import { BiCopyright } from '@react-icons/all-files/bi/BiCopyright'
 
 export const Footer: React.FC = () => {
   return (
-    <div className="w-full bg-gray-200 text-xl">
-      <div className="flex flex-col flex-wrap justify-around items-center max-w-screen-2xl mx-auto p-10">
-        <div className="flex flex-col lg:flex-row justify-around items-center lg:items-start w-104 lg:w-full mb-14">
-          <section className="flex flex-col justify-between w-full lg:w-1/3 h-24 order-1 px-16">
+    <div className="relative w-full bg-gray-200 z-10">
+      <div className="flex flex-col  flex-wrap justify-around items-center max-w-screen-2xl mx-auto p-10">
+        <div className="flex flex-wrap justify-around w-full mb-14">
+          <section className="flex flex-col items-center h-32 justify-between m-8 order-1">
             <h5 className="text-3xl">Contact Us</h5>
             <h6>(123)456-7890 ext 2364</h6>
             <h6 className="font-bold">questions@GYconsulting.com</h6>
