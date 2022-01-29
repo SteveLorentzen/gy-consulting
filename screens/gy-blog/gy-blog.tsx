@@ -101,7 +101,7 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
                 return <p key={textObject.text}>{textObject.text}</p>
             }
           })}
-          <button className="flex items-center mt-6 border-2 border-cyan-900 text-cyan-900 py-2 px-6 rounded hover:text-cyan-700">
+          <button className="flex items-center mt-6 border border-cyan-900 text-cyan-900 py-2 px-6 rounded hover:text-cyan-700">
             Read More{' '}
             <span className="ml-2">
               <AiOutlineArrowRight />
@@ -137,7 +137,7 @@ export function GYBlogPage() {
               <input
                 type="text"
                 placeholder="self-care"
-                className=" border-2 border-cyan-900 px-2"
+                className=" border border-cyan-900 px-2"
               />
             </section>
             <section>
@@ -169,7 +169,7 @@ export function GYBlogPage() {
               <input
                 type="email"
                 placeholder="yourEmail@yourProvider.com"
-                className=" border-2 border-cyan-900 px-2 w-full"
+                className=" border border-cyan-900 px-2 w-full"
               />
             </section>
           </div>

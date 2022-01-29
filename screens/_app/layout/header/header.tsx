@@ -12,9 +12,9 @@ export const Header: React.FC = () => {
   const yPosition = useScrollYPosition()
 
   React.useEffect(() => {
-    const calculatedOpacity = yPosition / 500
+    const calculatedOpacity = yPosition / 200
 
-    if (yPosition < 501) {
+    if (yPosition < 201) {
       setHeaderOpacity(calculatedOpacity)
     } else if (headerOpacity !== 1) {
       setHeaderOpacity(1)

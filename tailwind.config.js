@@ -16,6 +16,9 @@ module.exports = {
       screens: {
         '2xl': '1536px',
       },
+      borderWidth: {
+        1: '1px',
+      },
       animation: {
         descend: 'descend .15s ease-in',
         descendmenu: 'descendmenu .15s ease-in',
@@ -66,6 +69,8 @@ module.exports = {
         216: '54rem',
         224: '56rem',
         232: '58rem',
+        280: '70rem',
+        320: '80rem',
       },
       spacing: {
         88: '22rem',
