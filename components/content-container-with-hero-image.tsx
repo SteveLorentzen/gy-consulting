@@ -33,7 +33,7 @@ export const ContentContainerWithHeroImage: React.FC<
         </div>
       </section>
 
-      <div className="relative w-full h-full bg-white z-10 pt-16">
+      <div className="relative w-full h-full bg-white z-10 pt-16 text-xl">
         {children}
       </div>
     </>

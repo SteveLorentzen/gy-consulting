@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { AiOutlineArrowRight } from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { ContentContainerWithHeroImage } from 'components/content-container-with-hero-image'
 import { Input } from 'components/input'
+import { Button } from 'components/button'
 
 const blogs = [
   {
@@ -12,7 +13,7 @@ const blogs = [
     endPreviewIndex: 0,
     content: [
       {
-        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.  I am very smart and cool and please listen to my cool writing.',
+        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
         type: 'paragraph',
       },
       { text: 'The Studying Process', type: 'sub-heading-1' },
@@ -25,10 +26,10 @@ const blogs = [
   {
     title: '10 Helpful Ways to Avoid Study Fatigue',
     photoURL: '/images/paying-attention.jpeg',
-    endPreviewIndex: 1,
+    endPreviewIndex: 0,
     content: [
       {
-        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.  I am very smart and cool and please listen to my cool writing.',
+        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
         type: 'paragraph',
       },
       { text: 'Train Your Brain', type: 'sub-heading-1' },
@@ -41,10 +42,10 @@ const blogs = [
   {
     title: 'Balancing Covid Safety With Mental Health',
     photoURL: '/images/college-building.jpeg',
-    endPreviewIndex: 2,
+    endPreviewIndex: 0,
     content: [
       {
-        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.  I am very smart and cool and please listen to my cool writing.',
+        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
         type: 'paragraph',
       },
       { text: 'A Healthy Balance', type: 'sub-heading-1' },
@@ -65,25 +66,17 @@ interface IBlog {
 
 const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
   return (
-    <div className="flex flex-col items-center w-full mx-auto mb-24">
-      <div className="w-full">
-        <div className="relative w-full h-96 md:h-104 lg:h-120">
-          <Image
-            src={blog.photoURL}
-            layout="fill"
-            alt="Students studying on college lawn"
-            className="object-cover"
-          />
-        </div>
-        <div className=" mx-auto w-full px-4 sm:px-0">
-          <h2 className="text-4xl my-6 text-cyan-900 font-bold">
+    <div className="flex flex-col items-center w-full mx-auto py-6 border-b-2 pb-8 hover:cursor-pointer hover:bg-gray-50">
+      <div className="w-full flex flex-col xxs:flex-row items-center xxs:items-start">
+        <div className="flex flex-col  xxs:items-start xxs:mr-4 w-full xxs:pr-8 order-2 xxs:order-1">
+          <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0">
             {blog.title}
           </h2>
           {blog.content.slice(0, blog.endPreviewIndex + 1).map(textObject => {
             switch (textObject.type) {
               case 'paragraph':
                 return (
-                  <p key={textObject.text} className="text-xl">
+                  <p key={textObject.text} className="text-xl ">
                     {textObject.text}
                   </p>
                 )
@@ -102,12 +95,20 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
                 return <p key={textObject.text}>{textObject.text}</p>
             }
           })}
-          <button className="flex items-center mt-6 border border-cyan-900 text-cyan-900 py-2 px-6 rounded hover:text-cyan-700">
+          {/* <button className="flex items-center self-start mt-6 border border-cyan-900 text-cyan-900 py-2 px-6 rounded hover:text-cyan-700">
             Read More{' '}
             <span className="ml-2">
               <AiOutlineArrowRight />
             </span>
-          </button>
+          </button> */}
+        </div>
+        <div className="relative min-w-max w-full xxs:w-80 h-48 md:h-40 lg:h-32 order:1 xxs:order-2">
+          <Image
+            src={blog.photoURL}
+            layout="fill"
+            alt="Students studying on college lawn"
+            className="object-cover"
+          />
         </div>
       </div>
     </div>
@@ -120,66 +121,64 @@ export function GYBlogPage() {
 
   return (
     <>
-      <ContentContainerWithHeroImage
-        src="/images/seoul-national-university.jpeg"
-        mainHeading="GY Blog"
-        subHeading="Read the latest from Global Youth staff and parents"
-      >
-        <div className="flex flex-col md:flex-row justify-between w-full sm:w-11/12 max-w-screen-2xl mx-auto mt-8 lg:p-8">
-          <div className="w-full md:w-8/12">
-            <section className="w-full mx-auto">
-              {blogs.map(blog => {
-                return <BlogPost key={blog.title} blog={blog} />
-              })}
-            </section>
+      <div className="w-full h-56 bg-cyan-800"></div>
+      <div className="flex flex-col md:flex-row justify-center w-full px-4 xs:px-12 max-w-screen-2xl mx-auto sm:mt-6">
+        <div className="w-full md:w-8/12 mb-12">
+          <section className="w-full mx-auto">
+            {blogs.map(blog => {
+              return <BlogPost key={blog.title} blog={blog} />
+            })}
+          </section>
+        </div>
+        <div className="md:flex flex-col items-stretch md:ml-16 w-10/12 mx-auto md:w-3/12 xl:w-3/12">
+          <div className="flex flex-col items-stretch w-7/12 md:w-full text-cyan-900 rounded-md mx-auto mb-10 ">
+            <h2 className="text-3xl xl:text-4xl">Search Blogs</h2>
+            <Input
+              placeholder="self-care"
+              inputRef={searchInputRef}
+              type="text"
+            />
+            <Button
+              fill
+              buttonAction={() => alert('searching...')}
+              buttonText="Search"
+            />
           </div>
-          <div className="md:flex flex-col items-stretch md:ml-10 lg:ml-20 md:w-4/12 xl:3/12 p-4 sm:p-0">
-            <section className="flex flex-col items-stretch w-full text-cyan-900 rounded-md mx-auto mb-10 ">
-              <h2 className="md:text-2xl lg:text-3xl xl:text-4xl mb-2">
-                Search Blogs
-              </h2>
-              <Input
-                placeholder="self-care"
-                inputRef={searchInputRef}
-                type="text"
-              />
-            </section>
-            <section>
-              <h3 className="md:text-2xl lg:text-3xl xl:text-4xl mb-4 text-cyan-900">
-                Popular Posts
-              </h3>
-              <div className="w-full bg-cyan-900 p-4 rounded">
-                <h4 className="text-xl text-white mb-4 hover:cursor-pointer hover:text-cyan-100">
-                  Practice Self Care For An Energy Boost
-                </h4>
-                <h4 className="text-xl text-white mb-4 hover:cursor-pointer hover:text-cyan-100">
-                  Super Foods for Studying
-                </h4>
-                <h4 className="text-xl text-white mb-4 hover:cursor-pointer hover:text-cyan-100">
-                  What College Admissions Staff Are Thinking
-                </h4>
-                <h4 className="text-xl text-white mb-4 hover:cursor-pointer hover:text-cyan-100">
-                  4 Questions you should try and ask your student while away
-                </h4>
-                <h4 className="text-xl text-white mb-4 hover:cursor-pointer hover:text-cyan-100">
-                  Covid 19- The Latest
-                </h4>
-              </div>
-            </section>
-            <section className="flex flex-col w-full my-12">
-              <h3 className="md:text-2xl lg:text-3xl xl:text-4xl mb-4 text-cyan-900 w-max">
-                Join Mailing List
-              </h3>
+          <div className="border-y-2 py-4">
+            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900">
+              Popular Posts
+            </h3>
+            <div className="w-full text-cyan-900 pl-4 rounded">
+              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
+                Practice Self Care For An Energy Boost
+              </h4>
+              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
+                Super Foods for Studying
+              </h4>
+              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
+                What College Admissions Staff Are Thinking
+              </h4>
+              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
+                4 Questions you should try and ask your student while away
+              </h4>
+              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
+                Covid 19- The Latest
+              </h4>
+            </div>
+          </div>
+          <div className="mx-auto w-7/12 md:w-full flex flex-col my-12">
+            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900">
+              Join Mailing List
+            </h3>
 
-              <Input
-                type="email"
-                placeholder="email"
-                inputRef={mailingListInputRef}
-              />
-            </section>
+            <Input
+              type="email"
+              placeholder="email"
+              inputRef={mailingListInputRef}
+            />
           </div>
         </div>
-      </ContentContainerWithHeroImage>
+      </div>
 
       <div className="relative w-full h-full bg-white z-10 pt-16"></div>
     </>

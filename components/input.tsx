@@ -16,7 +16,7 @@ export const Input: React.FC<InputProps> = ({
       type={type}
       ref={inputRef}
       placeholder={placeholder}
-      className="w-full p-2 rounded border border-cyan-900 focus:border-cyan-700"
+      className="w-full p-2 rounded border border-cyan-900 focus:border-cyan-700 my-4"
     ></input>
   )
 }
