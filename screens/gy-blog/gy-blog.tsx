@@ -63,7 +63,7 @@ interface IBlog {
 
 function BlogPost({ blog }: { blog: IBlog }) {
   return (
-    <div className="flex flex-col items-center w-full mx-auto py-6 border-b-2 pb-8 hover:cursor-pointer hover:bg-gray-50">
+    <div className="flex flex-col items-center w-full mx-auto py-6 border-b-1 pb-8 hover:cursor-pointer hover:bg-gray-50">
       <div className="w-full flex flex-col xxs:flex-row items-center xxs:items-start">
         <div className="flex flex-col  xxs:items-start xxs:mr-4 w-full xxs:pr-8 order-2 xxs:order-1">
           <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0 xxs:mb-2">
@@ -148,10 +148,10 @@ export function GYBlogPage() {
         </div>
         <div className="md:flex flex-col items-stretch md:ml-16 w-10/12 mx-auto md:w-3/12 xl:w-3/12 pt-4">
           <div className="">
-            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900">
+            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900 border-b-1 pb-4">
               Popular Posts
             </h3>
-            <div className="w-full text-cyan-900 pl-4 rounded">
+            <div className="w-full text-cyan-900 rounded">
               {popularPosts.map(popularPost => {
                 return (
                   <PopularPost key={popularPost}>{popularPost}</PopularPost>
