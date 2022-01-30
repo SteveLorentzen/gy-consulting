@@ -1,7 +1,9 @@
-export const SectionHeading: React.FC<{
+type SectionHeadingProps = {
   color: 'white' | 'blue'
   headingText: string
-}> = ({ color, headingText }) => {
+}
+
+export function SectionHeading({ color, headingText }: SectionHeadingProps) {
   return (
     <h3
       className={`text-6xl font-light ${

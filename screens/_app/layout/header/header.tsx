@@ -7,7 +7,7 @@ import { Nav } from 'screens/_app/layout/nav/nav'
 
 import { NavMobile } from 'screens/_app/layout/nav-mobile/nav-mobile'
 
-export const Header: React.FC = () => {
+export function Header() {
   const [headerOpacity, setHeaderOpacity] = React.useState(0)
   const yPosition = useScrollYPosition()
 

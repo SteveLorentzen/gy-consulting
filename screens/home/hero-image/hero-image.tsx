@@ -1,6 +1,6 @@
 import Image from 'next/image'
 
-export const HeroImage = () => {
+export function HeroImage() {
   return (
     <div className="relative">
       <div className="w-full h-full flex flex-col sm:flex-row sm:items-stretch justify-start bg-gradient-to-l from-cyan-900 to-cyan-700">

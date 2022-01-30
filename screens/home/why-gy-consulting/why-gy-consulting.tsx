@@ -28,9 +28,10 @@ export const reasons = [
 type ReasonProps = {
   title: string
   description: string
+  children: React.ReactNode
 }
 
-const Reason: React.FC<ReasonProps> = ({ title, description, children }) => {
+function Reason({ title, description, children }: ReasonProps) {
   return (
     <div className="flex flex-col items-center w-104 md:w-60 mx-8 mb-16 md:mb-4 text-white ">
       <div className="mr-2 mb-2 text-cyan-200 text-7xl md:text-5xl">
@@ -46,7 +47,7 @@ const Reason: React.FC<ReasonProps> = ({ title, description, children }) => {
   )
 }
 
-export const WhyGYConsulting: React.FC = () => {
+export function WhyGYConsulting() {
   return (
     <div
       id="why-gy-consulting"

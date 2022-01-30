@@ -3,7 +3,7 @@ import * as React from 'react'
 import { Footer } from 'screens/_app/layout/footer/footer'
 import { Header } from 'screens/_app/layout/header/header'
 
-export const Layout: React.FC = ({ children }) => {
+export function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />

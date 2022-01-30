@@ -8,15 +8,16 @@ type ServiceCardProps = {
   description: string
   buttonText: string
   buttonAction: () => void
+  children: React.ReactNode
 }
 
-const ServiceCard: React.FC<ServiceCardProps> = ({
+function ServiceCard({
   title,
   description,
   children,
   buttonText,
   buttonAction,
-}) => {
+}: ServiceCardProps) {
   return (
     <div className="flex flex-col justify-between items-center md:w-1/3 h-112 md:h-96 lg:h-88 max-w-sm px-7 py-6 my-6 text-cyan-700 text-2xl md:text-xl">
       <div className="text-9xl md:text-8xl">{children}</div>
@@ -31,7 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   )
 }
 
-const Services: React.FC = () => {
+function Services() {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between w-full xl:w-11/12 2xl:w-10/12 mx-auto mt-4 mb-16">
       <ServiceCard
@@ -64,7 +65,7 @@ const Services: React.FC = () => {
   )
 }
 
-export const WhoWeAre: React.FC = () => {
+export function WhoWeAre() {
   return (
     <div
       className="w-full min-h-max scroll-mt-11 md:scroll-m-14 lg:scroll-mt-20"

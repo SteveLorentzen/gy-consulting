@@ -7,11 +7,11 @@ import { Menu, MenuList, MenuButton, MenuItem } from '@reach/menu-button'
 
 import { IDropdown } from 'interfaces-and-types'
 
-const NavDropdown: React.FC<IDropdown> = ({
+function NavDropdown({
   dropdownTitle,
   dropdownOptions,
   mainDestination,
-}) => {
+}: IDropdown) {
   const router = useRouter()
 
   return (
@@ -54,7 +54,7 @@ const NavDropdown: React.FC<IDropdown> = ({
   )
 }
 
-export const Nav: React.FC = () => {
+export function Nav() {
   const router = useRouter()
 
   return (
