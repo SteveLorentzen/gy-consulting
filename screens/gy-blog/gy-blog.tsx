@@ -69,7 +69,7 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
     <div className="flex flex-col items-center w-full mx-auto py-6 border-b-2 pb-8 hover:cursor-pointer hover:bg-gray-50">
       <div className="w-full flex flex-col xxs:flex-row items-center xxs:items-start">
         <div className="flex flex-col  xxs:items-start xxs:mr-4 w-full xxs:pr-8 order-2 xxs:order-1">
-          <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0">
+          <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0 xxs:mb-2">
             {blog.title}
           </h2>
           {blog.content.slice(0, blog.endPreviewIndex + 1).map(textObject => {
@@ -95,12 +95,6 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
                 return <p key={textObject.text}>{textObject.text}</p>
             }
           })}
-          {/* <button className="flex items-center self-start mt-6 border border-cyan-900 text-cyan-900 py-2 px-6 rounded hover:text-cyan-700">
-            Read More{' '}
-            <span className="ml-2">
-              <AiOutlineArrowRight />
-            </span>
-          </button> */}
         </div>
         <div className="relative min-w-max w-full xxs:w-80 h-48 md:h-40 lg:h-32 order:1 xxs:order-2">
           <Image
@@ -166,7 +160,7 @@ export function GYBlogPage() {
               </h4>
             </div>
           </div>
-          <div className="mx-auto w-7/12 md:w-full flex flex-col my-12">
+          {/* <div className="mx-auto w-7/12 md:w-full flex flex-col my-12">
             <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900">
               Join Mailing List
             </h3>
@@ -176,7 +170,7 @@ export function GYBlogPage() {
               placeholder="email"
               inputRef={mailingListInputRef}
             />
-          </div>
+          </div> */}
         </div>
       </div>
 
