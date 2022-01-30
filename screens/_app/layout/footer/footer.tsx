@@ -1,6 +1,11 @@
 import { BiCopyright } from '@react-icons/all-files/bi/BiCopyright'
+import { Button } from 'components/button'
+import { Input } from 'components/input'
+import * as React from 'react'
 
 export const Footer: React.FC = () => {
+  const newsletterInputRef = React.useRef<HTMLInputElement>(null)
+
   return (
     <div className="relative w-full bg-gray-200 z-10 text-xl">
       <div className="flex flex-col flex-wrap w-full justify-around items-center max-w-screen-2xl mx-auto p-10 ">
@@ -14,15 +19,17 @@ export const Footer: React.FC = () => {
           <div className="flex flex-col justify-between w-full md:w-3/12 h-40 order-2 md:order-3 50 my-12 md:my-0 ">
             <h5 className="text-3xl ">Sign Up for GY&apos;s newsletter</h5>
 
-            <input
+            <Input
+              inputRef={newsletterInputRef}
+              placeholder="email"
               type="email"
-              className="w-full p-2 rounded"
-              placeholder="YourEmail@YourProvider.com"
             />
 
-            <button className="border border-cyan-900 text-cyan-900 py-2 rounded mt-2 hover:text-cyan-700 active:text-cyan-700 active:border-cyan-700">
-              Submit
-            </button>
+            <Button
+              fill
+              buttonAction={() => alert('yay!')}
+              buttonText="Submit"
+            />
           </div>
           <div className="flex flex-col w-full md:w-3/12 items-center order-3 md:order-2 font-bold ">
             <div className="flex flex-col">

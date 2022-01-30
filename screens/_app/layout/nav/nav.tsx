@@ -26,7 +26,7 @@ const NavDropdown: React.FC<IDropdown> = ({
           >
             {dropdownTitle} <span aria-hidden>▾</span>
           </MenuButton>
-          <div className="flex flex-col bg-green-200">
+          <div className="flex flex-col bg-cyan-200">
             <MenuList className="flex flex-col z-50 relative border border-white p-2 bg-cyan-900 rounded shadow-md translate-y-4 animate-descend">
               {dropdownOptions.map(navLink => {
                 return (

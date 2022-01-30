@@ -1,6 +1,7 @@
 import { BiTrophy } from '@react-icons/all-files/bi/BiTrophy'
 import { BsHouse } from '@react-icons/all-files/bs/BsHouse'
 import { BiSupport } from '@react-icons/all-files/bi/BiSupport'
+import { Button } from 'components/button'
 
 type ServiceCardProps = {
   title: string
@@ -20,17 +21,12 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
     <div className="flex flex-col justify-between items-center md:w-1/3 h-112 md:h-96 lg:h-88 max-w-sm px-7 py-6 my-6 text-cyan-700 text-2xl md:text-xl">
       <div className="text-9xl md:text-8xl">{children}</div>
 
-      <div className="flex flex-col justify-between text-gray-800 w-104 xs:w-136 md:w-full max-w-3xl h-3/5">
+      <div className="flex flex-col justify-between text-gray-800 w-104 xxs:w-112 xs:w-136 md:w-full max-w-3xl h-3/5">
         <h3 className="text-4xl md:text-3xl font-bold">{title}</h3>
         <h3 className="h-2/3">{description}</h3>
       </div>
 
-      <button
-        className="text-3xl md:text-2xl active:text-green-800 border border-cyan-700 px-6 py-2 rounded hover:bg-cyan-50"
-        onClick={buttonAction}
-      >
-        {buttonText}
-      </button>
+      <Button buttonAction={buttonAction} buttonText={buttonText} />
     </div>
   )
 }

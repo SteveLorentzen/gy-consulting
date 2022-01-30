@@ -1,6 +1,7 @@
 import { FaMedal } from '@react-icons/all-files/fa/FaMedal'
 import { AiOutlineDollar } from '@react-icons/all-files/ai/AiOutlineDollar'
 import { GoBook } from '@react-icons/all-files/go/GoBook'
+import { SectionHeading } from 'components/section-heading'
 
 export const reasons = [
   {
@@ -35,9 +36,8 @@ const Reason: React.FC<ReasonProps> = ({ title, description, children }) => {
       <div className="mr-2 mb-2 text-cyan-200 text-7xl md:text-5xl">
         {children}
       </div>
-      <div className="flex flex-col items-center mb-4 text-4xl">
-        <h3 className="flex items-center justify-center font-bold">{title}</h3>
-      </div>
+
+      <h3 className="font-bold mb-4 text-4xl">{title}</h3>
 
       <div className="">
         <p>{description}</p>
@@ -53,9 +53,8 @@ export const WhyGYConsulting: React.FC = () => {
       className="relative bg-cyan-900 justify-around items-center py-10 lg:scroll-m-20"
     >
       <div className="max-w-screen-2xl mx-auto">
-        <h3 className="text-6xl font-light text-white pb-12 px-4">
-          Why GY Consulting?
-        </h3>
+        <SectionHeading color="white" headingText="Why GY Consulting" />
+
         <div className="flex flex-col md:flex-row items-center md:items-start w-full flex-wrap justify-around">
           {reasons.map(reason => {
             return (

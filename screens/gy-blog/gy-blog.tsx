@@ -3,6 +3,7 @@ import Image from 'next/image'
 
 import { AiOutlineArrowRight } from '@react-icons/all-files/ai/AiOutlineArrowRight'
 import { ContentContainerWithHeroImage } from 'components/content-container-with-hero-image'
+import { Input } from 'components/input'
 
 const blogs = [
   {
@@ -114,6 +115,9 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
 }
 
 export function GYBlogPage() {
+  const searchInputRef = React.useRef<HTMLInputElement>(null)
+  const mailingListInputRef = React.useRef<HTMLInputElement>(null)
+
   return (
     <>
       <ContentContainerWithHeroImage
@@ -134,10 +138,10 @@ export function GYBlogPage() {
               <h2 className="md:text-2xl lg:text-3xl xl:text-4xl mb-2">
                 Search Blogs
               </h2>
-              <input
-                type="text"
+              <Input
                 placeholder="self-care"
-                className=" border border-cyan-900 px-2"
+                inputRef={searchInputRef}
+                type="text"
               />
             </section>
             <section>
@@ -166,10 +170,11 @@ export function GYBlogPage() {
               <h3 className="md:text-2xl lg:text-3xl xl:text-4xl mb-4 text-cyan-900 w-max">
                 Join Mailing List
               </h3>
-              <input
+
+              <Input
                 type="email"
-                placeholder="yourEmail@yourProvider.com"
-                className=" border border-cyan-900 px-2 w-full"
+                placeholder="email"
+                inputRef={mailingListInputRef}
               />
             </section>
           </div>
