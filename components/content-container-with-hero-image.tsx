@@ -4,11 +4,15 @@ type ContentContainerWithHeroImageProps = {
   mainHeading: string
   subHeading: string
   src: string
+  children: React.ReactNode
 }
 
-export const ContentContainerWithHeroImage: React.FC<
-  ContentContainerWithHeroImageProps
-> = ({ mainHeading, subHeading, src, children }) => {
+export function ContentContainerWithHeroImage({
+  mainHeading,
+  subHeading,
+  src,
+  children,
+}: ContentContainerWithHeroImageProps) {
   return (
     <>
       <div className="fixed w-full h-72 sm:h-80 md:h-104 lg:h-120 xl:h-132 2xl:h-152">

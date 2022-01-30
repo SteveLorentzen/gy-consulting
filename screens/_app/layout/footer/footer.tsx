@@ -3,7 +3,7 @@ import { Button } from 'components/button'
 import { Input } from 'components/input'
 import * as React from 'react'
 
-export const Footer: React.FC = () => {
+export function Footer() {
   const newsletterInputRef = React.useRef<HTMLInputElement>(null)
 
   return (

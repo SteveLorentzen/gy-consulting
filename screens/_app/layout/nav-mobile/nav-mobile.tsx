@@ -24,11 +24,11 @@ type NavDropdownMobileProps = {
   close: () => void
 }
 
-const NavDropdownMobile: React.FC<NavDropdownMobileProps> = ({
+function NavDropdownMobile({
   dropdownContent: { dropdownOptions, dropdownTitle },
   index,
   close,
-}) => {
+}: NavDropdownMobileProps) {
   const [openPanelIndex, setOpenPanelIndex] = React.useState(-1)
   const context = useAccordionContext()
 
@@ -75,7 +75,7 @@ const NavDropdownMobile: React.FC<NavDropdownMobileProps> = ({
   )
 }
 
-export const NavMobile: React.FC = () => {
+export function NavMobile() {
   const [showDialog, setShowDialog] = React.useState(false)
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)

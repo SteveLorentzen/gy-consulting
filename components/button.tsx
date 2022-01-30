@@ -1,8 +1,10 @@
-export const Button: React.FC<{
+type ButtonProps = {
   buttonAction: () => void
   buttonText: string
   fill?: boolean
-}> = ({ buttonAction, buttonText, fill }) => {
+}
+
+export function Button({ buttonAction, buttonText, fill }: ButtonProps) {
   let myButton = (
     <button
       className="text-3xl md:text-2xl active:text-cyan-600 border text-cyan-800 border-cyan-800 px-6 py-2 rounded hover:bg-cyan-50"

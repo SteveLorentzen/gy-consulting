@@ -1,7 +1,7 @@
 import { SectionHeading } from 'components/section-heading'
 import Image from 'next/image'
 
-export const TheTeam: React.FC = () => {
+export function TheTeam() {
   return (
     <div
       className="flex flex-col w-full scroll-mt-11 lg:scroll-mt-20 text-4xl p-14"

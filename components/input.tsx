@@ -6,11 +6,7 @@ type InputProps = {
   inputRef: React.RefObject<HTMLInputElement>
 }
 
-export const Input: React.FC<InputProps> = ({
-  type,
-  placeholder,
-  inputRef,
-}) => {
+export function Input({ type, placeholder, inputRef }: InputProps) {
   return (
     <input
       type={type}

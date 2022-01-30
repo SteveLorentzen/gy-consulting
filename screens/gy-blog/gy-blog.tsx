@@ -1,10 +1,7 @@
 import * as React from 'react'
 import Image from 'next/image'
 
-import { AiOutlineArrowRight } from '@react-icons/all-files/ai/AiOutlineArrowRight'
-import { ContentContainerWithHeroImage } from 'components/content-container-with-hero-image'
 import { Input } from 'components/input'
-import { Button } from 'components/button'
 
 const blogs = [
   {
@@ -64,9 +61,9 @@ interface IBlog {
   content: { text: string; type: string }[]
 }
 
-const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
+function BlogPost({ blog }: { blog: IBlog }) {
   return (
-    <div className="flex flex-col items-center w-full mx-auto py-6 border-b-2 pb-8 hover:cursor-pointer hover:bg-gray-50">
+    <div className="flex flex-col items-center w-full mx-auto py-6 border-b-1 pb-8 hover:cursor-pointer hover:bg-gray-50">
       <div className="w-full flex flex-col xxs:flex-row items-center xxs:items-start">
         <div className="flex flex-col  xxs:items-start xxs:mr-4 w-full xxs:pr-8 order-2 xxs:order-1">
           <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0 xxs:mb-2">
@@ -109,13 +106,38 @@ const BlogPost: React.FC<{ blog: IBlog }> = ({ blog }) => {
   )
 }
 
+function PopularPost({ children }: { children: string }) {
+  return (
+    <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
+      {children}
+    </h4>
+  )
+}
+
+const popularPosts = [
+  'Practice Self Care For An Energy Boost',
+  'Super Foods for Studying',
+  'What College Admissions Staff Are Thinking',
+  '4 Questions you should try and ask your student while away',
+  'Covid 19- The Latest',
+]
+
 export function GYBlogPage() {
   const searchInputRef = React.useRef<HTMLInputElement>(null)
   const mailingListInputRef = React.useRef<HTMLInputElement>(null)
 
   return (
     <>
-      <div className="w-full h-56 bg-cyan-800"></div>
+      <div className="flex items-end w-full h-56 bg-gradient-to-l from-cyan-900 to-cyan-700">
+        <div className="flex flex-col items-stretch w-11/12 xxs:w-9/12 sm:w-7/12 md:w-5/12 lg:w-4/12 xl:w-3/12 rounded-md mx-auto mb-4 ">
+          <h2 className="text-3xl xl:text-4xl text-white">Search Blogs</h2>
+          <Input
+            placeholder="self-care"
+            inputRef={searchInputRef}
+            type="text"
+          />
+        </div>
+      </div>
       <div className="flex flex-col md:flex-row justify-center w-full px-4 xs:px-12 max-w-screen-2xl mx-auto sm:mt-6">
         <div className="w-full md:w-8/12 mb-12">
           <section className="w-full mx-auto">
@@ -124,53 +146,19 @@ export function GYBlogPage() {
             })}
           </section>
         </div>
-        <div className="md:flex flex-col items-stretch md:ml-16 w-10/12 mx-auto md:w-3/12 xl:w-3/12">
-          <div className="flex flex-col items-stretch w-7/12 md:w-full text-cyan-900 rounded-md mx-auto mb-10 ">
-            <h2 className="text-3xl xl:text-4xl">Search Blogs</h2>
-            <Input
-              placeholder="self-care"
-              inputRef={searchInputRef}
-              type="text"
-            />
-            <Button
-              fill
-              buttonAction={() => alert('searching...')}
-              buttonText="Search"
-            />
-          </div>
-          <div className="border-y-2 py-4">
-            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900">
+        <div className="md:flex flex-col items-stretch md:ml-16 w-10/12 mx-auto md:w-3/12 xl:w-3/12 pt-4">
+          <div className="">
+            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900 border-b-1 pb-4">
               Popular Posts
             </h3>
-            <div className="w-full text-cyan-900 pl-4 rounded">
-              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
-                Practice Self Care For An Energy Boost
-              </h4>
-              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
-                Super Foods for Studying
-              </h4>
-              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
-                What College Admissions Staff Are Thinking
-              </h4>
-              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
-                4 Questions you should try and ask your student while away
-              </h4>
-              <h4 className="text-xl mb-8 hover:cursor-pointer hover:text-cyan-600">
-                Covid 19- The Latest
-              </h4>
+            <div className="w-full text-cyan-900 rounded">
+              {popularPosts.map(popularPost => {
+                return (
+                  <PopularPost key={popularPost}>{popularPost}</PopularPost>
+                )
+              })}
             </div>
           </div>
-          {/* <div className="mx-auto w-7/12 md:w-full flex flex-col my-12">
-            <h3 className="text-3xl xl:text-4xl mb-4 text-cyan-900">
-              Join Mailing List
-            </h3>
-
-            <Input
-              type="email"
-              placeholder="email"
-              inputRef={mailingListInputRef}
-            />
-          </div> */}
         </div>
       </div>
 
