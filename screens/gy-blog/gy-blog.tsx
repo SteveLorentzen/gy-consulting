@@ -1,69 +1,36 @@
 import * as React from 'react'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 import { Input } from 'components/input'
 
-const blogs = [
-  {
-    title: 'College Requirements have evolved.  Are you prepared?',
-    photoURL: '/images/college-lawn.jpeg',
-    endPreviewIndex: 0,
-    content: [
-      {
-        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
-        type: 'paragraph',
-      },
-      { text: 'The Studying Process', type: 'sub-heading-1' },
-      {
-        text: 'Another Paragraph about colleges and things and yeah I have nothing to say just gonna keep typing stuff to make this paragraph look long enough visually.',
-        type: 'paragraph',
-      },
-    ],
-  },
-  {
-    title: '10 Helpful Ways to Avoid Study Fatigue',
-    photoURL: '/images/paying-attention.jpeg',
-    endPreviewIndex: 0,
-    content: [
-      {
-        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
-        type: 'paragraph',
-      },
-      { text: 'Train Your Brain', type: 'sub-heading-1' },
-      {
-        text: 'Another Paragraph about colleges and things and yeah I have nothing to say just gonna keep typing stuff to make this paragraph look long enough visually.',
-        type: 'paragraph',
-      },
-    ],
-  },
-  {
-    title: 'Balancing Covid Safety With Mental Health',
-    photoURL: '/images/college-building.jpeg',
-    endPreviewIndex: 0,
-    content: [
-      {
-        text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
-        type: 'paragraph',
-      },
-      { text: 'A Healthy Balance', type: 'sub-heading-1' },
-      {
-        text: 'Another Paragraph about colleges and things and yeah I have nothing to say just gonna keep typing stuff to make this paragraph look long enough visually.',
-        type: 'paragraph',
-      },
-    ],
-  },
-]
+import { blogs } from 'screens/gy-blog/constants'
 
 interface IBlog {
   title: string
+  id: string
   photoURL: string
   endPreviewIndex: number
   content: { text: string; type: string }[]
 }
 
-function BlogPost({ blog }: { blog: IBlog }) {
+function BlogPost({
+  blog,
+}: {
+  blog: IBlog
+  onClick: (blogId: string) => void
+}) {
+  const router = useRouter()
+
+  function navigateToBlog(blogId: string) {
+    router.push(`/gy-blog/${blogId}`)
+  }
+
   return (
-    <div className="flex flex-col items-center w-full mx-auto py-6 border-b-1 pb-8 hover:cursor-pointer hover:bg-gray-50">
+    <div
+      className="flex flex-col items-center w-full mx-auto py-6 border-b-1 pb-8 hover:cursor-pointer hover:bg-gray-50"
+      onClick={() => navigateToBlog(blog.id)}
+    >
       <div className="w-full flex flex-col xxs:flex-row items-center xxs:items-start">
         <div className="flex flex-col  xxs:items-start xxs:mr-4 w-full xxs:pr-8 order-2 xxs:order-1">
           <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0 xxs:mb-2">
@@ -135,7 +102,6 @@ export function GYBlogPage() {
             placeholder="self-care"
             inputRef={searchInputRef}
             type="text"
-            name="search"
           />
         </div>
       </div>
@@ -143,7 +109,7 @@ export function GYBlogPage() {
         <div className="w-full md:w-8/12 mb-12">
           <section className="w-full mx-auto">
             {blogs.map(blog => {
-              return <BlogPost key={blog.title} blog={blog} />
+              return <BlogPost key={blog.id} blog={blog} />
             })}
           </section>
         </div>
