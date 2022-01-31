@@ -135,6 +135,7 @@ export function GYBlogPage() {
             placeholder="self-care"
             inputRef={searchInputRef}
             type="text"
+            name="search"
           />
         </div>
       </div>
