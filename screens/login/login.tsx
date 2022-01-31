@@ -17,10 +17,12 @@ export function LoginPage() {
           alt="college campus"
         />
       </div>
-      <div className="flex flex-col w-120 h-144 bg-white z-20 rounded-lg p-16">
-        <h1 className="text-cyan-900 text-4xl text-center">GY Consulting</h1>
+      <div className="flex flex-col w-120 h-144 bg-white z-20 rounded-lg p-16 -translate-y-12">
+        <h1 className="text-cyan-900 text-5xl sm:text-4xl text-center">
+          GY Consulting
+        </h1>
 
-        <div className=" mx-auto pt-8 pb-6">
+        <div className=" mx-auto pt-8 pb-6 text-2xl sm:text-xl">
           <Input
             inputRef={usernameRef}
             type="email"
