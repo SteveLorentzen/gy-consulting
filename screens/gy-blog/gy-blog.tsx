@@ -5,24 +5,20 @@ import { useRouter } from 'next/router'
 import { Input } from 'components/input'
 
 import { blogs } from 'screens/gy-blog/constants'
+import { Console } from 'console'
 
 interface IBlog {
   title: string
-  id: string
+  author: string
+  id: number
   photoURL: string
-  endPreviewIndex: number
   content: { text: string; type: string }[]
 }
 
-function BlogPost({
-  blog,
-}: {
-  blog: IBlog
-  onClick: (blogId: string) => void
-}) {
+function BlogPost({ blog }: { blog: IBlog }) {
   const router = useRouter()
 
-  function navigateToBlog(blogId: string) {
+  function navigateToBlog(blogId: number) {
     router.push(`/gy-blog/${blogId}`)
   }
 
@@ -36,7 +32,7 @@ function BlogPost({
           <h2 className="text-2xl text-cyan-900 font-bold mb-4 my-4 xxs:my-0 xxs:mb-2">
             {blog.title}
           </h2>
-          {blog.content.slice(0, blog.endPreviewIndex + 1).map(textObject => {
+          {blog.content.slice(0, 1).map(textObject => {
             switch (textObject.type) {
               case 'paragraph':
                 return (
@@ -90,7 +86,28 @@ const popularPosts = [
 ]
 
 export function GYBlogPage() {
-  const searchInputRef = React.useRef<HTMLInputElement>(null)
+  const [searchInput, setSearchInput] = React.useState('')
+  const [filteredBlogs, setFilteredBlogs] = React.useState(blogs)
+  const [timer, setTimer] = React.useState<NodeJS.Timeout | undefined>()
+
+  React.useEffect(() => {
+    const debounceTimer = setTimeout(() => {
+      if (searchInput.length === 0) {
+        setFilteredBlogs(blogs)
+      } else {
+        setFilteredBlogs(
+          blogs.filter(blog => {
+            return blog.title.toLowerCase().includes(searchInput.toLowerCase())
+          }),
+        )
+      }
+    }, 500)
+    setTimer(debounceTimer)
+    if (timer) {
+      return clearTimeout(timer)
+    }
+  }, [searchInput])
+
   const mailingListInputRef = React.useRef<HTMLInputElement>(null)
 
   return (
@@ -100,15 +117,15 @@ export function GYBlogPage() {
           <h2 className="text-3xl xl:text-4xl text-white">Search Blogs</h2>
           <Input
             placeholder="self-care"
-            inputRef={searchInputRef}
             type="text"
+            onChange={e => setSearchInput((e.target as HTMLInputElement).value)}
           />
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-center w-full px-4 xs:px-12 max-w-screen-2xl mx-auto sm:mt-6">
         <div className="w-full md:w-8/12 mb-12">
           <section className="w-full mx-auto">
-            {blogs.map(blog => {
+            {filteredBlogs.map(blog => {
               return <BlogPost key={blog.id} blog={blog} />
             })}
           </section>

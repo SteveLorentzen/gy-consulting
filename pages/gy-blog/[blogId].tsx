@@ -1,6 +1,5 @@
 import { useRouter } from 'next/router'
 import Image from 'next/image'
-import { blogs } from 'screens/gy-blog/constants'
 import { getBlogPostById } from 'screens/gy-blog/constants'
 
 export default function BlogPage() {
@@ -14,7 +13,7 @@ export default function BlogPage() {
 
   return (
     <>
-      <div className="h-40 bg-cyan-800"></div>
+      <div className="h-48 bg-cyan-800"></div>
       <div className="flex flex-col justify-center items-center p16 max-w-screen-lg mx-auto p-16">
         {blogPost && (
           <div className="relative w-full h-104 mb-8">
@@ -28,9 +27,12 @@ export default function BlogPage() {
         )}
 
         <div>
-          <h1 className="text-3xl text-cyan-900 font-semibold mb-8">
+          <h1 className="text-3xl text-cyan-900 font-semibold mb-4">
             {blogPost?.title}
           </h1>
+          <h2 className="text-xl text-gray-500 italic">
+            By: {blogPost?.author}
+          </h2>
           {blogPost?.content.map(textObject => {
             switch (textObject.type) {
               case 'paragraph':

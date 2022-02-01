@@ -17,6 +17,7 @@ import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretUp'
 import { IDropdown } from 'interfaces-and-types'
 
 import { navContent } from 'screens/_app/layout/constants/constants-layout'
+import { useRouter } from 'next/router'
 
 type NavDropdownMobileProps = {
   dropdownContent: IDropdown
@@ -80,6 +81,13 @@ export function NavMobile() {
   const open = () => setShowDialog(true)
   const close = () => setShowDialog(false)
 
+  const router = useRouter()
+
+  function navigateToLogin() {
+    router.push('/login')
+    setShowDialog(false)
+  }
+
   return (
     <>
       <div
@@ -98,7 +106,10 @@ export function NavMobile() {
           aria-label="Navigation Menu"
           className="relative flex flex-col justify-start items-start  min-w-full min-h-full px-16 tracking-wide text-3xl"
         >
-          <button className="mx-auto my-12 bg-white px-24 py-3 rounded-md text-cyan-900 active:text-cyan-700 font-bold ">
+          <button
+            onClick={navigateToLogin}
+            className="mx-auto my-12 bg-white px-24 py-3 rounded-md text-cyan-900 active:text-cyan-700 font-bold "
+          >
             Login
           </button>
           <div className="flex flex-col justify-start w-full">

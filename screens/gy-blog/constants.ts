@@ -1,9 +1,9 @@
 export const blogs = [
   {
     title: 'College Requirements have evolved.  Are you prepared?',
+    author: 'Guhn',
     id: 0,
     photoURL: '/images/college-lawn.jpeg',
-    endPreviewIndex: 0,
     content: [
       {
         text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
@@ -18,10 +18,10 @@ export const blogs = [
   },
   {
     title: '10 Helpful Ways to Avoid Study Fatigue',
+    author: 'Guhn',
     id: 1,
 
     photoURL: '/images/paying-attention.jpeg',
-    endPreviewIndex: 0,
     content: [
       {
         text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
@@ -36,9 +36,9 @@ export const blogs = [
   },
   {
     title: 'Balancing Covid Safety With Mental Health',
+    author: 'Jane D. Parent',
     id: 2,
     photoURL: '/images/college-building.jpeg',
-    endPreviewIndex: 0,
     content: [
       {
         text: 'This is my blog about colleges and stuff.  I have many insights about learning things that you should listen to.',
