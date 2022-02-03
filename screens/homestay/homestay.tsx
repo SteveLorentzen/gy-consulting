@@ -4,10 +4,10 @@ export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
       src="/images/homework-floor.jpeg"
-      mainHeading="Homestay"
-      subHeading="Give your kids a support system while they're away from home"
+      mainHeading="A Support System"
+      subHeading=""
     >
-      <h1 className="text-9xl w-full text-center my-152">Some Page Content!</h1>
+      <h1 className="text-7xl w-full text-center my-152">Some Page Content!</h1>
     </ContentContainerWithHeroImage>
   )
 }

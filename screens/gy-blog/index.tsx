@@ -5,7 +5,6 @@ import { useRouter } from 'next/router'
 import { Input } from 'components/input'
 
 import { blogs } from 'screens/gy-blog/constants'
-import { Console } from 'console'
 
 interface IBlog {
   title: string

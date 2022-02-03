@@ -1,3 +1,3 @@
-import { GYBlogPage } from 'screens/gy-blog/gy-blog'
+import { GYBlogPage } from 'screens/gy-blog'
 
 export default GYBlogPage
