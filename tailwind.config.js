@@ -15,6 +15,7 @@ module.exports = {
     extend: {
       screens: {
         '2xl': '1536px',
+        '3xl': '1950px',
       },
       borderWidth: {
         1: '1px',
@@ -80,6 +81,8 @@ module.exports = {
         240: '60rem',
         248: '62rem',
         256: '64rem',
+        264: '66rem',
+        272: '68rem',
         280: '70rem',
         320: '80rem',
       },

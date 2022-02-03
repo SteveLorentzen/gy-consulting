@@ -1,7 +1,7 @@
 export const blogs = [
   {
     title: 'College Requirements have evolved.  Are you prepared?',
-    author: 'Guhn',
+    author: 'Whoever',
     id: 0,
     photoURL: '/images/college-lawn.jpeg',
     content: [
@@ -18,7 +18,7 @@ export const blogs = [
   },
   {
     title: '10 Helpful Ways to Avoid Study Fatigue',
-    author: 'Guhn',
+    author: 'Whoever',
     id: 1,
 
     photoURL: '/images/paying-attention.jpeg',
