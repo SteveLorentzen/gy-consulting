@@ -15,7 +15,7 @@ export function ContentContainerWithHeroImage({
 }: ContentContainerWithHeroImageProps) {
   return (
     <>
-      <div className="fixed w-full h-120 sm:h-132 md:h-140 lg:h-148 xl:h-152 2xl:h-152">
+      <div className="fixed w-full h-152">
         <Image
           src={src}
           layout="fill"
@@ -25,10 +25,10 @@ export function ContentContainerWithHeroImage({
         />
       </div>
 
-      <section className="relative h-120 sm:h-132 md:h-140 lg:h-148 xl:h-152 2xl:h-152">
-        <div className="absolute w-full h-full bg-cyan-900 opacity-90"></div>
-        <div className="flex flex-col justify-center h-full items-center text-white">
-          <h1 className="z-10 flex flex-col justify-center whitespace-nowrap font-light text-7xl md:text-8xl xl:text-9xl mb-4 lg:mb-8">
+      <section className="relative h-152">
+        <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-700 opacity-90"></div>
+        <div className="flex flex-col justify-center h-full items-center text-white p-8">
+          <h1 className="z-10 flex flex-col justify-center text-center lg:whitespace-nowrap font-semibold lg:font-normal text-7xl md:text-8xl xl:text-9xl mb-4 lg:mb-8">
             {mainHeading}
           </h1>
           <h2 className="z-10 flex flex-col text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl max-w-xs xs:max-w-sm sm:max-w-md mx-4 md:max-w-lg lg:w-full">
