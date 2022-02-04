@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import { GetStaticProps } from 'next'
-import sanity from 'lib/sanity'
-import { IBlog } from 'interfaces-and-types'
-import { imageUrlFor } from 'utils/image-url-for'
+import sanity from 'lib/common/sanity/sanity'
+import { IBlog } from 'interfaces-and-types/gy-blog/interfaces-and-types'
+import { imageUrlFor } from 'lib/common/sanity/image-url-for'
 import { PortableText, PortableTextReactComponents } from '@portabletext/react'
 
 const components: Partial<PortableTextReactComponents> = {
@@ -10,6 +10,7 @@ const components: Partial<PortableTextReactComponents> = {
     image: ({ value }) => (
       <div className="relative w-full h-104 my-8">
         <Image
+          key="akmsdkmsdkv"
           src={imageUrlFor(value).url()}
           layout="fill"
           objectFit="contain"

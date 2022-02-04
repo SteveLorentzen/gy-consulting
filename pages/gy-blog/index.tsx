@@ -1,11 +1,11 @@
 import * as React from 'react'
 import Image from 'next/image'
 import { useRouter } from 'next/router'
-import { imageUrlFor } from 'utils/image-url-for'
+import { imageUrlFor } from 'lib/common/sanity/image-url-for'
 
-import { Input } from 'components/input'
+import { Input } from 'components/common/input'
 
-import sanity from 'lib/sanity'
+import sanity from 'lib/common/sanity/sanity'
 
 interface IBlogPreview {
   _id: string
@@ -83,20 +83,20 @@ const popularPosts = [
 ]
 
 export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
-  const [searchInput, setSearchInput] = React.useState('')
   const [filteredBlogs, setFilteredBlogs] = React.useState(blogs)
   const [timer, setTimer] = React.useState<NodeJS.Timeout | undefined>()
 
   console.log(blogs)
 
-  React.useEffect(() => {
+  function inputHandler(e: React.SyntheticEvent) {
+    const input = (e.target as HTMLInputElement).value
     const debounceTimer = setTimeout(() => {
-      if (searchInput.length === 0) {
+      if (input.length === 0) {
         setFilteredBlogs(blogs)
       } else {
         setFilteredBlogs(
           blogs.filter(blog => {
-            return blog.title.toLowerCase().includes(searchInput.toLowerCase())
+            return blog.title.toLowerCase().includes(input.toLowerCase())
           }),
         )
       }
@@ -105,7 +105,7 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
     if (timer) {
       return clearTimeout(timer)
     }
-  }, [searchInput, blogs, timer])
+  }
 
   const mailingListInputRef = React.useRef<HTMLInputElement>(null)
 
@@ -114,11 +114,7 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
       <div className="flex items-end w-full h-56 bg-gradient-to-l from-cyan-900 to-cyan-700">
         <div className="flex flex-col items-stretch w-11/12 xxs:w-9/12 sm:w-7/12 md:w-5/12 lg:w-4/12 xl:w-3/12 rounded-md mx-auto mb-4 ">
           <h2 className="text-3xl xl:text-4xl text-white">Search Blogs</h2>
-          <Input
-            placeholder="self-care"
-            type="text"
-            onChange={e => setSearchInput((e.target as HTMLInputElement).value)}
-          />
+          <Input placeholder="self-care" type="text" onChange={inputHandler} />
         </div>
       </div>
       <div className="flex flex-col md:flex-row justify-center w-full px-4 xs:px-12 max-w-screen-2xl mx-auto sm:mt-6">
