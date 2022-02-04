@@ -3,8 +3,6 @@ import Image from 'next/image'
 import { useRouter } from 'next/router'
 import { imageUrlFor } from 'utils/image-url-for'
 
-import {} from '@sanity/types'
-
 import { Input } from 'components/input'
 
 import sanity from 'lib/sanity'
@@ -107,7 +105,7 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
     if (timer) {
       return clearTimeout(timer)
     }
-  }, [searchInput])
+  }, [searchInput, blogs, timer])
 
   const mailingListInputRef = React.useRef<HTMLInputElement>(null)
 
@@ -161,8 +159,6 @@ export async function getStaticProps() {
   }`
 
   const blogs = await sanity.fetch(query)
-
-  console.log(blogs)
 
   return {
     props: {
