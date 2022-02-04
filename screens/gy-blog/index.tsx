@@ -4,6 +4,8 @@ import { useRouter } from 'next/router'
 
 import { Input } from 'components/input'
 
+import sanity from 'lib/sanity'
+
 import { blogs } from 'screens/gy-blog/constants'
 
 interface IBlog {
@@ -84,10 +86,16 @@ const popularPosts = [
   'Covid 19- The Latest',
 ]
 
-export function GYBlogPage() {
+interface IBlog {
+  title: string
+}
+
+export function GYBlogPage({ blogs }: { blogs: IBlog }) {
   const [searchInput, setSearchInput] = React.useState('')
   const [filteredBlogs, setFilteredBlogs] = React.useState(blogs)
   const [timer, setTimer] = React.useState<NodeJS.Timeout | undefined>()
+
+  console.log(blogs)
 
   React.useEffect(() => {
     const debounceTimer = setTimeout(() => {
@@ -124,9 +132,10 @@ export function GYBlogPage() {
       <div className="flex flex-col md:flex-row justify-center w-full px-4 xs:px-12 max-w-screen-2xl mx-auto sm:mt-6">
         <div className="w-full md:w-8/12 mb-12">
           <section className="w-full mx-auto">
-            {filteredBlogs.map(blog => {
-              return <BlogPost key={blog.id} blog={blog} />
-            })}
+            {blogs &&
+              filteredBlogs.map(blog => {
+                return <BlogPost key={blog.id} blog={blog} />
+              })}
           </section>
         </div>
         <div className="md:flex flex-col items-stretch md:ml-16 w-10/12 mx-auto md:w-3/12 xl:w-3/12 pt-4">
@@ -148,4 +157,18 @@ export function GYBlogPage() {
       <div className="relative w-full h-full bg-white z-10 pt-16"></div>
     </>
   )
+}
+
+export async function getStaticProps() {
+  const query = '*[_type == "post"]'
+
+  const blogs = await sanity.fetch(query)
+
+  console.log(blogs)
+
+  return {
+    props: {
+      blogs,
+    },
+  }
 }
