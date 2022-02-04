@@ -75,14 +75,14 @@ export function BlogPage({ blogPost }: { blogPost: IBlog }) {
             <Image
               objectFit="cover"
               layout="fill"
-              src={imageUrlFor(blogPost?.mainImage).url()}
-              alt={blogPost?.title}
+              src={imageUrlFor(blogPost.mainImage).url()}
+              alt={blogPost.title}
             ></Image>
           </div>
         )}
-        <h1 className="text-5xl text-cyan-900 mb-8">{blogPost.title}</h1>
+        <h1 className="text-5xl text-cyan-900 mb-8">{blogPost?.title}</h1>
         <div className="text-xl">
-          {blogPost.body.map(bodyElement => {
+          {blogPost?.body.map(bodyElement => {
             return (
               <PortableText
                 key={bodyElement._key}
