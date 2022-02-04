@@ -113,7 +113,8 @@ export const getStaticProps: GetStaticProps = async context => {
     queryParams = { id: context.params.blogId }
   }
 
-  const blogPost: IBlog[] = await sanity.fetch(query, queryParams)
+  const blogPost = await sanity.fetch<IBlog[]>(query, queryParams)
+
   console.log(context)
   return {
     props: {
