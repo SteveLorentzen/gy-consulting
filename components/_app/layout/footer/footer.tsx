@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <div className="relative w-full bg-gray-200 z-10 text-xl py-16">
       <div className="flex flex-col flex-wrap w-full justify-around items-center max-w-screen-2xl mx-auto px-16 ">
-        <div className="flex flex-wrap justify-between w-96 md:w-full">
+        <div className="flex flex-wrap justify-between w-11/12 xxs:w-96 md:w-full">
           <div className="flex flex-col h-32 justify-between md:w-3/12 order-1 mb-12 md:mb-0">
             <h5 className="text-3xl">Contact Us</h5>
             <h6>(123)456-7890 ext 2364</h6>

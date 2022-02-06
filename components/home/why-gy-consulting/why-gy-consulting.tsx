@@ -54,7 +54,7 @@ export function WhyGYConsulting() {
       className="relative bg-cyan-900 justify-between items-center py-10 lg:scroll-m-20 px-12"
     >
       <div className="w-full xl:w-11/12 2xl:w-10/12 mx-auto py-12 md:py-18">
-        <SectionHeading color="white" headingText="Why GY Consulting" />
+        <SectionHeading color="white">Why GY Consulting</SectionHeading>
 
         <div className="flex flex-col md:flex-row items-center md:items-start w-full justify-between">
           {reasons.map(reason => {
