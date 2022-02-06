@@ -49,7 +49,7 @@ export function ContentContainerWithHeroImage({
       </div>
       {src2 && yScrollValueForSecondaryBackground && (
         <div
-          className={`fixed w-full h-full ${
+          className={`fixed w-full h-screen ${
             showSecondaryImage ? '-z-10' : '-z-30'
           }`}
         >
