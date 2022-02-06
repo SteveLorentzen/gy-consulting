@@ -7,7 +7,7 @@ export function TheTeam() {
       className="flex flex-col w-full scroll-mt-11 lg:scroll-mt-20 text-4xl py-24 px-8"
       id="the-team"
     >
-      <SectionHeading color="blue" headingText="Meet The Team" />
+      <SectionHeading color="blue">Meet The Team</SectionHeading>
       <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center">
         <div className="w-104 max-w-lg mb-10 lg:mr-20 bg-black">
           <Image

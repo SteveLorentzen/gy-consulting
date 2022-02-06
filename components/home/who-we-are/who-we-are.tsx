@@ -37,7 +37,7 @@ function Services() {
     <div className="flex flex-col md:flex-row items-center justify-between w-full xl:w-11/12 2xl:w-10/12 mx-auto mt-4 mb-16 p-4">
       <ServiceCard
         title="Consulting"
-        description="We work closely with both parents and students to make sure every requirement is being met."
+        description="We work closely with both parents and students to reach your college admissions goals."
         buttonText="Learn More"
         buttonAction={() => alert('the button works!')}
       >
@@ -46,7 +46,7 @@ function Services() {
 
       <ServiceCard
         title="Homestays"
-        description="Knowing your son or daughter is being looked after properly is a great source of peace of mind."
+        description="Knowing your child is being looked after is a great source of peace of mind."
         buttonText="Apply Now"
         buttonAction={() => alert('the button works!')}
       >
@@ -73,8 +73,8 @@ export function WhoWeAre() {
     >
       <div className="flex flex-col justify-center items-center mx-auto py-6 md:py-8 lg:py-12 text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl px-10 sm:whitespace-nowrap my-16 sm:my-12">
         <h2>
-          At <span className="text-cyan-700 ">GY</span> Consulting, We Put
-          Students First
+          <span className="text-cyan-700 ">Global Youth Consulting</span> will
+          be there every step of the way
         </h2>{' '}
         <h5 className="text-3xl mt-6  ">
           You can trust that your loved ones are in good hands.
