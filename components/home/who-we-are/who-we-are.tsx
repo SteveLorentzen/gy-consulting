@@ -2,6 +2,7 @@ import { BiTrophy } from '@react-icons/all-files/bi/BiTrophy'
 import { BsHouse } from '@react-icons/all-files/bs/BsHouse'
 import { BiSupport } from '@react-icons/all-files/bi/BiSupport'
 import { Button } from 'components/common/button'
+import { ReactNode } from 'react'
 
 type ServiceCardProps = {
   title: string
@@ -28,6 +29,14 @@ function ServiceCard({
       </div>
 
       <Button buttonAction={buttonAction} buttonText={buttonText} />
+    </div>
+  )
+}
+
+function StyledServiceCardsContainer({ children }: { children: ReactNode }) {
+  return (
+    <div className="flex flex-col md:flex-row items-center justify-between w-full xl:w-11/12 2xl:w-10/12 mx-auto mt-4 mb-16 p-4">
+      {children}
     </div>
   )
 }
@@ -67,12 +76,9 @@ function Services() {
 
 export function WhoWeAre() {
   return (
-    <div
-      className="w-full min-h-max scroll-mt-11 md:scroll-m-14 lg:scroll-mt-20"
-      id="who-we-are"
-    >
-      <div className="flex flex-col justify-center items-center mx-auto py-6 md:py-8 lg:py-12 text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl px-10 sm:whitespace-nowrap my-16 sm:my-12">
-        <h2>
+    <div className="w-full" id="who-we-are">
+      <div className="flex flex-col items-center py-6 md:py-8 lg:py-12  px-10  my-16 sm:my-12">
+        <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl sm:whitespace-nowrap">
           <span className="text-cyan-700 ">Global Youth Consulting</span> will
           be there every step of the way
         </h2>{' '}

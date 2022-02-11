@@ -2,6 +2,7 @@ import * as React from 'react'
 import { ContentContainerWithHeroImage } from 'components/common/content-container-with-hero-image'
 import { SectionHeading } from 'components/common/section-heading'
 import Image from 'next/image'
+import { ContentContainerStyled } from 'components/common/content-container-styled'
 
 type HomestayDetailProps = {
   title: string
@@ -83,8 +84,8 @@ export function HomestayPage() {
       mainHeading="Academic Homestay"
       subHeading=""
     >
-      <div className="flex flex-col items-center py-20 bg-white w-full">
-        <SectionHeading color="blue">
+      <ContentContainerStyled bgColor="white">
+        <SectionHeading color="blue" marginBottom="large">
           Your Child Is In Good Hands
         </SectionHeading>
         <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center w-full lg:px-8">
@@ -94,11 +95,11 @@ export function HomestayPage() {
               alt="friendly woman in living room"
               layout="fill"
               objectFit="cover"
-              objectPosition="right"
+              objectPosition="top right"
             />
           </div>
 
-          <div className=" lg:pl-16 px-16 w-full lg:w-160 xl:h-112">
+          <div className=" lg:pl-16 xl:pl-24 xxl:pl-32 px-16 w-full lg:w-160 xl:h-112">
             <h1 className="text-5xl mb-6 font-light">
               Stay with one of our Mentors
             </h1>
@@ -116,20 +117,20 @@ export function HomestayPage() {
             </p>
           </div>
         </div>
-      </div>
+      </ContentContainerStyled>
       <div className="relative h-88 w-full">
         <div className="absolute w-full h-full bg-cyan-900 opacity-50"></div>
       </div>
-      <section className="flex flex-col items-center w-full bg-white">
-        <div className="flex flex-col items-center w-full py-24 text-cyan-900">
-          <h2 className="relative text-6xl mb-8 lg:mb-4 text-center">
+      <div className="flex flex-col items-center bg-white w-full">
+        <ContentContainerStyled bgColor="white">
+          <SectionHeading color="blue" marginBottom="small">
             Receive Weekly Updates
-          </h2>
+          </SectionHeading>
           <h2 className="relative text-4xl px-12 text-center">
             Easily access the latest information about your child&apos;s
             experience
           </h2>
-        </div>
+        </ContentContainerStyled>
 
         <div className="w-full bg-cyan-800">
           {homestayDetails.map(homestayDetail => {
@@ -144,7 +145,7 @@ export function HomestayPage() {
             )
           })}
         </div>
-      </section>
+      </div>
     </ContentContainerWithHeroImage>
   )
 }

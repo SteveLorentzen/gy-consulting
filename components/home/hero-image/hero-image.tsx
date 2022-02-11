@@ -5,14 +5,13 @@ export function HeroImage() {
     <div className="relative">
       <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-700" />
       <div className="absolute bottom-0 sm:hidden bg-gradient-to-t from-black to-transparent w-full h-1/2 opacity-50 z-10"></div>
-      <div className="flex w-full sm:h-144 lg:h-160 xl:h-172 2xl:h-184 3xl:h-200 max-w-screen-3xl  mx-auto flex-col sm:flex-row sm:items-stretch justify-end">
-        <div className="sm:absolute mx-auto right-0 xs:right-auto left-0 bottom-0 lg:-left-14 3xl:left-40 w-full sm:w-196 lg:w-216 xl:w-232 2xl:w-248 3xl:w-320 -translate-x-4 sm:-translate-x-36 md:-translate-x-24 lg:-translate-x-0 z-0">
+      <div className="flex w-full h-120 sm:h-144 lg:h-160 xl:h-172 2xl:h-184 3xl:h-200 max-w-screen-3xl  mx-auto flex-col sm:flex-row sm:items-stretch justify-end">
+        <div className="absolute mx-auto left-0 0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-3/5 h-full z-0">
           <Image
             alt="mentor and student"
-            src="/images/female-mentor-and-student.png"
-            width={1500}
-            height={900}
-            layout="responsive"
+            src="/images/graduate.png"
+            layout="fill"
+            objectFit="contain"
             priority
           />
         </div>
