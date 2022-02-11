@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export function TheTeam() {
   return (
-    <div className="flex flex-col w-full text-4xl py-24 px-8" id="the-team">
+    <div className="flex flex-col w-full text-4xl py-24 px-8">
       <SectionHeading color="blue" marginBottom="large">
         Meet The Team
       </SectionHeading>
