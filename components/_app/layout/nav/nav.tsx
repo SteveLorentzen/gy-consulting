@@ -12,7 +12,7 @@ export function Nav() {
         return (
           <Link key={navLink.linkText} href={navLink.destination}>
             <a
-              className={` text-white hover:text-cyan-200 whitespace-nowrap ml-12 lg:ml-16 ${
+              className={` text-white hover:text-cyan-200 whitespace-nowrap ml-8 lg:ml-16 ${
                 router.pathname === navLink.destination ? 'text-cyan-200' : ''
               }  `}
             >

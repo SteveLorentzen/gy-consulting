@@ -70,7 +70,7 @@ export function WhoWeAre() {
   return (
     <div className="w-full">
       <div className="flex flex-col items-center py-6 md:py-8 lg:py-12  px-10  my-16 sm:my-12">
-        <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl sm:whitespace-nowrap">
+        <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl ">
           <span className="text-cyan-700 ">Global Youth Consulting</span> will
           be there every step of the way
         </h2>{' '}
