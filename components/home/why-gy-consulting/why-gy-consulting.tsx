@@ -2,6 +2,7 @@ import { FaMedal } from '@react-icons/all-files/fa/FaMedal'
 import { AiOutlineDollar } from '@react-icons/all-files/ai/AiOutlineDollar'
 import { GoBook } from '@react-icons/all-files/go/GoBook'
 import { SectionHeading } from 'components/common/section-heading'
+import { ContentContainerStyled } from 'components/common/content-container-styled'
 
 export const reasons = [
   {
@@ -49,12 +50,11 @@ function Reason({ title, description, children }: ReasonProps) {
 
 export function WhyGYConsulting() {
   return (
-    <div
-      id="why-gy-consulting"
-      className="relative bg-cyan-900 justify-between items-center py-10 lg:scroll-m-20 px-12"
-    >
-      <div className="w-full xl:w-11/12 2xl:w-10/12 mx-auto py-12 md:py-18">
-        <SectionHeading color="white">Why GY Consulting</SectionHeading>
+    <ContentContainerStyled bgColor="blue">
+      <div className="w-full xl:w-11/12 2xl:w-10/12 mx-auto md:py-18">
+        <SectionHeading color="white" marginBottom="large">
+          Why GY Consulting
+        </SectionHeading>
 
         <div className="flex flex-col md:flex-row items-center md:items-start w-full justify-between">
           {reasons.map(reason => {
@@ -70,6 +70,6 @@ export function WhyGYConsulting() {
           })}
         </div>
       </div>
-    </div>
+    </ContentContainerStyled>
   )
 }
