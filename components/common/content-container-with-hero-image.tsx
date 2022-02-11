@@ -38,7 +38,7 @@ export function ContentContainerWithHeroImage({
 
   return (
     <>
-      <div className="fixed w-full h-152 -z-20">
+      <div className="fixed w-full h-192 -z-20">
         <Image
           src={src}
           layout="fill"
@@ -63,7 +63,7 @@ export function ContentContainerWithHeroImage({
         </div>
       )}
 
-      <section className="relative h-152">
+      <section className="relative h-192">
         <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-700 opacity-70"></div>
         <div className="flex flex-col justify-center h-full items-center text-white p-8">
           <h1 className="z-10 flex flex-col justify-center text-center lg:whitespace-nowrap font-semibold lg:font-normal text-7xl md:text-8xl xl:text-9xl mb-4 lg:mb-8 xxs:px-16">
