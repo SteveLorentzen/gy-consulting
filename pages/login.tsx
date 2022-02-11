@@ -7,15 +7,17 @@ export function LoginPage() {
   const usernameRef = React.useRef(null)
 
   return (
-    <div className="flex justify-center items-center w-full min-h-screen p-4">
+    <div className="flex justify-center items-center w-full min-h-screen px-4 py-36">
       <div className="absolute top-0 left-0 w-full min-h-screen bg-cyan-800 opacity-80 z-10"></div>
       <div className="absolute top-0 left-0 w-full min-h-screen">
-        <Image
-          src="/images/occidental-college.jpeg"
-          layout="fill"
-          objectFit="cover"
-          alt="college campus"
-        />
+        <div className="relative w-full h-screen">
+          <Image
+            src="/images/occidental-college.jpeg"
+            layout="fill"
+            objectFit="cover"
+            alt="college campus"
+          />
+        </div>
       </div>
       <div className="flex flex-col w-120 h-144 bg-white z-20 rounded-lg p-16 -translate-y-12">
         <h1 className="text-cyan-900 text-5xl sm:text-4xl text-center">

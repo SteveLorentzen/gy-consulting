@@ -33,14 +33,6 @@ function ServiceCard({
   )
 }
 
-function StyledServiceCardsContainer({ children }: { children: ReactNode }) {
-  return (
-    <div className="flex flex-col md:flex-row items-center justify-between w-full xl:w-11/12 2xl:w-10/12 mx-auto mt-4 mb-16 p-4">
-      {children}
-    </div>
-  )
-}
-
 function Services() {
   return (
     <div className="flex flex-col md:flex-row items-center justify-between w-full xl:w-11/12 2xl:w-10/12 mx-auto mt-4 mb-16 p-4">
@@ -76,7 +68,7 @@ function Services() {
 
 export function WhoWeAre() {
   return (
-    <div className="w-full" id="who-we-are">
+    <div className="w-full">
       <div className="flex flex-col items-center py-6 md:py-8 lg:py-12  px-10  my-16 sm:my-12">
         <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl sm:whitespace-nowrap">
           <span className="text-cyan-700 ">Global Youth Consulting</span> will

@@ -6,14 +6,16 @@ export function HeroImage() {
       <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-700" />
       <div className="absolute bottom-0 sm:hidden bg-gradient-to-t from-black to-transparent w-full h-1/2 opacity-50 z-10"></div>
       <div className="flex w-full h-120 sm:h-144 lg:h-160 xl:h-172 2xl:h-184 3xl:h-200 max-w-screen-3xl  mx-auto flex-col sm:flex-row sm:items-stretch justify-end">
-        <div className="absolute mx-auto left-0 0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-3/5 h-full z-0">
-          <Image
-            alt="mentor and student"
-            src="/images/graduate.png"
-            layout="fill"
-            objectFit="contain"
-            priority
-          />
+        <div className="absolute mx-auto left-0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-3/5 h-full z-0">
+          <div className="relative h-full">
+            <Image
+              alt="mentor and student"
+              src="/images/graduate.png"
+              layout="fill"
+              objectFit="contain"
+              priority
+            />
+          </div>
         </div>
 
         <div className="h-0 sm:flex justify-end 2xl:justify-center w-full 2xl:w-7/12 sm:h-full -translate-y-40 xxs:-translate-y-44 xs:-translate-y-56 sm:translate-y-24 2xl:translate-y-12 text-white font-extrabold sm:font-normal lg:mr-8 z-20">
