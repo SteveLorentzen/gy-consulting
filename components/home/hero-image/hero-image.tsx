@@ -18,7 +18,7 @@ export function HeroImage() {
           </div>
         </div>
 
-        <div className="h-0 sm:flex justify-end 2xl:justify-center w-full 2xl:w-6/12 3xl:w-7/12 sm:h-full -translate-y-40 xxs:-translate-y-44 xs:-translate-y-56 sm:translate-y-0 2xl:translate-y-12 text-white font-extrabold sm:font-normal lg:mr-8 z-20">
+        <div className="h-0 sm:flex justify-end 2xl:justify-center w-full 2xl:w-6/12 3xl:w-7/12 sm:h-full -translate-y-40 xxs:-translate-y-44 xs:-translate-y-56 sm:translate-y-0 text-white font-extrabold sm:font-normal lg:mr-8 z-20">
           <h1 className="font-bold sm:font-semibold mx-auto sm:mx-0 flex justify-center w-132 xxs:w-120 xs:w-144 sm:w-120 md:w-128 lg:w-168 xl:w-208 2xl:w-200 items-center text-7xl xxs:text-7xl xs:text-8xl sm:text-7xl lg:text-8xl xl:text-9xl 2xl:text-9xl pr-0 md:pr-8 lg:pr-0">
             Start your future today.
           </h1>

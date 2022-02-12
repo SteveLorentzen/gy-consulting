@@ -41,7 +41,7 @@ function Reason({ title, description, children }: ReasonProps) {
 
       <h3 className="font-bold mb-6 md:mb-4 text-4xl">{title}</h3>
 
-      <div className="text-2xl md:text-xl">
+      <div className="text-2xl md:text-xl px-12 sm:px-0">
         <p>{description}</p>
       </div>
     </div>

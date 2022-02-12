@@ -68,8 +68,7 @@ export function BlogPage({ blogPost }: { blogPost: IBlog }) {
   console.log(blogPost)
 
   return (
-    <div>
-      <div className="h-48 bg-gradient-to-l from-cyan-900 to-cyan-700"></div>
+    <div className="py-12">
       <div className="flex flex-col justify-center max-w-screen-lg mx-auto py-24 px-16">
         {blogPost && (
           <div className="relative w-full h-104 mb-8">
@@ -81,7 +80,7 @@ export function BlogPage({ blogPost }: { blogPost: IBlog }) {
             ></Image>
           </div>
         )}
-        <h1 className="text-5xl text-cyan-900 mb-8">{blogPost?.title}</h1>
+        <h1 className="text-5xl text-cyan-900 mb-4">{blogPost?.title}</h1>
         <div className="text-xl">
           {blogPost?.body.map(bodyElement => {
             return (

@@ -80,7 +80,7 @@ export function HomestayPage() {
     <ContentContainerWithHeroImage
       src="/images/homework-floor.jpeg"
       src2="/images/bunkbed-room.jpeg"
-      yScrollValueForSecondaryBackground={600}
+      yScrollValueForSecondaryBackground={700}
       mainHeading="Academic Homestay"
       subHeading=""
     >
