@@ -7,9 +7,15 @@ import { Nav } from 'components/_app/layout/nav/nav'
 
 import { NavMobile } from 'components/_app/layout/nav-mobile/nav-mobile'
 
+import { useRouter } from 'next/router'
+
 export function Header() {
   const [headerOpacity, setHeaderOpacity] = React.useState(0)
   const yPosition = useScrollYPosition()
+
+  const router = useRouter()
+
+  const routesWhereHeaderShouldStayOpaque = ['/gy-blog']
 
   React.useEffect(() => {
     const calculatedOpacity = yPosition / 200
@@ -21,12 +27,20 @@ export function Header() {
     }
   }, [yPosition, headerOpacity])
 
+  let headerShouldStayOpaque
+
+  routesWhereHeaderShouldStayOpaque.forEach(route => {
+    if (router.pathname.startsWith(route)) {
+      headerShouldStayOpaque = true
+    }
+  })
+
   return (
     <>
       <div className="fixed flex items-center w-full h-20 z-50 ">
         <div
           style={{
-            opacity: headerOpacity,
+            opacity: headerShouldStayOpaque ? 1 : headerOpacity,
           }}
           className="absolute w-full h-full bg-cyan-800"
         ></div>
@@ -41,6 +55,11 @@ export function Header() {
           <NavMobile />
         </div>
       </div>
+      {routesWhereHeaderShouldStayOpaque.includes(router.pathname) ? (
+        <div className="h-24 w-full" />
+      ) : (
+        ''
+      )}
     </>
   )
 }

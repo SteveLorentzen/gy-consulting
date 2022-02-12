@@ -70,12 +70,11 @@ export function WhoWeAre() {
   return (
     <div className="w-full">
       <div className="flex flex-col items-center py-6 md:py-8 lg:py-12  px-10  my-16 sm:my-12">
-        <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-6xl ">
-          <span className="text-cyan-700 ">Global Youth Consulting</span> will
-          be there every step of the way
-        </h2>{' '}
-        <h5 className="text-3xl mt-6  ">
-          You can trust that your loved ones are in good hands.
+        <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-7xl text-cyan-800 ">
+          Global Youth Consulting
+        </h2>
+        <h5 className="text-4xl mt-6 tracking-wider">
+          Every step of the way, your child is in good hands
         </h5>
       </div>
       <hr className="w-10/12 mx-auto " />
