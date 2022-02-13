@@ -207,6 +207,7 @@ export function HomestayPage() {
                 key={homestayDetail.title}
                 src={homestayDetail.src}
                 imageSide={homestayDetail.imageSide}
+                imageFocus={homestayDetail.imageFocus}
                 description={homestayDetail.description}
                 title={homestayDetail.title}
               />
