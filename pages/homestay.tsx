@@ -6,9 +6,25 @@ import { ContentContainerStyled } from 'components/common/content-container-styl
 
 type HomestayDetailProps = {
   title: string
+  imageFocus:
+    | 'left'
+    | 'center'
+    | 'left top'
+    | 'right'
+    | 'right top'
+    | 'center top'
+    | 'center bottom'
+    | 'left bottom'
+    | 'right bottom'
   description: string
   src: string
   imageSide: 'left' | 'right'
+}
+
+type ProgramDetailProps = {
+  title: string
+  description: string
+  src: string
 }
 
 function HomestayDetail({
@@ -16,6 +32,7 @@ function HomestayDetail({
   description,
   src,
   imageSide,
+  imageFocus,
 }: HomestayDetailProps) {
   return (
     <div className="flex flex-col lg:flex-row w-full lg:h-144 text-2xl text-white">
@@ -24,7 +41,13 @@ function HomestayDetail({
           imageSide === 'left' ? 'lg:order-1' : 'lg:order-2'
         }`}
       >
-        <Image src={src} layout="fill" objectFit="cover" alt="" />
+        <Image
+          src={src}
+          layout="fill"
+          objectFit="cover"
+          alt={title}
+          objectPosition={imageFocus}
+        />
       </div>
       <div
         className={`flex flex-col justify-center items-center px-12 ${
@@ -44,6 +67,20 @@ function HomestayDetail({
   )
 }
 
+function ProgramDetail({ src, title, description }: ProgramDetailProps) {
+  return (
+    <div className="flex flex-col w-full xs:w-144 md:w-152 xl:w-136 3xl:w-104  bg-gray-100 rounded-md overflow-hidden mx-4 xxs:mx-8 xs:mx-12 md:mx-24 3xl:mx-8 my-12">
+      <div className="relative w-full h-88">
+        <Image src={src} layout="fill" objectFit="cover" alt="" />
+      </div>
+      <h1 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-8">
+        {title}
+      </h1>
+      <p className="px-8 pb-12">{description}</p>
+    </div>
+  )
+}
+
 const homestayDetails: HomestayDetailProps[] = [
   {
     title: 'Academic Progress',
@@ -51,20 +88,23 @@ const homestayDetails: HomestayDetailProps[] = [
       "Our in-house mentor will encourage students to follow a productive schedule, provide academic help when needed, and offer counseling to help your child stay on track.  Check your child's progress on our online dashboard.",
     src: '/images/students-studying.jpeg',
     imageSide: 'left',
+    imageFocus: 'center',
   },
   {
     title: 'Meal Menus',
     description:
       'Delicious and nutritious meals will be the source of energy for optimal school life. Photos and menu charts will be updated weekly.',
-    src: '/images/vegetables.jpeg',
+    src: '/images/korean-meal.jpeg',
     imageSide: 'right',
+    imageFocus: 'center',
   },
   {
     title: 'Weekly Activities',
     description:
       'GY homestay students have regular activities that boost physical and mental health.',
-    src: '/images/hiking.jpeg',
+    src: '/images/yoga.jpeg',
     imageSide: 'left',
+    imageFocus: 'center bottom',
   },
   {
     title: 'In-house College Consulting',
@@ -72,6 +112,34 @@ const homestayDetails: HomestayDetailProps[] = [
       'Our mentors and consultants will guide your child to do the right thing, at the right time to become competitive candidates for admission to top universities. ',
     src: '/images/tutor.jpeg',
     imageSide: 'right',
+    imageFocus: 'center',
+  },
+]
+
+const programDetails: ProgramDetailProps[] = [
+  {
+    title: 'Mentor Meetings',
+    description:
+      'We will get to know your child in a way no other consulting firms have. Constant interaction between the mentor and student is the key to cultivating a unique student identity with positive character, experience, and life goals that top universities desire in their applicants.',
+    src: '/images/mentor-meeting.jpeg',
+  },
+  {
+    title: 'Consultant Meetings',
+    description:
+      'Regular online and offline meetings between your child and consultant provides continuous help throughout their high school years. Each student is provided with all the necessary information to achieve their university admissions goals. ',
+    src: '/images/consultant-discussion.jpeg',
+  },
+  {
+    title: 'Diagnostics',
+    description:
+      'GY homestay mentors work with consultants to accurately evaluate your child. From academic performance to emotional and mental health, extensive diagnostics will be the groundwork for formulating optimal timelines/guidelines for your child to follow through with in order to thrive in school.',
+    src: '/images/survey.jpeg',
+  },
+  {
+    title: 'Recommended Classes/Activities',
+    description:
+      'Each student will be offered guidance according to their individual needs. Your child may take enrichment classes offered by GY teaching staff, or from other partner teachers that will be recommended by GY consultants. GY Homestay recommends after school and summer activities designed to shape your child’s strengths. Enjoy the numerous weekend activities led by the GY team.',
+    src: '/images/high-school-tutor.jpeg',
   },
 ]
 
@@ -146,6 +214,93 @@ export function HomestayPage() {
           })}
         </div>
       </div>
+      <ContentContainerStyled bgColor="white">
+        <SectionHeading color="blue" marginBottom="large">
+          Academic Homestay Program
+        </SectionHeading>
+        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start max-w-3xl lg:max-w-screen-xl mb-12 mt-6 px-12 lg:px-0">
+          <div className="flex flex-col w-full lg:w-2/5 order-2 lg:order-1">
+            <h2 className="text-cyan-900 text-5xl tracking-wide font-light mb-6 lg:mb-8 lg:whitespace-nowrap ">
+              Get a head start
+            </h2>
+            <p className="">
+              Colleges consider all four years of high school grades, courses,
+              activities, summer plans, and awards when reviewing student
+              applications, so it is never too early to prepare. Start at GY
+              Homestay and get a head start.
+            </p>
+          </div>
+
+          <div className="relative w-full lg:w-5/12 lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
+            <Image
+              src="/images/college-lawn.jpeg"
+              alt="friendly woman in living room"
+              layout="responsive"
+              width={300}
+              height={200}
+              className=""
+            />
+          </div>
+        </div>
+
+        <hr className="w-full max-w-screen-2xl mt-12 mb-4 h-2"></hr>
+
+        <div className="flex flex-col lg:flex-row w-full max-w-3xl justify-center items-center lg:max-w-screen-xl py-8 px-12 lg:px-0">
+          <div className=" flex flex-col w-full lg:w-2/5 order-2 lg:order-1 px-8 lg:px-0">
+            <h2 className="text-cyan-900 text-5xl mb-6 lg:mb-8 tracking-wide font-light">
+              Constant Communication
+            </h2>
+            <p className="w-full lg:w-136">
+              At GY homestay, we emphasize communication between in-house
+              mentors, academic consultants, and parents. We want to know our
+              students’ personalities, interests, aspirations, and “all the
+              little quirks” to best guide them during their most important high
+              school years.
+            </p>
+          </div>
+          <div className="relative w-full lg:w-5/12 h-full lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
+            <Image
+              src="/images/gy-consulting-diagram.png"
+              alt="friendly woman in living room"
+              layout="responsive"
+              width={230}
+              height={200}
+              className=""
+            />
+          </div>
+        </div>
+      </ContentContainerStyled>
+
+      {/* <div className="w-full bg-cyan-800">
+        {programDetails.map(programDetail => {
+          return (
+            <HomestayDetail
+              key={programDetail.title}
+              src={programDetail.src}
+              imageSide={programDetail.imageSide}
+              description={programDetail.description}
+              title={programDetail.title}
+            />
+          )
+        })}
+      </div> */}
+      <ContentContainerStyled bgColor="blue">
+        <SectionHeading color="white" marginBottom="large">
+          Our Process
+        </SectionHeading>
+        <div className="flex justify-evenly w-full flex-wrap">
+          {programDetails.map(programDetail => {
+            return (
+              <ProgramDetail
+                key={programDetail.title}
+                src={programDetail.src}
+                title={programDetail.title}
+                description={programDetail.description}
+              />
+            )
+          })}
+        </div>
+      </ContentContainerStyled>
     </ContentContainerWithHeroImage>
   )
 }
