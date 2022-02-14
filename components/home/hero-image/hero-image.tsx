@@ -36,6 +36,8 @@ export default function useWindowDimensions() {
 export function HeroImage() {
   const { width } = useWindowDimensions()
 
+  console.log(width)
+
   return (
     <div className="relative">
       <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-600" />
@@ -47,7 +49,7 @@ export function HeroImage() {
               alt="mentor and student"
               src="/images/graduate.png"
               layout="fill"
-              objectFit={width < 640 && width > -1 ? 'cover' : 'contain'}
+              objectFit={width < 640 ? 'cover' : 'contain'}
               priority
             />
           </div>
