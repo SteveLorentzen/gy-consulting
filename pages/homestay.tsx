@@ -69,7 +69,7 @@ function HomestayDetail({
 
 function ProgramDetail({ src, title, description }: ProgramDetailProps) {
   return (
-    <div className="flex flex-col w-full xs:w-144 md:w-152 xl:w-136 3xl:w-104  bg-gray-100 rounded-md overflow-hidden mx-4 xxs:mx-8 xs:mx-12 md:mx-24 3xl:mx-8 my-12">
+    <div className="flex flex-col w-full xs:w-144 md:w-152 xl:w-136 3xl:w-104  bg-gray-100 rounded-md overflow-hidden mx-4 xxs:mx-8 xs:mx-12 md:mx-12 3xl:mx-8 my-12">
       <div className="relative w-full h-88">
         <Image src={src} layout="fill" objectFit="cover" alt="" />
       </div>
@@ -286,10 +286,10 @@ export function HomestayPage() {
         })}
       </div> */}
       <ContentContainerStyled bgColor="blue">
-        <SectionHeading color="white" marginBottom="large">
+        <SectionHeading color="white" marginBottom="medium">
           Our Process
         </SectionHeading>
-        <div className="flex justify-evenly w-full flex-wrap">
+        <div className="flex justify-evenly w-full flex-wrap md:px-12 3xl:px-8">
           {programDetails.map(programDetail => {
             return (
               <ProgramDetail
