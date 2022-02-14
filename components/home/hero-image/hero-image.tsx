@@ -2,10 +2,12 @@ import Image from 'next/image'
 import { useState, useEffect } from 'react'
 
 function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window
-  return {
-    width,
-    height,
+  if (typeof window !== 'undefined') {
+    const { innerWidth: width, innerHeight: height } = window
+    return {
+      width,
+      height,
+    }
   }
 }
 
@@ -23,7 +25,12 @@ export default function useWindowDimensions() {
     return () => window.removeEventListener('resize', handleResize)
   }, [])
 
-  return windowDimensions
+  if (
+    typeof windowDimensions?.width === 'number' &&
+    typeof windowDimensions?.height === 'number'
+  )
+    return windowDimensions
+  else return { width: -1, height: -1 }
 }
 
 export function HeroImage() {
@@ -40,7 +47,7 @@ export function HeroImage() {
               alt="mentor and student"
               src="/images/graduate.png"
               layout="fill"
-              objectFit={width < 640 ? 'cover' : 'contain'}
+              objectFit={width < 640 && width > -1 ? 'cover' : 'contain'}
               priority
             />
           </div>
