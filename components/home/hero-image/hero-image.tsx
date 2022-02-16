@@ -1,47 +1,11 @@
 import Image from 'next/image'
-import { useState, useEffect } from 'react'
-
-function getWindowDimensions() {
-  if (typeof window !== 'undefined') {
-    const { innerWidth: width, innerHeight: height } = window
-    return {
-      width,
-      height,
-    }
-  }
-}
-
-export default function useWindowDimensions() {
-  const [windowDimensions, setWindowDimensions] = useState(
-    getWindowDimensions(),
-  )
-
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions())
-    }
-
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
-
-  if (
-    typeof windowDimensions?.width === 'number' &&
-    typeof windowDimensions?.height === 'number'
-  )
-    return windowDimensions
-  else return { width: -1, height: -1 }
-}
+import classes from './hero-image.module.css'
 
 export function HeroImage() {
-  const { width } = useWindowDimensions()
-
-  console.log(width)
-
   return (
-    <div className="relative">
+    <div className="relative ">
       <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-600" />
-      <div className="absolute bottom-0 sm:hidden bg-gradient-to-t from-black to-transparent w-full h-1/2 opacity-50 z-10"></div>
+      <div className="absolute bottom-0 sm:hidden bg-gradient-to-t from-black to-transparent w-full mx-auto h-1/2 opacity-50 z-10"></div>
       <div className="flex w-full h-160 xxs:h-192 xs:h-232 sm:h-160 lg:h-160 xl:h-172 2xl:h-192 3xl:h-224 max-w-screen-3xl  mx-auto flex-col sm:flex-row sm:items-stretch justify-end">
         <div className="absolute mx-auto left-0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-8/12 lg:w-7/12 h-full z-0 sm:-translate-x-36 md:-translate-x-16 lg:-translate-x-12 2xl:-translate-x-0">
           <div className="relative h-full">
@@ -49,8 +13,8 @@ export function HeroImage() {
               alt="mentor and student"
               src="/images/graduate.png"
               layout="fill"
-              objectFit={width < 640 ? 'cover' : 'contain'}
               priority
+              className={classes.image}
             />
           </div>
         </div>

@@ -10,7 +10,7 @@ export function SectionHeading({
   marginBottom,
 }: SectionHeadingProps) {
   return (
-    <h3
+    <h2
       className={`text-6xl text-center font-light z-10 ${
         color === 'blue' ? 'text-cyan-900' : 'text-white'
       } ${
@@ -24,6 +24,6 @@ export function SectionHeading({
       } px-8`}
     >
       {children}
-    </h3>
+    </h2>
   )
 }

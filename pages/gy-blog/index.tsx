@@ -6,6 +6,7 @@ import { imageUrlFor } from 'lib/common/sanity/image-url-for'
 import { Input } from 'components/common/input'
 
 import sanity from 'lib/common/sanity/sanity'
+import Head from 'next/head'
 
 interface IBlogPreview {
   _id: string
@@ -76,11 +77,12 @@ function BlogPost({ blog }: { blog: IBlogPreview }) {
                 alt={blog.author.name}
               />
             </div>
-
-            <h3 className="justify-self-end ">{blog.author.name}</h3>
-            <h4 className="ml-4 text-sm text-gray-500">
-              {new Date(blog._createdAt).toDateString()}
-            </h4>
+            <div className="flex flex-col sm:flex-row">
+              <h3 className="justify-self-end ">{blog.author.name}</h3>
+              <h4 className="sm:ml-4 text-md text-gray-500 italic">
+                {new Date(blog._createdAt).toDateString()}
+              </h4>
+            </div>
           </div>
         </div>
         <div className="relative min-w-max w-full xxs:w-80 h-64 xxs:h-48 md:h-40 lg:h-32 order:1 xxs:order-2">
@@ -102,14 +104,14 @@ function PopularPost({
   popularPost: { title: string; author: string }
 }) {
   return (
-    <h4 className="hover:cursor-pointer mb-8 group ">
-      <h5 className="text-xl  hover:cursor-pointer hover:text-cyan-600 mb-2 group-hover:text-cyan-700">
+    <div className="hover:cursor-pointer mb-8 group ">
+      <h4 className="text-xl  hover:cursor-pointer hover:text-cyan-600 mb-2 group-hover:text-cyan-700">
         {popularPost.title}
-      </h5>
-      <h6 className="text-gray-500 tracking-wide group-hover:text-cyan-700">
+      </h4>
+      <h5 className="text-gray-500 tracking-wide group-hover:text-cyan-700">
         {popularPost.author}
-      </h6>
-    </h4>
+      </h5>
+    </div>
   )
 }
 
@@ -156,10 +158,14 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
 
   return (
     <>
-      {/* <div className="w-full h-20" /> */}
-      {/** this is just a spacer for the heading */}
-
-      <div className="flex flex-col lg:flex-row justify-center items-center md:items-start w-full xxs:px-4 xs:px-12 mx-auto sm:mt-6 font-serif max-w-5xl lg:max-w-none">
+      <div className="flex flex-col lg:flex-row justify-center items-center md:items-start w-full xxs:px-4 xs:px-12 mx-auto sm:mt-6 font-serif max-w-5xl lg:max-w-none text-xl">
+        <Head>
+          <title>GY Blog</title>
+          <meta
+            name="description"
+            content="Read the latest opinions and observations abot college admissions, homestays, student support, and much more"
+          />
+        </Head>
         <div className="flex flex-col items-stretch w-full lg:w-2/12 rounded-md lg:mx-16 min-w-max pt-4 lg:pt-0 pb-8 px-4 xxs:px-0">
           <h2 className="text-3xl xl:text-4xl text-cyan-900 w-60">
             Search Blogs
@@ -171,7 +177,10 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
             {filteredBlogs.map(blog => {
               if (blog.isFeatured) {
                 return (
-                  <div className="flex-col items-center pb-8 w-full hover:bg-gray-50 lg:px-8 border-b-1">
+                  <article
+                    key={blog._id}
+                    className="flex-col items-center pb-8 w-full hover:bg-gray-50 lg:px-8 border-b-1"
+                  >
                     <div className="relative h-72 xxs:h-80 xs:h-96 sm:h-104 lg:h-80 xl:h-96 2xl:h-104 w-full">
                       <Image
                         src={imageUrlFor(blog.mainImage).url()}
@@ -185,7 +194,7 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
                       <h1 className="text-cyan-900 text-4xl my-4">
                         {blog.title}
                       </h1>
-                      <p className="text-2xl mb-6 text-gray-500 tracking-wide">
+                      <p className="text-2xl mb-6  tracking-wide">
                         {blog.excerpt}
                       </p>
                       <div className="flex items-center">
@@ -197,14 +206,17 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
                             alt={blog.author.name}
                           />
                         </div>
-
-                        <h2>{blog.author.name}</h2>
-                        <h3 className="text-gray-500">
-                          {new Date(blog._createdAt).toDateString()}
-                        </h3>
+                        <div className="flex flex-col sm:flex-row">
+                          <h2 className="whitespace-nowrap">
+                            {blog.author.name}
+                          </h2>
+                          <h3 className="text-gray-500 sm:ml-4 italic whitespace-nowrap">
+                            {new Date(blog._createdAt).toDateString()}
+                          </h3>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </article>
                 )
               }
             })}

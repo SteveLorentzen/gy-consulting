@@ -3,6 +3,7 @@ import { ContentContainerWithHeroImage } from 'components/common/content-contain
 import { SectionHeading } from 'components/common/section-heading'
 import Image from 'next/image'
 import { ContentContainerStyled } from 'components/common/content-container-styled'
+import Head from 'next/head'
 
 type HomestayDetailProps = {
   title: string
@@ -57,9 +58,9 @@ function HomestayDetail({
         } ${imageSide === 'left' ? 'lg:order-2' : 'lg:order-1'}`}
       >
         <div className="w-11/12 lg:w-104">
-          <h3 className="text-4xl font-bold tracking-wider mb-8 lg:mb-4">
+          <h4 className="text-4xl font-bold tracking-wider mb-8 lg:mb-4">
             {title}
-          </h3>
+          </h4>
           <p>{description}</p>
         </div>
       </div>
@@ -73,9 +74,9 @@ function ProgramDetail({ src, title, description }: ProgramDetailProps) {
       <div className="relative w-full h-88">
         <Image src={src} layout="fill" objectFit="cover" alt="" />
       </div>
-      <h1 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-8">
+      <h3 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-8">
         {title}
-      </h1>
+      </h3>
       <p className="px-8 pb-12">{description}</p>
     </div>
   )
@@ -152,11 +153,18 @@ export function HomestayPage() {
       mainHeading="Academic Homestay"
       subHeading=""
     >
+      <Head>
+        <title>Academic Homestay</title>
+        <meta
+          name="description"
+          content="Set up a homestay with an experienced host and inspiring mentor."
+        />
+      </Head>
       <ContentContainerStyled bgColor="white">
         <SectionHeading color="blue" marginBottom="large">
           Your Child Is In Good Hands
         </SectionHeading>
-        <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center w-full lg:px-8">
+        <section className="flex flex-col items-center lg:items-start lg:flex-row justify-center w-full lg:px-8">
           <div className="relative w-full h-120 mb-12 lg:pb-0 lg:w-136 lg:h-96 xl:w-160 xl:h-112">
             <Image
               src="/images/smiling-woman.jpeg"
@@ -167,13 +175,13 @@ export function HomestayPage() {
             />
           </div>
 
-          <div className=" lg:pl-16 xl:pl-24 xxl:pl-32 px-16 w-full lg:w-160 xl:h-112">
-            <h1 className="text-5xl mb-6 font-light">
+          <div className=" lg:pl-16 xl:pl-24 xxl:pl-32 px-16 sm:px-0 w-full lg:w-160 xl:h-112">
+            <h3 className="text-5xl mb-6 font-light">
               Stay with one of our Mentors
-            </h1>
-            <h2 className="text-3xl font-bold text-cyan-900 mb-6 tracking-widest">
+            </h3>
+            <h4 className="text-3xl font-bold text-cyan-900 mb-6 tracking-widest">
               Leave your troubles behind
-            </h2>
+            </h4>
             <p className="">
               GY academic homestay combines exceptional consulting expertise
               with great home living. From homework guidance to weekend
@@ -184,7 +192,7 @@ export function HomestayPage() {
               potential.
             </p>
           </div>
-        </div>
+        </section>
       </ContentContainerStyled>
       <div className="relative h-88 w-full">
         <div className="absolute w-full h-full bg-cyan-900 opacity-50"></div>
@@ -194,13 +202,13 @@ export function HomestayPage() {
           <SectionHeading color="blue" marginBottom="small">
             Receive Weekly Updates
           </SectionHeading>
-          <h2 className="relative text-4xl px-12 text-center">
+          <h3 className="relative text-4xl px-12 text-center">
             Easily access the latest information about your child&apos;s
             experience
-          </h2>
+          </h3>
         </ContentContainerStyled>
 
-        <div className="w-full bg-cyan-800">
+        <section className="w-full bg-cyan-800">
           {homestayDetails.map(homestayDetail => {
             return (
               <HomestayDetail
@@ -213,17 +221,17 @@ export function HomestayPage() {
               />
             )
           })}
-        </div>
+        </section>
       </div>
       <ContentContainerStyled bgColor="white">
         <SectionHeading color="blue" marginBottom="large">
           Academic Homestay Program
         </SectionHeading>
-        <div className="flex flex-col lg:flex-row justify-center items-center lg:items-start max-w-3xl lg:max-w-screen-xl mb-12 mt-6 px-12 lg:px-0">
+        <section className="flex flex-col lg:flex-row justify-center items-center lg:items-start max-w-3xl lg:max-w-screen-xl mb-12 mt-6 px-12 lg:px-0">
           <div className="flex flex-col w-full lg:w-2/5 order-2 lg:order-1">
-            <h2 className="text-cyan-900 text-5xl tracking-wide font-light mb-6 lg:mb-8 lg:whitespace-nowrap ">
+            <h3 className="text-cyan-900 text-5xl tracking-wide font-light mb-6 lg:mb-8 lg:whitespace-nowrap ">
               Get a head start
-            </h2>
+            </h3>
             <p className="">
               Colleges consider all four years of high school grades, courses,
               activities, summer plans, and awards when reviewing student
@@ -242,15 +250,15 @@ export function HomestayPage() {
               className=""
             />
           </div>
-        </div>
+        </section>
 
         <hr className="w-full max-w-screen-2xl mt-12 mb-4 h-2"></hr>
 
-        <div className="flex flex-col lg:flex-row w-full max-w-3xl justify-center items-center lg:max-w-screen-xl py-8 px-12 lg:px-0">
+        <section className="flex flex-col lg:flex-row w-full max-w-3xl justify-center items-center lg:max-w-screen-xl py-8 px-12 lg:px-0">
           <div className=" flex flex-col w-full lg:w-2/5 order-2 lg:order-1 px-8 lg:px-0">
-            <h2 className="text-cyan-900 text-5xl mb-6 lg:mb-8 tracking-wide font-light">
-              Constant Communication
-            </h2>
+            <h3 className="text-cyan-900 text-5xl mb-6 lg:mb-8 tracking-wide font-light">
+              Frequent Communication
+            </h3>
             <p className="w-full lg:w-136">
               At GY homestay, we emphasize communication between in-house
               mentors, academic consultants, and parents. We want to know our
@@ -269,22 +277,9 @@ export function HomestayPage() {
               className=""
             />
           </div>
-        </div>
+        </section>
       </ContentContainerStyled>
 
-      {/* <div className="w-full bg-cyan-800">
-        {programDetails.map(programDetail => {
-          return (
-            <HomestayDetail
-              key={programDetail.title}
-              src={programDetail.src}
-              imageSide={programDetail.imageSide}
-              description={programDetail.description}
-              title={programDetail.title}
-            />
-          )
-        })}
-      </div> */}
       <ContentContainerStyled bgColor="blue">
         <SectionHeading color="white" marginBottom="medium">
           Our Process
