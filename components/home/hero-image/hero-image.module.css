@@ -1,0 +1,9 @@
+.image {
+  object-fit: cover;
+}
+
+@media (min-width: 640px) {
+  .image {
+    object-fit: contain;
+  }
+}

@@ -1,6 +1,10 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   content: [
     './pages/**/*.{js,ts,jsx,tsx}',
     './components/**/*.{js,ts,jsx,tsx}',
@@ -110,6 +114,8 @@ module.exports = {
         232: '58rem',
         280: '70rem',
         320: '80rem',
+        'screen-60': '60vh',
+        'screen-70': '70vh',
       },
       spacing: {
         88: '22rem',

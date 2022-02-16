@@ -20,7 +20,7 @@ function ServiceCard({
   buttonAction,
 }: ServiceCardProps) {
   return (
-    <div className="flex flex-col justify-between items-center md:w-1/3 h-112 xs:h-96  md:h-96 lg:h-88 max-w-sm px-7 py-6 my-12 text-cyan-700 text-2xl md:text-xl">
+    <div className="flex flex-col justify-between items-center md:w-1/3 h-112 xs:h-96  md:h-96 lg:h-88 max-w-sm px-7 py-4 my-12 text-cyan-700 text-2xl md:text-xl">
       <div className="text-9xl md:text-8xl">{children}</div>
 
       <div className="flex flex-col justify-between text-gray-800 w-104 xxs:w-112 xs:w-136 md:w-full max-w-3xl h-3/5">
@@ -35,7 +35,7 @@ function ServiceCard({
 
 function Services() {
   return (
-    <div className="flex flex-col md:flex-row items-center justify-between w-full xl:w-11/12 2xl:w-10/12 mx-auto mt-4 mb-16 p-4">
+    <div className="flex flex-col md:flex-row items-center justify-between w-full  mx-auto mt-4 mb-16  px-16">
       <ServiceCard
         title="Consulting"
         description="We work closely with both parents and students to reach your college admissions goals."
@@ -68,14 +68,14 @@ function Services() {
 
 export function WhoWeAre() {
   return (
-    <div className="w-full">
-      <div className="flex flex-col items-center py-6 md:py-8 lg:py-12  px-10  my-16 sm:my-12">
-        <h2 className="text-4xl xxs:text-5xl xs:text-6xl sm:text-5xl lg:text-7xl text-cyan-800 ">
+    <div className="w-full max-w-screen-3xl mx-auto">
+      <div className="flex flex-col items-center  px-10  my-16 sm:my-12">
+        <h2 className="text-6xl sm:text-7xl lg:text-7xl text-cyan-800 ">
           Global Youth Consulting
         </h2>
-        <h5 className="text-4xl mt-6 tracking-wider">
+        <h3 className="text-4xl mt-6 tracking-wider">
           Every step of the way, your child is in good hands
-        </h5>
+        </h3>
       </div>
       <hr className="w-10/12 mx-auto " />
       <Services />
