@@ -51,9 +51,9 @@ function HomestayDetail({
         />
       </div>
       <div
-        className={`flex flex-col justify-center items-center px-12 ${
+        className={`flex flex-col lg:justify-center items-center px-4 xxs:px-12 ${
           imageSide === 'right' ? 'lg:items-end' : 'lg:items-start'
-        } w-full py-24 lg:w-1/2 ${
+        } w-full lg:py-24 pt-8 pb-32 sm:pb-24 lg:w-1/2 ${
           imageSide === 'left' ? 'lg:pl-24' : 'lg:pr-24'
         } ${imageSide === 'left' ? 'lg:order-2' : 'lg:order-1'}`}
       >
@@ -137,9 +137,15 @@ const programDetails: ProgramDetailProps[] = [
     src: '/images/survey.jpeg',
   },
   {
+    title: 'Study Hall',
+    description:
+      'Mentors not only provide students help with everyday homework, they also teach students “how to study”. Academic tools such as time management, note taking, organizing information, and maintaining focus are key skills that in-house mentors foster in our homestay students. At GY homestay, your child will become independent, motivated scholars with abilities for lifelong success.',
+    src: '/images/homework-floor.jpeg',
+  },
+  {
     title: 'Recommended Classes/Activities',
     description:
-      'Each student will be offered guidance according to their individual needs. Your child may take enrichment classes offered by GY teaching staff, or from other partner teachers that will be recommended by GY consultants. GY Homestay recommends after school and summer activities designed to shape your child’s strengths. Enjoy the numerous weekend activities led by the GY team.',
+      'Each student will be offered additional guidance according to their individual needs. Your child may take enrichment classes offered by GY teaching staff, or from other partner teachers that will be recommended by GY consultants. GY Homestay recommends after school and summer activities designed to shape your child’s strengths. Enjoy the numerous weekend activities led by the GY team.',
     src: '/images/high-school-tutor.jpeg',
   },
 ]
@@ -161,36 +167,44 @@ export function HomestayPage() {
         />
       </Head>
       <ContentContainerStyled bgColor="white">
-        <SectionHeading color="blue" marginBottom="large">
-          Your Child Is In Good Hands
-        </SectionHeading>
-        <section className="flex flex-col items-center lg:items-start lg:flex-row justify-center w-full lg:px-8">
-          <div className="relative w-full h-120 mb-12 lg:pb-0 lg:w-136 lg:h-96 xl:w-160 xl:h-112">
-            <Image
-              src="/images/smiling-woman.jpeg"
-              alt="friendly woman in living room"
-              layout="fill"
-              objectFit="cover"
-              objectPosition="top right"
-            />
-          </div>
+        <section className="flex flex-col items-center w-11/12 xl:w-3/4 max-w-screen-xl ">
+          <SectionHeading color="blue" marginBottom="medium">
+            Your Child Is In Good Hands
+          </SectionHeading>
+          <p className="w-full mb-12">
+            GY homestay has over 5 years experience living and working with
+            international school students in Jeju, S. Korea. We are now offering
+            the same premium homestay program to international school students
+            in the Seoul-Incheon area.
+          </p>
+          <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center w-full">
+            <div className="relative w-full h-120 mb-12 lg:pb-0 flex-grow">
+              <Image
+                src="/images/smiling-woman.jpeg"
+                alt="friendly woman in living room"
+                layout="fill"
+                objectFit="cover"
+                objectPosition="top right"
+              />
+            </div>
 
-          <div className=" lg:pl-16 xl:pl-24 xxl:pl-32 px-16 sm:px-0 w-full lg:w-160 xl:h-112">
-            <h3 className="text-5xl mb-6 font-light">
-              Stay with one of our Mentors
-            </h3>
-            <h4 className="text-3xl font-bold text-cyan-900 mb-6 tracking-widest">
-              Leave your troubles behind
-            </h4>
-            <p className="">
-              GY academic homestay combines exceptional consulting expertise
-              with great home living. From homework guidance to weekend
-              activities, rest assured that your child is having the best
-              homestyle experience. Experienced mentors will live with them
-              24/7, providing students with the academic, emotional, mental
-              support and guidance that help students reach their full
-              potential.
-            </p>
+            <div className=" lg:pl-16 xl:pl-24 xxl:pl-32 w-full flex-grow">
+              <h3 className="text-5xl mb-6 font-light">
+                Stay with one of our Mentors
+              </h3>
+              <h4 className="text-3xl font-bold text-cyan-900 mb-6 tracking-widest">
+                Leave your troubles behind
+              </h4>
+              <p className="">
+                GY academic homestay combines exceptional consulting expertise
+                with great home living. From homework guidance to weekend
+                activities, rest assured that your child is having the best
+                homestyle experience. Experienced mentors will live with them
+                24/7, providing students with the academic, emotional, mental
+                support and guidance that help students reach their full
+                potential.
+              </p>
+            </div>
           </div>
         </section>
       </ContentContainerStyled>
