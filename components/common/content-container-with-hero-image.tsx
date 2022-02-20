@@ -75,7 +75,7 @@ export function ContentContainerWithHeroImage({
         </div>
       </section>
 
-      <div className="flex flex-col items-center w-full h-full z-10 text-xl">
+      <div className="flex flex-col items-center w-full h-full z-10 text-2xl">
         {children}
       </div>
     </>
