@@ -38,7 +38,7 @@ function HomestayDetail({
   return (
     <div className="flex flex-col lg:flex-row w-full lg:h-144 text-2xl text-white">
       <div
-        className={`relative w-full h-120 lg:h-full lg:w-1/2 ${
+        className={`relative w-full h-120 lg:h-full lg:basis-1/2 ${
           imageSide === 'left' ? 'lg:order-1' : 'lg:order-2'
         }`}
       >
@@ -53,11 +53,11 @@ function HomestayDetail({
       <div
         className={`flex flex-col lg:justify-center items-center px-4 xxs:px-12 ${
           imageSide === 'right' ? 'lg:items-end' : 'lg:items-start'
-        } w-full lg:py-24 pt-8 pb-32 sm:pb-24 lg:w-1/2 ${
+        } w-full lg:py-24 pt-8 pb-32 sm:pb-24 lg:basis-1/2 ${
           imageSide === 'left' ? 'lg:pl-24' : 'lg:pr-24'
         } ${imageSide === 'left' ? 'lg:order-2' : 'lg:order-1'}`}
       >
-        <div className="w-11/12 lg:w-104">
+        <div className="w-full lg:w-104">
           <h4 className="text-4xl font-bold tracking-wider mb-8 lg:mb-4">
             {title}
           </h4>
@@ -70,14 +70,14 @@ function HomestayDetail({
 
 function ProgramDetail({ src, title, description }: ProgramDetailProps) {
   return (
-    <div className="flex flex-col w-full xs:w-144 md:w-152 xl:w-136 3xl:w-104  bg-gray-100 rounded-md overflow-hidden mx-4 xxs:mx-8 xs:mx-12 md:mx-12 3xl:mx-8 my-12">
+    <div className="flex flex-col basis-full xs:basis-144 md:basis-152 xl:basis-1/3 3xl:basis-1/4 bg-gray-100 rounded-md overflow-hidden mx-4 xs:mx-8 xxs:mx-8 my-12">
       <div className="relative w-full h-88">
         <Image src={src} layout="fill" objectFit="cover" alt="" />
       </div>
-      <h3 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-8">
+      <h3 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-12">
         {title}
       </h3>
-      <p className="px-8 pb-12">{description}</p>
+      <p className="px-8 xs:px-12 pb-12">{description}</p>
     </div>
   )
 }
@@ -167,7 +167,7 @@ export function HomestayPage() {
         />
       </Head>
       <ContentContainerStyled bgColor="white">
-        <section className="flex flex-col items-center w-11/12 xl:w-3/4 max-w-screen-xl ">
+        <section className="flex flex-col items-center w-11/12 xl:w-3/4 max-w-screen-xl px-4">
           <SectionHeading color="blue" marginBottom="medium">
             Your Child Is In Good Hands
           </SectionHeading>
@@ -269,7 +269,7 @@ export function HomestayPage() {
         <hr className="w-full max-w-screen-2xl mt-12 mb-4 h-2"></hr>
 
         <section className="flex flex-col lg:flex-row w-full max-w-3xl justify-center items-center lg:max-w-screen-xl py-8 px-12 lg:px-0">
-          <div className=" flex flex-col w-full lg:w-2/5 order-2 lg:order-1 px-8 lg:px-0">
+          <div className=" flex flex-col w-full lg:basis-2/5 order-2 lg:order-1">
             <h3 className="text-cyan-900 text-5xl mb-6 lg:mb-8 tracking-wide font-light">
               Frequent Communication
             </h3>
@@ -281,7 +281,7 @@ export function HomestayPage() {
               school years.
             </p>
           </div>
-          <div className="relative w-full lg:w-5/12 h-full lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
+          <div className="relative w-full lg:basis-5/12 h-full lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
             <Image
               src="/images/gy-consulting-diagram.png"
               alt="friendly woman in living room"
