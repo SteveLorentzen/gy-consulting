@@ -2,14 +2,42 @@ import { ContentContainerStyled } from 'components/common/content-container-styl
 import { ContentContainerWithHeroImage } from 'components/common/content-container-with-hero-image'
 import { SectionHeading } from 'components/common/section-heading'
 import Image from 'next/image'
+import { AiFillCaretDown } from '@react-icons/all-files/ai/AiFillCaretDown'
+import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretUp'
 
 import {
   Accordion,
   AccordionItem,
   AccordionButton,
   AccordionPanel,
+  useAccordionContext,
+  useAccordionItemContext,
 } from '@reach/accordion'
 import '@reach/accordion/styles.css'
+import React from 'react'
+
+function ItemContent({
+  title,
+  description,
+}: {
+  title: string
+  description: string
+}) {
+  const itemContext = useAccordionItemContext()
+  return (
+    <>
+      <h3 className="mb-4 text-4xl whitespace-nowrap hover:text-cyan-100">
+        <AccordionButton className="flex items-end xs:tracking-wide sm:tracking-wider">
+          {title}{' '}
+          <span className="text-3xl ml-2 -translate-y-1">
+            {itemContext.isExpanded ? <AiFillCaretUp /> : <AiFillCaretDown />}
+          </span>
+        </AccordionButton>
+      </h3>
+      <AccordionPanel className="mb-12">{description}</AccordionPanel>
+    </>
+  )
+}
 
 function Strength({
   title,
@@ -19,17 +47,11 @@ function Strength({
   description: string
 }) {
   return (
-    // <div className="p-8 pb-12 basis-full mx-4 bg-gray-100 rounded">
-    //   <h3 className="text-3xl text-cyan-900 mb-6 h-3/12 ">{title}</h3>
-    //   <p>{description}</p>
-    // </div>
-    <AccordionItem className="text-white ">
-      <h3 className="mb-4 text-4xl">
-        <AccordionButton>
-          {title} <span className="text-2xl">&#9660;</span>
-        </AccordionButton>
-      </h3>
-      <AccordionPanel className="mb-12">{description}</AccordionPanel>
+    <AccordionItem
+      key={title}
+      className="flex flex-col items-start text-white border-b-1 mt-2"
+    >
+      <ItemContent title={title} description={description} />
     </AccordionItem>
   )
 }
@@ -38,7 +60,7 @@ const strengths = [
   {
     title: 'Expertise and Experience',
     description:
-      'Our experienced consultants have over 50 years of collective experience in admissions consulting. We’ve helped students get admissions from the most selective universities like Harvard, Cornell, Columbia, NYU, U Penn, Carnegie Mellon, and more. ',
+      'Our consultants have over 50 years of collective experience in admissions consulting. We’ve helped students get admissions from the most selective universities like Harvard, Cornell, Columbia, NYU, U Penn, Carnegie Mellon, and more. ',
   },
   {
     title: 'Passion and Attention',
@@ -64,6 +86,10 @@ const strengths = [
 ]
 
 export function ConsultingPage() {
+  const context = useAccordionContext()
+
+  console.log(context)
+
   return (
     <ContentContainerWithHeroImage
       src="/images/consulting.jpeg"
@@ -108,15 +134,12 @@ export function ConsultingPage() {
           </div>
         </section>
       </ContentContainerStyled>
-      <div className="w-full h-88 bg-transparent"></div>
-      <ContentContainerStyled bgColor="white">
-        <section></section>
-      </ContentContainerStyled>
+
       <ContentContainerStyled bgColor="blue">
         <SectionHeading color="white" marginBottom="large">
           What separates GY from the competition?
         </SectionHeading>
-        <Accordion className="px-12 max-w-screen-2xl h-120">
+        <Accordion className="px-4 xxs:px-12 max-w-screen-2xl w-full h-200 xxs: xs:h-168 sm:h-160 md:h-152 lg:h-144 xl:h-136 2xl:h-128">
           {strengths.map(strength => {
             return (
               <Strength
@@ -127,6 +150,10 @@ export function ConsultingPage() {
             )
           })}
         </Accordion>
+      </ContentContainerStyled>
+      <div className="w-full h-88 bg-transparent"></div>
+      <ContentContainerStyled bgColor="white">
+        <section></section>
       </ContentContainerStyled>
     </ContentContainerWithHeroImage>
   )
