@@ -21,7 +21,7 @@ export function SectionHeading({
           : marginBottom === 'large'
           ? 'pb-24 md:pb-16'
           : ''
-      } px-8`}
+      } px-8 animate-ascendslow`}
     >
       {children}
     </h2>

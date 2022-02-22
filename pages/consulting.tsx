@@ -26,7 +26,7 @@ function ItemContent({
   const itemContext = useAccordionItemContext()
   return (
     <>
-      <h3 className="mb-4 text-4xl whitespace-nowrap hover:text-cyan-100">
+      <h3 className="mb-4 text-4xl whitespace-nowrap ">
         <AccordionButton className="flex items-end xs:tracking-wide sm:tracking-wider">
           {title}{' '}
           <span className="text-3xl ml-2 -translate-y-1">
@@ -34,7 +34,9 @@ function ItemContent({
           </span>
         </AccordionButton>
       </h3>
-      <AccordionPanel className="mb-12">{description}</AccordionPanel>
+      <AccordionPanel className="mb-12 animate-ascend">
+        {description}
+      </AccordionPanel>
     </>
   )
 }

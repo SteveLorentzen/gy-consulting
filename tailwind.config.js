@@ -26,8 +26,11 @@ module.exports = {
       },
       animation: {
         descend: 'descend .15s ease-in',
-        descendmenu: 'descendmenu .15s ease-in',
-        slidein: 'slidein .2s ease-in',
+        ascend: 'ascend .3s ease-in',
+        ascendslow: 'ascend .6s ease-in',
+        ascendsmall: 'ascend .6s ease-in',
+        slidein: 'slidein .15s ease-in',
+        open: 'open 7s ease-in',
       },
       keyframes: {
         descend: {
@@ -40,14 +43,32 @@ module.exports = {
             transform: 'translateY(1rem)',
           },
         },
-        descendmenu: {
+        ascend: {
           '0%': {
             opacity: 0,
-            transform: 'translateY(-8%)',
+            transform: 'translateY(10%)',
           },
           '100%': {
             opacity: 1,
             transform: 'translateY(0)',
+          },
+        },
+        ascendsmall: {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(5%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
+        open: {
+          '0%': {
+            height: '0',
+          },
+          '100%': {
+            height: '100%',
           },
         },
         slidein: {
