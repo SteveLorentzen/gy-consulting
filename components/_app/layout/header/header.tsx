@@ -37,21 +37,21 @@ export function Header() {
 
   return (
     <>
-      <div className="fixed flex items-center w-full h-20 z-50 ">
+      <div className="fixed flex items-center w-full h-20 z-40 ">
         <div
           style={{
             opacity: headerShouldStayOpaque ? 1 : headerOpacity,
           }}
           className="absolute w-full h-full bg-cyan-800"
         ></div>
-        <div className="flex justify-between items-stretch w-full px-4 sm:px-6 md:px-12">
+        <div className="flex justify-between items-stretch w-full pl-4  md:pl-6 ">
           <Link href="/">
             <a className="flex items-center  text-white text-5xl font-semibold tracking-wider z-10">
               GY
             </a>
           </Link>
 
-          <Nav />
+          <Nav yPosition={yPosition} />
           <NavMobile />
         </div>
       </div>

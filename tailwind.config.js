@@ -31,8 +31,17 @@ module.exports = {
         ascendsmall: 'ascend .6s ease-in',
         slidein: 'slidein .15s ease-in',
         open: 'open 7s ease-in',
+        appear: 'appear .7s ease-in',
       },
       keyframes: {
+        appear: {
+          '0%': {
+            opacity: 0,
+          },
+          '100%': {
+            opacity: 1,
+          },
+        },
         descend: {
           '0%': {
             opacity: 0,
