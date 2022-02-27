@@ -1,9 +1,10 @@
 import { ContentContainerStyled } from 'components/common/content-container-styled'
 import { ContentContainerWithHeroImage } from 'components/common/content-container-with-hero-image'
 import { SectionHeading } from 'components/common/section-heading'
-import Image from 'next/image'
 import { AiFillCaretDown } from '@react-icons/all-files/ai/AiFillCaretDown'
 import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretUp'
+import { TextWithPictureProps } from '../interfaces-and-types/common/interfaces-and-types-common'
+import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
 
 import {
   Accordion,
@@ -15,6 +16,7 @@ import {
 } from '@reach/accordion'
 import '@reach/accordion/styles.css'
 import React from 'react'
+import { TextWithPicture } from 'components/common/text-with-picture'
 
 function ItemContent({
   title,
@@ -57,6 +59,27 @@ function Strength({
     </AccordionItem>
   )
 }
+
+const services: TextWithPictureProps[] = [
+  {
+    title: 'GY Academic Homestay Consulting',
+    description:
+      'GY Consulting is the only educational consulting company in South Korea where mentors live with students in homestay settings to offer personalized, 24/7, premium consultation. If your child is attending an international school in the Seoul-Incheon area and interested in our Academic Homestay, click here and find out more about our excellent homestay consulting.',
+    src: '/images/friends-studying.jpeg',
+    imageSide: 'right',
+    objectPosition: 'center',
+    theme: 'blue',
+  },
+  {
+    title: 'GY University Admissions Consulting',
+    description:
+      'Students who are planning to apply to universities in the US gain incredible strategies and insights on preparing for college admissions. Our expert team guides you throughout your high school years so that you can be confident about your academic and college admissions goals.',
+    src: '/images/consultant-discussion.jpeg',
+    imageSide: 'left',
+    objectPosition: 'center',
+    theme: 'blue',
+  },
+]
 
 const strengths = [
   {
@@ -101,28 +124,15 @@ export function ConsultingPage() {
       yScrollValueForSecondaryBackground={700}
     >
       {/* <h1 className="text-7xl w-full text-center my-152">Some Page Content!</h1> */}
-      <ContentContainerStyled bgColor="white">
-        <section className="max-w-screen-2xl">
+      <ContentContainerStyled bgColor="white" padding="lg">
+        <section className="max-w-screen-2xl p-4 xxs:p-12">
           <SectionHeading color="blue" marginBottom="small">
             The Global Youth Initiative
           </SectionHeading>
-          <div className="flex flex-col lg:flex-row p-4 xxs:p-12">
-            <div className="relative lg:basis-full h-88 xxs:h-104 xs:h-120 sm:h-128 bg-gray-500 lg:h-120 xl:h-104 mb-12 lg:mb-0">
-              <Image
-                src="/images/happy-student.jpeg"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="right"
-                alt="hands in"
-              ></Image>
-            </div>
-            <div className="basis-full lg:ml-12">
-              <h2 className="text-5xl mb-4">Cultivating Leadership</h2>
-              <h3 className="text-3xl text-cyan-900 mb-8">
-                Building hope for our future
-              </h3>
-              <p>
-                Young students are the world’s most valuable assets that can
+          <PictureWithHeadingAndText
+            src="/images/happy-student.jpeg"
+            style="side"
+            body="Young students are the world’s most valuable assets that can
                 make positive changes for a better world. GY Consulting offers
                 students and parents in South Korea and around the world with
                 unsurpassed admissions consulting services so that our students
@@ -130,14 +140,15 @@ export function ConsultingPage() {
                 consultants not only help students achieve their greatest
                 potentials during high school, we also meticulously curate each
                 student’s achievements and experiences to showcase their best
-                selves.{' '}
-              </p>
-            </div>
-          </div>
+                selves."
+            heading="Cultivating Leadership"
+            subHeading="Building hope for our future"
+            objectPosition="right"
+          />
         </section>
       </ContentContainerStyled>
 
-      <ContentContainerStyled bgColor="blue">
+      <ContentContainerStyled bgColor="blue" padding="lg">
         <SectionHeading color="white" marginBottom="large">
           What separates GY from the competition?
         </SectionHeading>
@@ -153,9 +164,58 @@ export function ConsultingPage() {
           })}
         </Accordion>
       </ContentContainerStyled>
-      <div className="w-full h-88 bg-transparent"></div>
-      <ContentContainerStyled bgColor="white">
-        <section></section>
+      <div className="w-full h-88"></div>
+
+      <ContentContainerStyled bgColor="white" padding="lg">
+        <div className="flex w-full h-full justify-center items-center">
+          <SectionHeading color="blue">Our Consulting Services</SectionHeading>
+        </div>
+      </ContentContainerStyled>
+
+      <ContentContainerStyled padding="none" bgColor="blue">
+        {services.map(service => {
+          return (
+            <TextWithPicture
+              key={service.title}
+              src={service.src}
+              theme={service.theme}
+              title={service.title}
+              description={service.description}
+              objectPosition={service.objectPosition}
+              imageSide={service.imageSide}
+            />
+          )
+        })}
+      </ContentContainerStyled>
+      <ContentContainerStyled padding="lg" bgColor="white">
+        <section className="w-full">
+          <SectionHeading color="blue" marginBottom="small">
+            First Steps
+          </SectionHeading>
+          <div className="flex flex-col xl:flex-row items-center xl:items-start justify-evenly">
+            <div className="flex flex-col mb-12 max-w-screen-md p-4 xxs:p-12">
+              <PictureWithHeadingAndText
+                src="/images/shaking-hands.jpeg"
+                body="The GY Initial consultation is a detailed profile review that includes a 30-minute meeting with your expert counselor to get started on a personalized, strategic action plan to help your student achieve their academic and college admissions goals. Families learn in more detail our consulting products, and ask any questions you may have about our services. This crucial first step is for both the Academic Homestay Consulting and the University Admissions Consulting. After you complete our initial consultation form, we will email you our fees and ask you to respond with some dates and times that are convenient for you for our free consultation. Based upon the 30-minute consultation, we will recommend to you how we can proceed."
+                heading="Getting To Know You"
+                subHeading="Free 30-Minute Initial Consultation"
+                objectPosition="right"
+                style="top"
+              />
+            </div>
+
+            <div className="flex flex-col max-w-screen-md p-4 xxs:p-12">
+              <PictureWithHeadingAndText
+                src="/images/meeting.jpeg"
+                body="After your Initial Consultation, we request the student’s transcript, any completed test results, a list of extracurriculars, etc. During this strategy session, we come up with a plan to maximize the student's academic potential, provide essential tips to supplement possible gaps for improvement, and take courses outside of school (if necessary). If the student is in the eleventh grade, we will start on an appropriate list of colleges. In the process, we would also develop an academic and extracurricular strategy that will make your child as competitive as possible to the colleges to which he or she will eventually apply. Whether you proceed with our assistance with the college application process or not, you will come away from this one-hour strategy session with invaluable insight into the process. "
+                heading="Creating a Game Plan"
+                subHeading="1-Hour Strategy Session"
+                objectPosition="right"
+                style="top"
+              />
+            </div>
+          </div>
+        </section>
       </ContentContainerStyled>
     </ContentContainerWithHeroImage>
   )

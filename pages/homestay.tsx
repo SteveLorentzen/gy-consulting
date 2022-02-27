@@ -4,68 +4,14 @@ import { SectionHeading } from 'components/common/section-heading'
 import Image from 'next/image'
 import { ContentContainerStyled } from 'components/common/content-container-styled'
 import Head from 'next/head'
-
-type HomestayDetailProps = {
-  title: string
-  imageFocus:
-    | 'left'
-    | 'center'
-    | 'left top'
-    | 'right'
-    | 'right top'
-    | 'center top'
-    | 'center bottom'
-    | 'left bottom'
-    | 'right bottom'
-  description: string
-  src: string
-  imageSide: 'left' | 'right'
-}
+import { TextWithPicture } from '../components/common/text-with-picture'
+import { TextWithPictureProps } from 'interfaces-and-types/common/interfaces-and-types-common'
+import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
 
 type ProgramDetailProps = {
   title: string
   description: string
   src: string
-}
-
-function HomestayDetail({
-  title,
-  description,
-  src,
-  imageSide,
-  imageFocus,
-}: HomestayDetailProps) {
-  return (
-    <div className="flex flex-col lg:flex-row w-full lg:h-144 text-2xl text-white">
-      <div
-        className={`relative w-full h-120 lg:h-full lg:basis-1/2 ${
-          imageSide === 'left' ? 'lg:order-1' : 'lg:order-2'
-        }`}
-      >
-        <Image
-          src={src}
-          layout="fill"
-          objectFit="cover"
-          alt={title}
-          objectPosition={imageFocus}
-        />
-      </div>
-      <div
-        className={`flex flex-col lg:justify-center items-center px-4 xxs:px-12 ${
-          imageSide === 'right' ? 'lg:items-end' : 'lg:items-start'
-        } w-full lg:py-24 pt-8 pb-32 sm:pb-24 lg:basis-1/2 ${
-          imageSide === 'left' ? 'lg:pl-24' : 'lg:pr-24'
-        } ${imageSide === 'left' ? 'lg:order-2' : 'lg:order-1'}`}
-      >
-        <div className="w-full lg:w-104">
-          <h4 className="text-4xl font-bold tracking-wider mb-8 lg:mb-4">
-            {title}
-          </h4>
-          <p>{description}</p>
-        </div>
-      </div>
-    </div>
-  )
 }
 
 function ProgramDetail({ src, title, description }: ProgramDetailProps) {
@@ -82,14 +28,15 @@ function ProgramDetail({ src, title, description }: ProgramDetailProps) {
   )
 }
 
-const homestayDetails: HomestayDetailProps[] = [
+const homestayDetails: TextWithPictureProps[] = [
   {
     title: 'Academic Progress',
     description:
       "Our in-house mentor will encourage students to follow a productive schedule, provide academic help when needed, and offer counseling to help your child stay on track.  Check your child's progress on our online dashboard.",
     src: '/images/students-studying.jpeg',
     imageSide: 'left',
-    imageFocus: 'center',
+    objectPosition: 'center',
+    theme: 'blue',
   },
   {
     title: 'Meal Menus',
@@ -97,7 +44,8 @@ const homestayDetails: HomestayDetailProps[] = [
       'Delicious and nutritious meals will be the source of energy for optimal school life. Photos and menu charts will be updated weekly.',
     src: '/images/korean-meal.jpeg',
     imageSide: 'right',
-    imageFocus: 'center',
+    objectPosition: 'center',
+    theme: 'blue',
   },
   {
     title: 'Weekly Activities',
@@ -105,7 +53,8 @@ const homestayDetails: HomestayDetailProps[] = [
       'GY homestay students have regular activities that boost physical and mental health.',
     src: '/images/yoga.jpeg',
     imageSide: 'left',
-    imageFocus: 'center bottom',
+    objectPosition: 'center bottom',
+    theme: 'blue',
   },
   {
     title: 'In-house College Consulting',
@@ -113,7 +62,8 @@ const homestayDetails: HomestayDetailProps[] = [
       'Our mentors and consultants will guide your child to do the right thing, at the right time to become competitive candidates for admission to top universities. ',
     src: '/images/tutor.jpeg',
     imageSide: 'right',
-    imageFocus: 'center',
+    objectPosition: 'center',
+    theme: 'blue',
   },
 ]
 
@@ -153,7 +103,7 @@ const programDetails: ProgramDetailProps[] = [
 export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
-      src="/images/homework-floor.jpeg"
+      src="/images/homestay-hero-test.jpg"
       src2="/images/bunkbed-room.jpeg"
       yScrollValueForSecondaryBackground={700}
       mainHeading="Academic Homestay"
@@ -166,8 +116,8 @@ export function HomestayPage() {
           content="Set up a homestay with an experienced host and inspiring mentor."
         />
       </Head>
-      <ContentContainerStyled bgColor="white">
-        <section className="flex flex-col items-center w-11/12 xl:w-3/4 max-w-screen-xl px-4">
+      <ContentContainerStyled bgColor="white" padding="lg">
+        <section className="flex flex-col items-center  max-w-screen-2xl px-4 xxs:px-12 ">
           <SectionHeading color="blue" marginBottom="medium">
             Your Child Is In Good Hands
           </SectionHeading>
@@ -177,42 +127,27 @@ export function HomestayPage() {
             the same premium homestay program to international school students
             in the Seoul-Incheon area.
           </p>
-          <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center w-full">
-            <div className="relative w-full h-120 mb-12 lg:pb-0 flex-grow">
-              <Image
-                src="/images/smiling-woman.jpeg"
-                alt="friendly woman in living room"
-                layout="fill"
-                objectFit="cover"
-                objectPosition="top right"
-              />
-            </div>
-
-            <div className=" lg:pl-16 xl:pl-24 xxl:pl-32 w-full flex-grow">
-              <h3 className="text-5xl mb-6 font-light">
-                Stay with one of our Mentors
-              </h3>
-              <h4 className="text-3xl font-bold text-cyan-900 mb-6 tracking-widest">
-                Leave your troubles behind
-              </h4>
-              <p className="">
-                GY academic homestay combines exceptional consulting expertise
+          <PictureWithHeadingAndText
+            body="GY academic homestay combines exceptional consulting expertise
                 with great home living. From homework guidance to weekend
                 activities, rest assured that your child is having the best
                 homestyle experience. Experienced mentors will live with them
                 24/7, providing students with the academic, emotional, mental
                 support and guidance that help students reach their full
-                potential.
-              </p>
-            </div>
-          </div>
+                potential."
+            heading="Stay with one of our Mentors"
+            subHeading="Leave your troubles behind"
+            objectPosition="right top"
+            src="/images/smiling-woman.jpeg"
+            style="side"
+          />
         </section>
       </ContentContainerStyled>
       <div className="relative h-88 w-full">
         <div className="absolute w-full h-full bg-cyan-900 opacity-50"></div>
       </div>
       <div className="flex flex-col items-center bg-white w-full">
-        <ContentContainerStyled bgColor="white">
+        <ContentContainerStyled bgColor="white" padding="lg">
           <SectionHeading color="blue" marginBottom="small">
             Receive Weekly Updates
           </SectionHeading>
@@ -225,11 +160,12 @@ export function HomestayPage() {
         <section className="w-full bg-cyan-800">
           {homestayDetails.map(homestayDetail => {
             return (
-              <HomestayDetail
+              <TextWithPicture
                 key={homestayDetail.title}
                 src={homestayDetail.src}
+                theme="blue"
                 imageSide={homestayDetail.imageSide}
-                imageFocus={homestayDetail.imageFocus}
+                objectPosition={homestayDetail.objectPosition}
                 description={homestayDetail.description}
                 title={homestayDetail.title}
               />
@@ -237,7 +173,7 @@ export function HomestayPage() {
           })}
         </section>
       </div>
-      <ContentContainerStyled bgColor="white">
+      <ContentContainerStyled bgColor="white" padding="lg">
         <SectionHeading color="blue" marginBottom="large">
           Academic Homestay Program
         </SectionHeading>
@@ -294,7 +230,7 @@ export function HomestayPage() {
         </section>
       </ContentContainerStyled>
 
-      <ContentContainerStyled bgColor="blue">
+      <ContentContainerStyled bgColor="blue" padding="lg">
         <SectionHeading color="white" marginBottom="medium">
           Our Process
         </SectionHeading>

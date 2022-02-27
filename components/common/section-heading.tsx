@@ -1,6 +1,7 @@
 type SectionHeadingProps = {
   color: 'white' | 'blue'
-  marginBottom: 'none' | 'small' | 'medium' | 'large'
+  marginBottom?: 'small' | 'medium' | 'large'
+  marginTop?: 'small' | 'medium' | 'large'
   children: string
 }
 
@@ -8,6 +9,7 @@ export function SectionHeading({
   color,
   children,
   marginBottom,
+  marginTop,
 }: SectionHeadingProps) {
   return (
     <h2
@@ -20,6 +22,14 @@ export function SectionHeading({
           ? 'pb-16 md:pb-12'
           : marginBottom === 'large'
           ? 'pb-24 md:pb-16'
+          : ''
+      } ${
+        marginTop === 'small'
+          ? 'pb-8 md:pt-6'
+          : marginTop === 'medium'
+          ? 'pb-16 md:pt-12'
+          : marginTop === 'large'
+          ? 'pb-24 md:pt-16'
           : ''
       } px-8 animate-ascendslow`}
     >
