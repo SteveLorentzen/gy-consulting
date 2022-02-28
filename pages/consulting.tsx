@@ -172,7 +172,7 @@ export function ConsultingPage() {
         </div>
       </ContentContainerStyled>
 
-      <ContentContainerStyled padding="none" bgColor="blue">
+      <ContentContainerStyled bgColor="blue">
         {services.map(service => {
           return (
             <TextWithPicture
