@@ -5,6 +5,7 @@ import { AiFillCaretDown } from '@react-icons/all-files/ai/AiFillCaretDown'
 import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretUp'
 import { TextWithPictureProps } from '../interfaces-and-types/common/interfaces-and-types-common'
 import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
+import Link from 'next/link'
 
 import {
   Accordion,
@@ -63,16 +64,30 @@ function Strength({
 const services: TextWithPictureProps[] = [
   {
     title: 'GY Academic Homestay Consulting',
-    description:
-      'GY Consulting is the only educational consulting company in South Korea where mentors live with students in homestay settings to offer personalized, 24/7, premium consultation. If your child is attending an international school in the Seoul-Incheon area and interested in our Academic Homestay, click here and find out more about our excellent homestay consulting.',
     src: '/images/friends-studying.jpeg',
     imageSide: 'right',
     objectPosition: 'center',
     theme: 'blue',
+    children: (
+      <p>
+        GY Consulting is the only educational consulting company in South Korea
+        where mentors live with students in homestay settings to offer
+        personalized, 24/7, premium consultation. If your child is attending an
+        international school in the Seoul-Incheon area and you&apos;re
+        interested in our Academic Homestay, definitely check out our excellent{' '}
+        <span>
+          <Link href="/homestay">
+            <a className="text-orange-400 hover:text-orange-500 hover:underline">
+              homestay consulting program.
+            </a>
+          </Link>
+        </span>
+      </p>
+    ),
   },
   {
     title: 'GY University Admissions Consulting',
-    description:
+    children:
       'Students who are planning to apply to universities in the US gain incredible strategies and insights on preparing for college admissions. Our expert team guides you throughout your high school years so that you can be confident about your academic and college admissions goals.',
     src: '/images/consultant-discussion.jpeg',
     imageSide: 'left',
@@ -126,25 +141,25 @@ export function ConsultingPage() {
       {/* <h1 className="text-7xl w-full text-center my-152">Some Page Content!</h1> */}
       <ContentContainerStyled bgColor="white" padding="lg">
         <section className="max-w-screen-2xl p-4 xxs:p-12">
-          <SectionHeading color="blue" marginBottom="small">
+          <SectionHeading color="blue" marginBottom="medium">
             The Global Youth Initiative
           </SectionHeading>
           <PictureWithHeadingAndText
             src="/images/happy-student.jpeg"
             style="side"
-            body="Young students are the world’s most valuable assets that can
-                make positive changes for a better world. GY Consulting offers
-                students and parents in South Korea and around the world with
-                unsurpassed admissions consulting services so that our students
-                may, in fact, become “global youths”. Our mentors and
-                consultants not only help students achieve their greatest
-                potentials during high school, we also meticulously curate each
-                student’s achievements and experiences to showcase their best
-                selves."
             heading="Cultivating Leadership"
             subHeading="Building hope for our future"
             objectPosition="right"
-          />
+          >
+            Young students are the world&apos;s most valuable assets that can
+            make positive changes for a better world. GY Consulting offers
+            students and parents in South Korea and around the world with
+            unsurpassed admissions consulting services so that our students may,
+            in fact, become “global youths”. Our mentors and consultants not
+            only help students achieve their greatest potentials during high
+            school, we also meticulously curate each student&apos;s achievements
+            and experiences to showcase their best selves.
+          </PictureWithHeadingAndText>
         </section>
       </ContentContainerStyled>
 
@@ -164,7 +179,7 @@ export function ConsultingPage() {
           })}
         </Accordion>
       </ContentContainerStyled>
-      <div className="w-full h-88"></div>
+      <div className="w-full h-80 "></div>
 
       <ContentContainerStyled bgColor="white" padding="lg">
         <div className="flex w-full h-full justify-center items-center">
@@ -180,10 +195,11 @@ export function ConsultingPage() {
               src={service.src}
               theme={service.theme}
               title={service.title}
-              description={service.description}
               objectPosition={service.objectPosition}
               imageSide={service.imageSide}
-            />
+            >
+              {service.children}
+            </TextWithPicture>
           )
         })}
       </ContentContainerStyled>
@@ -196,24 +212,64 @@ export function ConsultingPage() {
             <div className="flex flex-col mb-12 max-w-screen-md p-4 xxs:p-12">
               <PictureWithHeadingAndText
                 src="/images/shaking-hands.jpeg"
-                body="The GY Initial consultation is a detailed profile review that includes a 30-minute meeting with your expert counselor to get started on a personalized, strategic action plan to help your student achieve their academic and college admissions goals. Families learn in more detail our consulting products, and ask any questions you may have about our services. This crucial first step is for both the Academic Homestay Consulting and the University Admissions Consulting. After you complete our initial consultation form, we will email you our fees and ask you to respond with some dates and times that are convenient for you for our free consultation. Based upon the 30-minute consultation, we will recommend to you how we can proceed."
                 heading="Getting To Know You"
                 subHeading="Free 30-Minute Initial Consultation"
                 objectPosition="right"
                 style="top"
-              />
+              >
+                <p>
+                  The GY Initial consultation is a detailed profile review that
+                  includes a 30-minute meeting with your expert counselor to get
+                  started on a personalized, strategic action plan to help your
+                  student achieve their academic and college admissions goals.
+                  Families learn in more detail our consulting products, and ask
+                  any questions you may have about our services. This crucial
+                  first step is for both the Academic Homestay Consulting and
+                  the University Admissions Consulting. After you complete our
+                  initial consultation form, we will email you our fees and ask
+                  you to respond with some dates and times that are convenient
+                  for you for our free consultation. Based upon the 30-minute
+                  consultation, we will recommend to you how we can proceed.
+                </p>
+              </PictureWithHeadingAndText>
             </div>
 
             <div className="flex flex-col max-w-screen-md p-4 xxs:p-12">
               <PictureWithHeadingAndText
                 src="/images/meeting.jpeg"
-                body="After your Initial Consultation, we request the student’s transcript, any completed test results, a list of extracurriculars, etc. During this strategy session, we come up with a plan to maximize the student's academic potential, provide essential tips to supplement possible gaps for improvement, and take courses outside of school (if necessary). If the student is in the eleventh grade, we will start on an appropriate list of colleges. In the process, we would also develop an academic and extracurricular strategy that will make your child as competitive as possible to the colleges to which he or she will eventually apply. Whether you proceed with our assistance with the college application process or not, you will come away from this one-hour strategy session with invaluable insight into the process. "
                 heading="Creating a Game Plan"
                 subHeading="1-Hour Strategy Session"
                 objectPosition="right"
                 style="top"
-              />
+              >
+                <p>
+                  After your Initial Consultation, we request the student’s
+                  transcript, any completed test results, a list of
+                  extracurriculars, etc. During this strategy session, we come
+                  up with a plan to maximize the student&apos;s academic
+                  potential, provide essential tips to supplement possible gaps
+                  for improvement, and take courses outside of school (if
+                  necessary). If the student is in the eleventh grade, we will
+                  start on an appropriate list of colleges. In the process, we
+                  would also develop an academic and extracurricular strategy
+                  that will make your child as competitive as possible to the
+                  colleges to which he or she will eventually apply. Whether you
+                  proceed with our assistance with the college application
+                  process or not, you will come away from this one-hour strategy
+                  session with invaluable insight into the process.
+                </p>
+              </PictureWithHeadingAndText>
             </div>
+          </div>
+          <div className="mx-auto max-w-screen-2xl flex flex-col items-center justify-center mt-6 px-12">
+            <h3 className="text-cyan-800 font-bold text-center">
+              When you&apos;re ready, get your free consultation.
+            </h3>
+            <Link href="/">
+              <a className="mt-6 py-2 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded-md font-bold">
+                Get a Free Consultation
+              </a>
+            </Link>
           </div>
         </section>
       </ContentContainerStyled>

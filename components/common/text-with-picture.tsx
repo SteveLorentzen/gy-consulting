@@ -3,11 +3,11 @@ import { TextWithPictureProps } from 'interfaces-and-types/common/interfaces-and
 
 export function TextWithPicture({
   title,
-  description,
   src,
   imageSide,
   theme,
   objectPosition,
+  children,
 }: TextWithPictureProps) {
   return (
     <div
@@ -43,7 +43,7 @@ export function TextWithPicture({
           >
             {title}
           </h4>
-          <p>{description}</p>
+          <p>{children}</p>
         </div>
       </div>
     </div>

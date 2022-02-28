@@ -2,13 +2,14 @@ import { BiTrophy } from '@react-icons/all-files/bi/BiTrophy'
 import { BsHouse } from '@react-icons/all-files/bs/BsHouse'
 import { BiSupport } from '@react-icons/all-files/bi/BiSupport'
 import { Button } from 'components/common/button'
-import { ReactNode } from 'react'
+import { useRouter } from 'next/router'
 
 type ServiceCardProps = {
   title: string
   description: string
   buttonText: string
   buttonAction: () => void
+  href: string
   children: React.ReactNode
 }
 
@@ -17,8 +18,11 @@ function ServiceCard({
   description,
   children,
   buttonText,
+  href,
   buttonAction,
 }: ServiceCardProps) {
+  const router = useRouter()
+
   return (
     <div className="flex flex-col justify-between items-center md:w-1/3 h-112 xs:h-96  md:h-96 lg:h-88 max-w-sm px-7 py-4 my-12 text-cyan-700 text-2xl md:text-xl">
       <div className="text-9xl md:text-8xl">{children}</div>
@@ -28,7 +32,12 @@ function ServiceCard({
         <h3 className="h-2/3">{description}</h3>
       </div>
 
-      <Button buttonAction={buttonAction} buttonText={buttonText} />
+      <Button
+        buttonAction={() => {
+          router.push(href)
+        }}
+        buttonText={buttonText}
+      />
     </div>
   )
 }
@@ -40,6 +49,7 @@ function Services() {
         title="Consulting"
         description="We work closely with both parents and students to reach your college admissions goals."
         buttonText="Learn More"
+        href="/consulting"
         buttonAction={() => alert('the button works!')}
       >
         <BiTrophy />
@@ -48,7 +58,8 @@ function Services() {
       <ServiceCard
         title="Homestays"
         description="Knowing your child is being looked after is a great source of peace of mind."
-        buttonText="Apply Now"
+        buttonText="Learn More"
+        href="homestay"
         buttonAction={() => alert('the button works!')}
       >
         <BsHouse />
@@ -58,6 +69,7 @@ function Services() {
         title="Support"
         description="Our support is second to none.  Available 24 hours a day, 7 days a week."
         buttonText="Reach Out"
+        href="/"
         buttonAction={() => alert('the button works!')}
       >
         <BiSupport />
