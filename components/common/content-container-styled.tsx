@@ -7,7 +7,7 @@ export function ContentContainerStyled({
 }: {
   children: ReactNode
   bgColor: 'blue' | 'white'
-  padding: 'none' | 'lg'
+  padding?: 'lg'
 }) {
   return (
     <div
