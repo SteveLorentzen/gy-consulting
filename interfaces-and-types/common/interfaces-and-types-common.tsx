@@ -1,10 +1,10 @@
 export type TextWithPictureProps = {
   title: string
   objectPosition: ObjectPosition
-  description: string
   src: string
   theme: 'blue' | 'white'
   imageSide: 'left' | 'right'
+  children?: React.ReactNode
 }
 
 export type ObjectPosition =

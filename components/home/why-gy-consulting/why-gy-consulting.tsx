@@ -50,7 +50,7 @@ function Reason({ title, description, children }: ReasonProps) {
 
 export function WhyGYConsulting() {
   return (
-    <ContentContainerStyled bgColor="blue">
+    <ContentContainerStyled bgColor="blue" padding="lg">
       <div className="w-full max-w-screen-3xl xl:w-11/12 2xl:w-10/12 mx-auto md:py-18 px-16">
         <SectionHeading color="white" marginBottom="large">
           Why GY Consulting

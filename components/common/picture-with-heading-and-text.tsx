@@ -4,17 +4,17 @@ import Image from 'next/image'
 export function PictureWithHeadingAndText({
   heading,
   subHeading,
-  body,
   src,
   style,
   objectPosition,
+  children,
 }: {
   heading: string
   subHeading: string
-  body: string
   src: string
   style: 'side' | 'top'
   objectPosition: ObjectPosition
+  children?: React.ReactNode
 }) {
   return (
     <div className={`flex flex-col ${style === 'side' ? 'lg:flex-row' : ''}`}>
@@ -39,7 +39,7 @@ export function PictureWithHeadingAndText({
         <h2 className="text-5xl mb-4">{heading}</h2>
         <h3 className="text-3xl text-cyan-900 mb-8">{subHeading}</h3>
 
-        <p>{body}</p>
+        <p>{children}</p>
       </div>
     </div>
   )

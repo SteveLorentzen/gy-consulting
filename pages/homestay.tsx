@@ -31,7 +31,7 @@ function ProgramDetail({ src, title, description }: ProgramDetailProps) {
 const homestayDetails: TextWithPictureProps[] = [
   {
     title: 'Academic Progress',
-    description:
+    children:
       "Our in-house mentor will encourage students to follow a productive schedule, provide academic help when needed, and offer counseling to help your child stay on track.  Check your child's progress on our online dashboard.",
     src: '/images/students-studying.jpeg',
     imageSide: 'left',
@@ -40,7 +40,7 @@ const homestayDetails: TextWithPictureProps[] = [
   },
   {
     title: 'Meal Menus',
-    description:
+    children:
       'Delicious and nutritious meals will be the source of energy for optimal school life. Photos and menu charts will be updated weekly.',
     src: '/images/korean-meal.jpeg',
     imageSide: 'right',
@@ -49,7 +49,7 @@ const homestayDetails: TextWithPictureProps[] = [
   },
   {
     title: 'Weekly Activities',
-    description:
+    children:
       'GY homestay students have regular activities that boost physical and mental health.',
     src: '/images/yoga.jpeg',
     imageSide: 'left',
@@ -58,7 +58,7 @@ const homestayDetails: TextWithPictureProps[] = [
   },
   {
     title: 'In-house College Consulting',
-    description:
+    children:
       'Our mentors and consultants will guide your child to do the right thing, at the right time to become competitive candidates for admission to top universities. ',
     src: '/images/tutor.jpeg',
     imageSide: 'right',
@@ -128,19 +128,19 @@ export function HomestayPage() {
             in the Seoul-Incheon area.
           </p>
           <PictureWithHeadingAndText
-            body="GY academic homestay combines exceptional consulting expertise
-                with great home living. From homework guidance to weekend
-                activities, rest assured that your child is having the best
-                homestyle experience. Experienced mentors will live with them
-                24/7, providing students with the academic, emotional, mental
-                support and guidance that help students reach their full
-                potential."
             heading="Stay with one of our Mentors"
             subHeading="Leave your troubles behind"
             objectPosition="right top"
             src="/images/smiling-woman.jpeg"
             style="side"
-          />
+          >
+            GY academic homestay combines exceptional consulting expertise with
+            great home living. From homework guidance to weekend activities,
+            rest assured that your child is having the best homestyle
+            experience. Experienced mentors will live with them 24/7, providing
+            students with the academic, emotional, mental support and guidance
+            that help students reach their full potential.
+          </PictureWithHeadingAndText>
         </section>
       </ContentContainerStyled>
       <div className="relative h-88 w-full">
@@ -166,9 +166,10 @@ export function HomestayPage() {
                 theme="blue"
                 imageSide={homestayDetail.imageSide}
                 objectPosition={homestayDetail.objectPosition}
-                description={homestayDetail.description}
                 title={homestayDetail.title}
-              />
+              >
+                {homestayDetail.children}
+              </TextWithPicture>
             )
           })}
         </section>
