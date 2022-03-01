@@ -183,7 +183,7 @@ export function ConsultingPage() {
       <div className=" relative w-full h-80 justify-center items-center">
         <div className="absolute w-full h-full bg-cyan-800 opacity-50"></div>
         <div className="flex justify-center items-center w-full h-full">
-          <h1 className="text-white text-7xl z-10 font-light tracking-wider">
+          <h1 className="text-white text-7xl z-10 font-light tracking-wider text-center">
             {' '}
             Our Consulting Services
           </h1>
