@@ -135,7 +135,7 @@ export function ConsultingPage() {
       src="/images/consulting.jpeg"
       mainHeading="Get Expert Preparation"
       subHeading=""
-      src2="/images/college-building.jpeg"
+      src2="/images/birds-eye-view.jpeg"
       yScrollValueForSecondaryBackground={700}
     >
       {/* <h1 className="text-7xl w-full text-center my-152">Some Page Content!</h1> */}
@@ -179,13 +179,16 @@ export function ConsultingPage() {
           })}
         </Accordion>
       </ContentContainerStyled>
-      <div className="w-full h-80 "></div>
 
-      <ContentContainerStyled bgColor="white" padding="lg">
-        <div className="flex w-full h-full justify-center items-center">
-          <SectionHeading color="blue">Our Consulting Services</SectionHeading>
+      <div className=" relative w-full h-80 justify-center items-center">
+        <div className="absolute w-full h-full bg-cyan-800 opacity-50"></div>
+        <div className="flex justify-center items-center w-full h-full">
+          <h1 className="text-white text-7xl z-10 font-light tracking-wider">
+            {' '}
+            Our Consulting Services
+          </h1>
         </div>
-      </ContentContainerStyled>
+      </div>
 
       <ContentContainerStyled bgColor="blue">
         {services.map(service => {
