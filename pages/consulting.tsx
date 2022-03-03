@@ -29,15 +29,15 @@ function ItemContent({
   const itemContext = useAccordionItemContext()
   return (
     <>
-      <h3 className="mb-4 text-4xl whitespace-nowrap ">
-        <AccordionButton className="flex items-end xs:tracking-wide sm:tracking-wider">
+      <h3 className="flex justify-between w-full text-4xl whitespace-nowrap">
+        <AccordionButton className="flex justify-between w-full items-end xs:tracking-wide sm:tracking-wider pb-4">
           {title}{' '}
           <span className="text-3xl ml-2 -translate-y-1">
             {itemContext.isExpanded ? <AiFillCaretUp /> : <AiFillCaretDown />}
           </span>
         </AccordionButton>
       </h3>
-      <AccordionPanel className="mb-12 animate-ascend">
+      <AccordionPanel className="mb-12 mx-4 xxs:mx-0" hidden={false}>
         {description}
       </AccordionPanel>
     </>
@@ -167,7 +167,7 @@ export function ConsultingPage() {
         <SectionHeading color="white" marginBottom="large">
           What separates GY from the competition?
         </SectionHeading>
-        <Accordion className="px-4 xxs:px-12 max-w-screen-2xl w-full h-200 xxs: xs:h-168 sm:h-160 md:h-152 lg:h-144 xl:h-136 2xl:h-128">
+        <Accordion className="px-2 xxs:px-4 xs:px-12 max-w-screen-2xl w-full ">
           {strengths.map(strength => {
             return (
               <Strength
@@ -269,7 +269,7 @@ export function ConsultingPage() {
               When you&apos;re ready, get your free consultation.
             </h3>
             <Link href="/">
-              <a className="mt-6 py-2 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded-md font-bold">
+              <a className="mt-6 py-4 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded-md font-bold">
                 Get a Free Consultation
               </a>
             </Link>
