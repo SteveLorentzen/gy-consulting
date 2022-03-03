@@ -8,9 +8,38 @@ html {
   font-size: 10px;
 }
 
+[data-reach-accordion-item] {
+  height: auto;
+  transition: max-height 0.3s ease-in;
+  overflow: hidden;
+  max-height: 3.5rem;
+}
+
+[data-reach-accordion-item][data-state='open'] {
+  max-height: 34rem;
+}
+
+[data-reach-accordion-item][data-state='closed'] {
+  max-height: 3.5rem;
+}
+
+@media (min-width: 320px) {
+  html {
+    font-size: 11px;
+  }
+
+  [data-reach-accordion-item][data-state='open'] {
+    max-height: 36rem;
+  }
+}
+
 @media (min-width: 490px) {
   html {
     font-size: 11px;
+  }
+
+  [data-reach-accordion-item][data-state='open'] {
+    max-height: 24rem;
   }
 }
 
@@ -18,11 +47,19 @@ html {
   html {
     font-size: 12px;
   }
+
+  [data-reach-accordion-item][data-state='open'] {
+    max-height: 20rem;
+  }
 }
 
 @media (min-width: 768px) {
   html {
     font-size: 13px;
+  }
+
+  [data-reach-accordion-item][data-state='open'] {
+    max-height: 18rem;
   }
 }
 
@@ -30,11 +67,19 @@ html {
   html {
     font-size: 14px;
   }
+
+  [data-reach-accordion-item][data-state='open'] {
+    max-height: 16rem;
+  }
 }
 
 @media (min-width: 1280px) {
   html {
     font-size: 15px;
+  }
+
+  [data-reach-accordion-item][data-state='open'] {
+    max-height: 14rem;
   }
 }
 

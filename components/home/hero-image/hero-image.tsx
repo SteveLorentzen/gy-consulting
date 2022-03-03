@@ -7,11 +7,11 @@ export function HeroImage() {
       <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-600" />
       <div className="absolute bottom-0 sm:hidden bg-gradient-to-t from-black to-transparent w-full mx-auto h-1/2 opacity-50 z-10"></div>
       <div className="flex w-full h-160 xxs:h-192 xs:h-232 sm:h-160 lg:h-160 xl:h-172 2xl:h-192 3xl:h-224 max-w-screen-3xl  mx-auto flex-col sm:flex-row sm:items-stretch justify-end">
-        <div className="absolute mx-auto left-0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-8/12 lg:w-7/12 h-full z-0 sm:-translate-x-36 md:-translate-x-16 lg:-translate-x-12 2xl:-translate-x-0">
+        <div className="absolute mx-auto left-0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-8/12 lg:w-7/12 h-full z-0 sm:-translate-x-24 md:-translate-x-16 lg:-translate-x-12 2xl:-translate-x-0">
           <div className="relative h-full">
             <Image
               alt="mentor and student"
-              src="/images/graduate.png"
+              src="/images/graduate-xxl.png"
               layout="fill"
               priority
               className={classes.image}

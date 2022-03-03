@@ -104,7 +104,7 @@ export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
       src="/images/homestay-hero-test.jpg"
-      src2="/images/bunkbed-room.jpeg"
+      src2="/images/bunks.jpeg"
       yScrollValueForSecondaryBackground={700}
       mainHeading="Academic Homestay"
       subHeading=""
