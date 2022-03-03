@@ -30,7 +30,7 @@ function ItemContent({
   return (
     <>
       <h3 className="flex justify-between w-full text-4xl whitespace-nowrap">
-        <AccordionButton className="flex justify-between w-full items-end xs:tracking-wide sm:tracking-wider pb-4">
+        <AccordionButton className="flex justify-between w-full items-end xs:tracking-wide sm:tracking-wider pb-4 pt-2">
           {title}{' '}
           <span className="text-3xl ml-2 -translate-y-1">
             {itemContext.isExpanded ? <AiFillCaretUp /> : <AiFillCaretDown />}
@@ -54,7 +54,7 @@ function Strength({
   return (
     <AccordionItem
       key={title}
-      className="flex flex-col items-start text-white border-b-1 mt-2"
+      className="flex flex-col items-start text-white border-b-1"
     >
       <ItemContent title={title} description={description} />
     </AccordionItem>
