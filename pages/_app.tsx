@@ -1,4 +1,6 @@
 import 'styles/globals.css'
+
+import 'styles/hero-images.css'
 import type { AppProps } from 'next/app'
 import { Layout } from 'components/_app/layout/layout'
 
