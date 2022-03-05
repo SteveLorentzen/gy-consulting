@@ -103,11 +103,12 @@ const programDetails: ProgramDetailProps[] = [
 export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
-      src="/images/homestay-hero-test.jpg"
-      src2="/images/bunks.jpeg"
+      src="/images/couch-study.jpeg"
+      src2="/images/bunk-room.jpeg"
       yScrollValueForSecondaryBackground={700}
       mainHeading="Academic Homestay"
       subHeading=""
+      className="homestay-hero"
     >
       <Head>
         <title>Academic Homestay</title>

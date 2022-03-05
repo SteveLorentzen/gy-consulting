@@ -132,11 +132,12 @@ export function ConsultingPage() {
 
   return (
     <ContentContainerWithHeroImage
-      src="/images/consulting.jpeg"
+      src="/images/consultant-discussion.jpeg"
       mainHeading="Get Expert Preparation"
       subHeading=""
       src2="/images/birds-eye-view.jpeg"
       yScrollValueForSecondaryBackground={700}
+      className="consulting-hero"
     >
       {/* <h1 className="text-7xl w-full text-center my-152">Some Page Content!</h1> */}
       <ContentContainerStyled bgColor="white" padding="lg">
@@ -182,13 +183,15 @@ export function ConsultingPage() {
 
       <div className=" relative w-full h-80 justify-center items-center">
         <div className="absolute w-full h-full bg-cyan-800 opacity-50"></div>
-        <div className="flex justify-center items-center w-full h-full">
-          <h1 className="text-white text-7xl z-10 font-light tracking-wider text-center">
-            {' '}
-            Our Consulting Services
-          </h1>
-        </div>
+        <div className="flex justify-center items-center w-full h-full"></div>
       </div>
+
+      <ContentContainerStyled padding="lg" bgColor="white">
+        <h1 className="text-blue text-7xl z-10 font-light tracking-wider text-center">
+          {' '}
+          Our Consulting Services
+        </h1>
+      </ContentContainerStyled>
 
       <ContentContainerStyled bgColor="blue">
         {services.map(service => {
