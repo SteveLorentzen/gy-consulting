@@ -33,7 +33,7 @@ const homestayDetails: TextWithPictureProps[] = [
     title: 'Academic Progress',
     children:
       "Our in-house mentor will encourage students to follow a productive schedule, provide academic help when needed, and offer counseling to help your child stay on track.  Check your child's progress on our online dashboard.",
-    src: '/images/students-studying.jpeg',
+    src: '/images/study-friends.jpg',
     imageSide: 'left',
     objectPosition: 'center',
     theme: 'blue',
@@ -60,7 +60,7 @@ const homestayDetails: TextWithPictureProps[] = [
     title: 'In-house College Consulting',
     children:
       'Our mentors and consultants will guide your child to do the right thing, at the right time to become competitive candidates for admission to top universities. ',
-    src: '/images/tutor.jpeg',
+    src: '/images/consultant-meeting-smiling.jpg',
     imageSide: 'right',
     objectPosition: 'center',
     theme: 'blue',
@@ -72,7 +72,7 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Mentor Meetings',
     description:
       'We will get to know your child in a way no other consulting firms have. Constant interaction between the mentor and student is the key to cultivating a unique student identity with positive character, experience, and life goals that top universities desire in their applicants.',
-    src: '/images/high-school-tutor.jpeg',
+    src: '/images/couch-discussion.jpg',
   },
   {
     title: 'Consultant Meetings',
@@ -90,7 +90,7 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Study Hall',
     description:
       'Mentors not only provide students help with everyday homework, they also teach students “how to study”. Academic tools such as time management, note taking, organizing information, and maintaining focus are key skills that in-house mentors foster in our homestay students. At GY homestay, your child will become independent, motivated scholars with abilities for lifelong success.',
-    src: '/images/homework-floor.jpeg',
+    src: '/images/library-study-friends.jpeg',
   },
   {
     title: 'Recommended Classes/Activities',
