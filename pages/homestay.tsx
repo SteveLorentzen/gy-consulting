@@ -42,7 +42,7 @@ const homestayDetails: TextWithPictureProps[] = [
     title: 'Meal Menus',
     children:
       'Delicious and nutritious meals will be the source of energy for optimal school life. Photos and menu charts will be updated weekly.',
-    src: '/images/korean-meal.jpeg',
+    src: '/images/korean-meal.jpg',
     imageSide: 'right',
     objectPosition: 'center',
     theme: 'blue',
@@ -51,7 +51,7 @@ const homestayDetails: TextWithPictureProps[] = [
     title: 'Weekly Activities',
     children:
       'GY homestay students have regular activities that boost physical and mental health.',
-    src: '/images/yoga.jpeg',
+    src: '/images/yoga-park.jpg',
     imageSide: 'left',
     objectPosition: 'center bottom',
     theme: 'blue',
@@ -72,7 +72,7 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Mentor Meetings',
     description:
       'We will get to know your child in a way no other consulting firms have. Constant interaction between the mentor and student is the key to cultivating a unique student identity with positive character, experience, and life goals that top universities desire in their applicants.',
-    src: '/images/mentor-meeting.jpeg',
+    src: '/images/high-school-tutor.jpeg',
   },
   {
     title: 'Consultant Meetings',
@@ -84,7 +84,7 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Diagnostics',
     description:
       'GY homestay mentors work with consultants to accurately evaluate your child. From academic performance to emotional and mental health, extensive diagnostics will be the groundwork for formulating optimal timelines/guidelines for your child to follow through with in order to thrive in school.',
-    src: '/images/survey.jpeg',
+    src: '/images/survey.jpg',
   },
   {
     title: 'Study Hall',
@@ -96,15 +96,15 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Recommended Classes/Activities',
     description:
       'Each student will be offered additional guidance according to their individual needs. Your child may take enrichment classes offered by GY teaching staff, or from other partner teachers that will be recommended by GY consultants. GY Homestay recommends after school and summer activities designed to shape your child’s strengths. Enjoy the numerous weekend activities led by the GY team.',
-    src: '/images/high-school-tutor.jpeg',
+    src: '/images/recommended-activities.jpg',
   },
 ]
 
 export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
-      src="/images/couch-study.jpeg"
-      src2="/images/bunk-room.jpeg"
+      src="/images/comfy-studying.jpg"
+      src2="/images/bunk-bed-room.jpg"
       yScrollValueForSecondaryBackground={700}
       mainHeading="Academic Homestay"
       subHeading=""
@@ -132,7 +132,7 @@ export function HomestayPage() {
             heading="Stay with one of our Mentors"
             subHeading="Leave your troubles behind"
             objectPosition="right top"
-            src="/images/smiling-woman.jpeg"
+            src="/images/friendly-mentor.jpg"
             style="side"
           >
             GY academic homestay combines exceptional consulting expertise with
@@ -194,7 +194,7 @@ export function HomestayPage() {
 
           <div className="relative w-full lg:w-5/12 lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
             <Image
-              src="/images/college-lawn.jpeg"
+              src="/images/graduate-clock.jpg"
               alt="friendly woman in living room"
               layout="responsive"
               width={300}
