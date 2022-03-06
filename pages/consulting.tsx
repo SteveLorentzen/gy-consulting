@@ -64,8 +64,8 @@ function Strength({
 const services: TextWithPictureProps[] = [
   {
     title: 'GY Academic Homestay Consulting',
-    src: '/images/friends-studying.jpeg',
-    imageSide: 'right',
+    src: '/images/study-living-room.jpg',
+    imageSide: 'left',
     objectPosition: 'center',
     theme: 'blue',
     children: (
@@ -89,9 +89,9 @@ const services: TextWithPictureProps[] = [
     title: 'GY University Admissions Consulting',
     children:
       'Students who are planning to apply to universities in the US gain incredible strategies and insights on preparing for college admissions. Our expert team guides you throughout your high school years so that you can be confident about your academic and college admissions goals.',
-    src: '/images/consultant-discussion.jpeg',
-    imageSide: 'left',
-    objectPosition: 'center',
+    src: '/images/admissions-sign.jpg',
+    imageSide: 'right',
+    objectPosition: 'left',
     theme: 'blue',
   },
 ]
@@ -132,10 +132,10 @@ export function ConsultingPage() {
 
   return (
     <ContentContainerWithHeroImage
-      src="/images/consultant-discussion.jpeg"
+      src="/images/consulting-window-room.jpg"
       mainHeading="Get Expert Preparation"
       subHeading=""
-      src2="/images/birds-eye-view.jpeg"
+      src2="/images/college-campus-overhead.jpg"
       yScrollValueForSecondaryBackground={700}
       className="consulting-hero"
     >
@@ -146,7 +146,7 @@ export function ConsultingPage() {
             The Global Youth Initiative
           </SectionHeading>
           <PictureWithHeadingAndText
-            src="/images/happy-student.jpeg"
+            src="/images/happy-student.jpg"
             style="side"
             heading="Cultivating Leadership"
             subHeading="Building hope for our future"
@@ -217,7 +217,7 @@ export function ConsultingPage() {
           <div className="flex flex-col xl:flex-row items-center xl:items-start justify-evenly">
             <div className="flex flex-col mb-12 max-w-screen-md p-4 xxs:p-12">
               <PictureWithHeadingAndText
-                src="/images/shaking-hands.jpeg"
+                src="/images/handshake.jpg"
                 heading="Getting To Know You"
                 subHeading="Free 30-Minute Initial Consultation"
                 objectPosition="right"
@@ -242,7 +242,7 @@ export function ConsultingPage() {
 
             <div className="flex flex-col max-w-screen-md p-4 xxs:p-12">
               <PictureWithHeadingAndText
-                src="/images/meeting.jpeg"
+                src="/images/consultant-meeting.jpg"
                 heading="Creating a Game Plan"
                 subHeading="1-Hour Strategy Session"
                 objectPosition="right"
