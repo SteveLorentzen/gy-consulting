@@ -16,14 +16,16 @@ type ProgramDetailProps = {
 
 function ProgramDetail({ src, title, description }: ProgramDetailProps) {
   return (
-    <div className="flex flex-col basis-full xs:basis-144 md:basis-152 xl:basis-1/3 3xl:basis-1/4 bg-gray-100 rounded-md overflow-hidden mx-4 xs:mx-8 xxs:mx-8 my-12">
-      <div className="relative w-full h-88">
+    <div className="flex flex-col lg:flex-row basis-full max-w-2xl lg:max-w-none bg-gray-100 rounded-md overflow-hidden mx-4 xs:mx-8 xxs:mx-8 my-12">
+      <div className="relative w-full h-96 lg:h-136 xl:h-120  lg:basis-full">
         <Image src={src} layout="fill" objectFit="cover" alt="" />
       </div>
-      <h3 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-12">
-        {title}
-      </h3>
-      <p className="px-8 xs:px-12 pb-12">{description}</p>
+      <div className="lg:basis-full">
+        <h3 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-12">
+          {title}
+        </h3>
+        <p className="px-8 xs:px-12 lg:px-16 pb-12">{description}</p>
+      </div>
     </div>
   )
 }
@@ -236,7 +238,7 @@ export function HomestayPage() {
         <SectionHeading color="white" marginBottom="medium">
           Our Process
         </SectionHeading>
-        <div className="flex justify-evenly w-full flex-wrap md:px-12 3xl:px-8">
+        <div className="flex lg:flex-col justify-center w-full flex-wrap md:px-12 3xl:px-8 max-w-screen-2xl">
           {programDetails.map(programDetail => {
             return (
               <ProgramDetail

@@ -27,7 +27,7 @@ export function Input({
         name={name ? name : type}
         ref={inputRef ? inputRef : undefined}
         placeholder={placeholder}
-        className="w-full p-2 rounded border border-cyan-900 focus:border-cyan-700 my-4"
+        className="w-full p-2 rounded border border-gray-400 my-4"
         onChange={onChange ? onChange : undefined}
       ></input>
     </>
