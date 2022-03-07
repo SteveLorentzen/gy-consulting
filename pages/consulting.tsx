@@ -30,14 +30,14 @@ function ItemContent({
   return (
     <>
       <h3 className="flex justify-between w-full text-4xl whitespace-nowrap">
-        <AccordionButton className="flex justify-between w-full items-end xs:tracking-wide sm:tracking-wider pb-4 pt-2 hover:text-gray-200">
+        <AccordionButton className="flex justify-between w-full items-end xs:tracking-wide sm:tracking-wider py-4  hover:text-gray-200">
           {title}{' '}
           <span className="text-3xl ml-2 -translate-y-1">
             {itemContext.isExpanded ? <AiFillCaretUp /> : <AiFillCaretDown />}
           </span>
         </AccordionButton>
       </h3>
-      <AccordionPanel className="mb-12 mx-4 xxs:mx-0" hidden={false}>
+      <AccordionPanel className="mb-8 mx-4 xxs:mx-0" hidden={false}>
         {description}
       </AccordionPanel>
     </>

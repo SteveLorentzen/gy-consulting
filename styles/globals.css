@@ -12,7 +12,7 @@ html {
   height: auto;
   transition: max-height 0.3s ease-in;
   overflow: hidden;
-  max-height: 3.7rem;
+  max-height: 4.8rem;
 }
 
 [data-reach-accordion-item][data-state='open'] {
