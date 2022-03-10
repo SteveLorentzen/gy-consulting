@@ -1,3 +1,4 @@
+import { CallToAction } from 'components/common/call-to-action'
 import Image from 'next/image'
 import classes from './hero-image.module.css'
 
@@ -19,10 +20,15 @@ export function HeroImage() {
           </div>
         </div>
 
-        <div className="h-0 sm:flex justify-end 2xl:justify-center w-full 2xl:w-6/12 3xl:w-7/12 sm:h-full -translate-y-48 xxs:-translate-y-60 xs:-translate-y-72 sm:translate-y-0 text-white font-extrabold sm:font-normal lg:mr-8 z-20">
-          <h1 className="font-bold sm:font-semibold mx-auto sm:mx-0 flex justify-center w-132 xxs:w-120 xs:w-144 sm:w-120 md:w-128 lg:w-168 xl:w-208 2xl:w-200 items-center text-7xl xxs:text-7xl xs:text-8xl sm:text-7xl lg:text-8xl xl:text-9xl 2xl:text-9xl pr-0 md:pr-8 lg:pr-0">
-            Start your future today.
-          </h1>
+        <div className="h-0 sm:flex flex-col sm:items-end 2xl:items-center justify-center w-full 2xl:w-6/12 3xl:w-7/12 sm:h-full -translate-y-64 xxs:-translate-y-64 xs:-translate-y-80 sm:translate-y-0 text-white font-extrabold sm:font-normal lg:mr-8 md:pr-8 z-20">
+          <div className="flex flex-col items-center">
+            <h1 className="font-bold sm:font-semibold mx-auto sm:mx-0 lg:mb-6 flex justify-center w-132 xxs:w-120 xs:w-144 sm:w-120 md:w-128 lg:w-168 xl:w-208 2xl:w-200 items-center text-7xl xxs:text-7xl xs:text-8xl sm:text-7xl lg:text-8xl xl:text-9xl 2xl:text-9xl ">
+              Start your future today.
+            </h1>
+            <div className="flex sm:flex-col lg:flex-row justify-between h-28 lg:h-auto items-center z-10">
+              <CallToAction text="Get a free consultation." isHomePage />
+            </div>
+          </div>
         </div>
       </div>
     </div>

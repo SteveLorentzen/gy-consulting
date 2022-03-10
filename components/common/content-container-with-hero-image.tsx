@@ -1,9 +1,8 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import React from 'react'
-import { AiOutlineArrowRight } from '@react-icons/all-files/ai/AiOutlineArrowRight'
 
 import { useScrollYPosition } from 'react-use-scroll-position'
+import { CallToAction } from 'components/common/call-to-action'
 
 type ContentContainerWithHeroImageProps = {
   mainHeading: string
@@ -76,15 +75,8 @@ export function ContentContainerWithHeroImage({
           <h2 className="z-10 flex flex-col text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl max-w-xs xs:max-w-sm sm:max-w-md mx-4 md:max-w-lg lg:w-full">
             {subHeading}
           </h2>
-          <div className="flex flex-col sm:flex-row items-center  z-10">
-            <h2 className="flex items-center text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl max-w-xs xs:max-w-sm sm:max-w-md mx-4 md:max-w-lg lg:w-full">
-              Set up a free consultation today
-            </h2>
-            <Link href="/">
-              <a className="flex items-center mt-4 sm:mt-0 py-4 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded-md font-bold whitespace-nowrap">
-                Free Consultation{' '}
-              </a>
-            </Link>
+          <div className="flex flex-col sm:flex-row items-center h-24 sm:h-auto justify-between  z-10">
+            <CallToAction text="Set up a free consultation today" />
           </div>
         </div>
       </section>
