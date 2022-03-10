@@ -26,7 +26,7 @@ export function HeroImage() {
               Start your future today.
             </h1>
             <div className="flex sm:flex-col lg:flex-row justify-between h-28 lg:h-auto items-center z-10">
-              <CallToAction text="Get a free consultation." frontPage />
+              <CallToAction text="Get a free consultation." isHomePage />
             </div>
           </div>
         </div>
