@@ -8,13 +8,15 @@ export function PictureWithHeadingAndText({
   style,
   objectPosition,
   children,
+  isBlueBackground,
 }: {
   heading: string
-  subHeading: string
+  subHeading?: string
   src: string
   style: 'side' | 'top'
   objectPosition: ObjectPosition
   children?: React.ReactNode
+  isBlueBackground?: boolean
 }) {
   return (
     <div className={`flex flex-col ${style === 'side' ? 'lg:flex-row' : ''}`}>
@@ -35,9 +37,21 @@ export function PictureWithHeadingAndText({
           alt="hands in"
         ></Image>
       </div>
-      <div className={`basis-full ${style === 'side' ? 'lg:ml-12' : ''}`}>
+      <div
+        className={`basis-full ${style === 'side' ? 'lg:ml-12' : ''} ${
+          isBlueBackground ? 'text-white' : ''
+        }`}
+      >
         <h2 className="text-5xl mb-4">{heading}</h2>
-        <h3 className="text-3xl text-cyan-900 mb-8">{subHeading}</h3>
+        {subHeading ? (
+          <h3
+            className={`text-3xl ${
+              isBlueBackground ? 'text-white' : 'text-cyan-900'
+            } mb-8`}
+          >
+            {subHeading}
+          </h3>
+        ) : null}
 
         <p>{children}</p>
       </div>

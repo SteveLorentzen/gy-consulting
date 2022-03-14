@@ -69,7 +69,7 @@ export function ContentContainerWithHeroImage({
       <section className="relative h-192 3xl:h-212">
         <div className="absolute w-full h-full bg-gradient-to-l from-cyan-900 to-cyan-700 opacity-70"></div>
         <div className="flex flex-col justify-center h-full items-center text-white p-8 ">
-          <h1 className="z-10 flex flex-col justify-center text-center lg:whitespace-nowrap font-semibold lg:font-normal text-7xl md:text-8xl xl:text-9xl mb-4 lg:mb-8 xxs:px-12 animate-ascendsmall">
+          <h1 className="z-10 flex flex-col justify-center text-center lg:whitespace-nowrap font-semibold lg:font-normal text-7xl md:text-8xl xl:text-9xl mb-4 lg:mb-8 xxs:px-8 animate-ascendsmall">
             {mainHeading}
           </h1>
           <h2 className="z-10 flex flex-col text-center text-xl xs:text-2xl sm:text-3xl md:text-4xl max-w-xs xs:max-w-sm sm:max-w-md mx-4 md:max-w-lg lg:w-full">
