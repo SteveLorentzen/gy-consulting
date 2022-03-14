@@ -30,6 +30,46 @@ function ProgramDetail({ src, title, description }: ProgramDetailProps) {
   )
 }
 
+function SmallerPictureWithHeadingAndText({
+  heading,
+  children,
+  src,
+  altText,
+  isBlueBackground,
+}: {
+  heading: string
+  children: React.ReactNode
+  src: string
+  altText: string
+  isBlueBackground?: boolean
+}) {
+  return (
+    <section className="flex flex-col lg:flex-row justify-center items-center lg:items-start max-w-3xl lg:max-w-screen-xl mb-12 mt-6 px-4 xxs:px-8 xs:px-12 lg:px-0">
+      <div className="flex flex-col w-full lg:w-2/5 order-2 lg:order-1">
+        <h3
+          className={`${
+            isBlueBackground ? 'text-white' : 'text-cyan-900'
+          } text-5xl tracking-wide font-light mb-6 lg:mb-8  `}
+        >
+          {heading}
+        </h3>
+        <p className={`${isBlueBackground ? 'text-white' : ''}`}>{children}</p>
+      </div>
+
+      <div className="relative w-full lg:w-5/12 lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
+        <Image
+          src={src}
+          alt={altText}
+          layout="responsive"
+          width={300}
+          height={200}
+          className=""
+        />
+      </div>
+    </section>
+  )
+}
+
 const homestayDetails: TextWithPictureProps[] = [
   {
     title: 'Academic Progress',
@@ -80,7 +120,7 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Consultant Meetings',
     description:
       'Regular online and offline meetings between your child and consultant provides continuous help throughout their high school years. Each student is provided with all the necessary information to achieve their university admissions goals. ',
-    src: '/images/consultant-discussion.jpeg',
+    src: '/images/consultant-meetings.jpg',
   },
   {
     title: 'Diagnostics',
@@ -133,7 +173,7 @@ export function HomestayPage() {
           <PictureWithHeadingAndText
             heading="Stay with one of our Mentors"
             subHeading="Leave your troubles behind"
-            objectPosition="right top"
+            objectPosition="center top"
             src="/images/friendly-mentor.jpg"
             style="side"
           >
@@ -146,9 +186,23 @@ export function HomestayPage() {
           </PictureWithHeadingAndText>
         </section>
       </ContentContainerStyled>
-      <div className="relative h-88 w-full">
+      {/* <div className="relative h-88 w-full">
         <div className="absolute w-full h-full bg-cyan-900 opacity-50"></div>
-      </div>
+      </div> */}
+      <ContentContainerStyled bgColor="blue" padding="lg">
+        <section className="max-w-screen-2xl">
+          <SmallerPictureWithHeadingAndText
+            heading="Premium Comfort"
+            src="/images/bunk-bed-room.jpg"
+            altText="A cozy homestay room"
+            isBlueBackground
+          >
+            GY Homestay rooms are spacious, cozy, and efficient. Each room is
+            shared by two students. All you need to bring are your personal
+            belongings and clothes. We provide the rest.
+          </SmallerPictureWithHeadingAndText>
+        </section>
+      </ContentContainerStyled>
       <div className="flex flex-col items-center bg-white w-full">
         <ContentContainerStyled bgColor="white" padding="lg">
           <SectionHeading color="blue" marginBottom="small">

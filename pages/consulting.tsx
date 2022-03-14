@@ -100,7 +100,7 @@ const strengths = [
   {
     title: 'Expertise and Experience',
     description:
-      'Our consultants have over 50 years of collective experience in admissions consulting. We’ve helped students get admissions from the most selective universities like Harvard, Cornell, Columbia, NYU, U Penn, Carnegie Mellon, and more. ',
+      'Our consultants have over 50 years of collective experience in admissions consulting. We’ve helped students get admissions from the most selective universities like Cornell, Duke, NYU, UCLA, University of Pennsylvania, Carnegie Mellon, UNC-Chapel Hill, Amherst College, Carleton College, Haverford College and more. ',
   },
   {
     title: 'Passion and Attention',
