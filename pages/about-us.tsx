@@ -76,30 +76,24 @@ function TeamMember({
   degrees: string[]
 }) {
   return (
-    <div className="flex flex-col xs:flex-row justify-between max-w-screen-md basis-full xs:basis-full xl:w-5/12 border-b-1 border-gray-200 px-12 py-8">
+    <div className="flex flex-col xs:flex-row justify-between max-w-sm xs:max-w-screen-md basis-full xl:w-5/12 border-b-1 border-gray-200 mx-8 xs:px-12 py-12">
       <div className="flex flex-col justify-between items-stretch basis-full order-2 xs:order-1">
-        <div className=" hidden xs:block">
+        <div className="my-4 xs:my-0">
           <h4 className="text-4xl mb-2">{name}</h4>
           <h5 className="text-cyan-800 font-bold">{role}</h5>
         </div>
         <div>
           {degrees.map(degree => {
             return (
-              <p key={degree} className="mt-2">
+              <p key={degree} className="mt-4 xs:mt-2">
                 {degree}
               </p>
             )
           })}
         </div>
       </div>
-      <div className="flex xs:flex-col justify-between order:1 xs:order-2 w-full xs:w-72 xs:basis-72">
-        <div className="xs:hidden ">
-          <div className="mb-4">
-            <h4 className="text-4xl mb-2">{name}</h4>
-            <h5 className="text-cyan-800 font-bold">{role}</h5>
-          </div>
-        </div>
-        <div className="relative basis-1/2 xxs:basis-1/3  xs:ml-12  mb-8 xs:mb-0">
+      <div className="flex flex-col justify-between basis-72 xs:basis-96 order-1 xs:order-2 ">
+        <div className="relative basis-full xs:basis-1/3 xs:ml-12  ">
           <Image
             src={src}
             layout="responsive"
@@ -123,7 +117,7 @@ export function AboutUsPage() {
     >
       <section className="flex flex-col items-center bg-white w-full">
         <ContentContainerStyled bgColor="white" padding="lg">
-          <div className="max-w-screen-lg mx-4 xxs:mx-8 xs:mx-12 sm:mx-16">
+          <div className="max-w-screen-lg mx-8 xs:mx-12 sm:mx-16">
             <SectionHeading color="blue" marginBottom="large">
               Our Mission
             </SectionHeading>
@@ -225,7 +219,7 @@ export function AboutUsPage() {
         </ContentContainerStyled>
         <ContentContainerStyled bgColor="white" padding="lg">
           <SectionHeading color="blue" marginBottom="large">
-            Our Team
+            The GY Team
           </SectionHeading>
           <div className="flex w-full flex-wrap justify-center xl:justify-around items-center xl:items-stretch max-w-screen-3xl">
             {teamMembers.map(teamMember => {
