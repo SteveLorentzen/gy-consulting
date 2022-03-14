@@ -1,4 +1,4 @@
-import { CallToAction } from 'components/common/call-to-action'
+import { CallToActionHero } from 'components/common/call-to-action-hero'
 import Image from 'next/image'
 import classes from './hero-image.module.css'
 
@@ -26,7 +26,7 @@ export function HeroImage() {
               Start your future today.
             </h1>
             <div className="flex sm:flex-col lg:flex-row justify-between h-28 lg:h-auto items-center z-10">
-              <CallToAction text="Get a free consultation." isHomePage />
+              <CallToActionHero text="Get a free consultation." isHomePage />
             </div>
           </div>
         </div>

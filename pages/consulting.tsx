@@ -18,6 +18,7 @@ import {
 import '@reach/accordion/styles.css'
 import React from 'react'
 import { TextWithPicture } from 'components/common/text-with-picture'
+import { CallToActionBottom } from 'components/common/call-to-action-bottom'
 
 function ItemContent({
   title,
@@ -267,16 +268,7 @@ export function ConsultingPage() {
               </PictureWithHeadingAndText>
             </div>
           </div>
-          <div className="mx-auto max-w-screen-2xl flex flex-col items-center justify-center mt-6 px-12">
-            <h3 className="text-cyan-800 font-bold text-center">
-              When you&apos;re ready, get your free consultation.
-            </h3>
-            <Link href="/">
-              <a className="mt-6 py-4 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded-md font-bold">
-                Get a Free Consultation
-              </a>
-            </Link>
-          </div>
+          <CallToActionBottom />
         </section>
       </ContentContainerStyled>
     </ContentContainerWithHeroImage>

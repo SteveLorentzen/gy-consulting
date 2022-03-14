@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-export function CallToAction({
+export function CallToActionHero({
   text,
   isHomePage,
 }: {

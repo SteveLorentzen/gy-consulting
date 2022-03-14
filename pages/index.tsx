@@ -3,6 +3,7 @@ import { WhoWeAre } from 'components/home/who-we-are/who-we-are'
 import { HeroImage } from 'components/home/hero-image/hero-image'
 import { TheTeam } from 'components/home/the-team/the-team'
 import Head from 'next/head'
+import { CallToActionBottom } from 'components/common/call-to-action-bottom'
 
 export function HomePage() {
   return (
@@ -18,6 +19,9 @@ export function HomePage() {
       <WhyGYConsulting />
 
       <TheTeam />
+      <div className="mb-24">
+        <CallToActionBottom />
+      </div>
     </div>
   )
 }

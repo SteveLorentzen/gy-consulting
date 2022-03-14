@@ -7,6 +7,7 @@ import Head from 'next/head'
 import { TextWithPicture } from '../components/common/text-with-picture'
 import { TextWithPictureProps } from 'interfaces-and-types/common/interfaces-and-types-common'
 import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
+import { CallToActionBottom } from 'components/common/call-to-action-bottom'
 
 type ProgramDetailProps = {
   title: string
@@ -303,6 +304,9 @@ export function HomestayPage() {
               />
             )
           })}
+        </div>
+        <div className="mt-12">
+          <CallToActionBottom isBlueBackground />
         </div>
       </ContentContainerStyled>
     </ContentContainerWithHeroImage>

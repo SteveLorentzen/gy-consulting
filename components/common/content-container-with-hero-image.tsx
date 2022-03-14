@@ -2,7 +2,7 @@ import Image from 'next/image'
 import React from 'react'
 
 import { useScrollYPosition } from 'react-use-scroll-position'
-import { CallToAction } from 'components/common/call-to-action'
+import { CallToActionHero } from 'components/common/call-to-action-hero'
 
 type ContentContainerWithHeroImageProps = {
   mainHeading: string
@@ -76,7 +76,7 @@ export function ContentContainerWithHeroImage({
             {subHeading}
           </h2>
           <div className="flex flex-col sm:flex-row items-center h-24 sm:h-auto justify-between  z-10">
-            <CallToAction text="Set up a free consultation today" />
+            <CallToActionHero text="Set up a free consultation today" />
           </div>
         </div>
       </section>
