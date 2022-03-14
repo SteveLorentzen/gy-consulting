@@ -1,3 +1,4 @@
+import { CallToActionBottom } from 'components/common/call-to-action-bottom'
 import { ContentContainerStyled } from 'components/common/content-container-styled'
 import { ContentContainerWithHeroImage } from 'components/common/content-container-with-hero-image'
 import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
@@ -233,6 +234,9 @@ export function AboutUsPage() {
                 />
               )
             })}
+          </div>
+          <div className="mt-24">
+            <CallToActionBottom />
           </div>
         </ContentContainerStyled>
       </section>
