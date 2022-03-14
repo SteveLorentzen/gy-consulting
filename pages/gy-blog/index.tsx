@@ -117,16 +117,16 @@ function PopularPost({
 
 const popularPosts = [
   { title: 'Practice Self Care For An Energy Boost', author: 'Jake Svenson' },
-  { title: 'Super Foods for Studying', author: 'Jake Svenson' },
+  { title: 'Super Foods for Studying', author: 'John Brenold' },
   {
     title: 'What College Admissions Staff Are Thinking',
-    author: 'Jake Svenson',
+    author: 'Anita Freeman',
   },
   {
     title: '4 Questions you should try and ask your student while away',
-    author: 'Jake Svenson',
+    author: 'Aaron Johnson',
   },
-  { title: 'Covid 19- The Latest', author: 'Jake Svenson' },
+  { title: 'Covid 19- The Latest', author: 'Alice Peters' },
 ]
 
 export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
@@ -156,6 +156,12 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
 
   const mailingListInputRef = React.useRef<HTMLInputElement>(null)
 
+  const router = useRouter()
+
+  function navigateToBlog(blogId: string) {
+    router.push(`/gy-blog/${blogId}`)
+  }
+
   return (
     <>
       <div className="flex flex-col lg:flex-row justify-center items-center md:items-start w-full xxs:px-4 xs:px-12 mx-auto sm:mt-6 font-serif max-w-5xl lg:max-w-none text-xl">
@@ -179,7 +185,8 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
                 return (
                   <article
                     key={blog._id}
-                    className="flex-col items-center pb-8 w-full hover:bg-gray-50 lg:px-8 border-b-1"
+                    className="flex-col items-center pb-8 w-full hover:bg-gray-50 lg:px-8 border-b-1 cursor-pointer"
+                    onClick={() => navigateToBlog(blog._id)}
                   >
                     <div className="relative h-72 xxs:h-80 xs:h-96 sm:h-104 lg:h-80 xl:h-96 2xl:h-104 w-full">
                       <Image
