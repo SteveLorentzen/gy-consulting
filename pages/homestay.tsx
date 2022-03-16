@@ -133,7 +133,7 @@ const programDetails: ProgramDetailProps[] = [
     title: 'Study Hall',
     description:
       'Mentors not only provide students help with everyday homework, they also teach students “how to study”. Academic tools such as time management, note taking, organizing information, and maintaining focus are key skills that in-house mentors foster in our homestay students. At GY homestay, your child will become independent, motivated scholars with abilities for lifelong success.',
-    src: '/images/library-study-friends.jpeg',
+    src: '/images/study-hall.jpg',
   },
   {
     title: 'Recommended Classes/Activities',
@@ -147,8 +147,6 @@ export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
       src="/images/comfy-studying.jpg"
-      src2="/images/bunk-bed-room.jpg"
-      yScrollValueForSecondaryBackground={700}
       mainHeading="Academic Homestay"
       subHeading=""
       className="homestay-hero"
@@ -178,12 +176,12 @@ export function HomestayPage() {
             src="/images/friendly-mentor.jpg"
             style="side"
           >
-            GY academic homestay combines exceptional consulting expertise with
-            great home living. From homework guidance to weekend activities,
-            rest assured that your child is having the best homestyle
-            experience. Experienced mentors will live with them 24/7, providing
-            students with the academic, emotional, mental support and guidance
-            that help students reach their full potential.
+            GY Academic Homestay combines exceptional college admissions
+            consulting expertise with great home living. From homework guidance
+            to weekend activities, rest assured that your child is having the
+            best homestyle experience. Experienced mentors will live with them
+            24/7, providing students with the academic, emotional, mental
+            support and guidance that help students reach their full potential.
           </PictureWithHeadingAndText>
         </section>
       </ContentContainerStyled>

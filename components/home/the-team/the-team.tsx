@@ -1,34 +1,44 @@
+import { Button } from 'components/common/button'
+import { ContentContainerStyled } from 'components/common/content-container-styled'
+import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
 import { SectionHeading } from 'components/common/section-heading'
 import Image from 'next/image'
+import { useRouter } from 'next/router'
 
 export function TheTeam() {
+  const router = useRouter()
+
   return (
-    <div className="flex flex-col w-full text-4xl py-24 px-8">
+    <ContentContainerStyled bgColor="white" padding="lg">
       <SectionHeading color="blue" marginBottom="large">
         Meet The Team
       </SectionHeading>
-      <div className="flex flex-col items-center lg:items-start lg:flex-row justify-center">
-        <div className="w-104 max-w-lg mb-10 lg:mr-20 bg-black">
-          <Image
-            className="max-w-lg"
-            src="/images/professional.jpg"
-            alt="two professional women"
-            layout="responsive"
-            width={145}
-            height={100}
-          />
-        </div>
-
-        <div className="flex flex-col items-center lg:items-start max-w-md">
-          <h3 className="font-bold text-3xl text-cyan-700 mb-8">World Class</h3>
-          <p className="text-xl text-center lg:text-left">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eveniet
-            explicabo veniam possimus in, recusandae harum numquam maxime at
-            deleniti ex, placeat laborum, culpa quas corporis. Tempore animi
-            culpa commodi eius.
-          </p>
-        </div>
+      <div className="max-w-screen-xl mx-12 sm:mx-24 md:mx-32 lg:mx-16 text-left">
+        <PictureWithHeadingAndText
+          heading="World Class"
+          objectPosition="center"
+          src="/images/hands-in.jpg"
+          style="side"
+          subHeading="Always ready to help"
+        >
+          <div>
+            <p>
+              Our exceptional team consists of highly qualified college
+              consultants and mentors who work together seamlessly to offer
+              premium services for your child. You can trust in our passion and
+              experience.
+            </p>
+            <div className="flex  justify-center mt-8 w-full">
+              <Button
+                buttonText="Learn more about us"
+                buttonAction={() => {
+                  router.push('/about-us')
+                }}
+              />
+            </div>
+          </div>
+        </PictureWithHeadingAndText>
       </div>
-    </div>
+    </ContentContainerStyled>
   )
 }

@@ -12,14 +12,15 @@ export function LoginPage() {
       <div className="absolute top-0 left-0 w-full min-h-screen">
         <div className="relative w-full h-screen">
           <Image
-            src="/images/college-campus.jpeg"
+            src="/images/college-building-reflection-crop.jpg"
             layout="fill"
             objectFit="cover"
             alt="college campus"
+            className=""
           />
         </div>
       </div>
-      <div className="flex flex-col items-center justify-center w-120 h-144  z-20 rounded-lg overflow-hidden p-16 -translate-y-12">
+      <div className="flex flex-col items-center justify-center w-120 h-144 mt-16  z-20 rounded-lg overflow-hidden p-16 -translate-y-12">
         <div className="absolute h-full w-full bg-gray-100 opacity-80 -z-10" />
         <h1 className="text-cyan-900 text-5xl sm:text-4xl text-center">
           GY Consulting
