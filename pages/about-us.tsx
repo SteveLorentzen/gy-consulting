@@ -111,56 +111,70 @@ function TeamMember({
 export function AboutUsPage() {
   return (
     <ContentContainerWithHeroImage
-      src="/images/graduation-caps.jpeg"
+      src="/images/living-room.jpg"
       mainHeading="Global Youth Consulting"
       subHeading=""
-      className=""
+      className="about-us-hero"
     >
       <section className="flex flex-col items-center bg-white w-full">
-        <ContentContainerStyled bgColor="white" padding="lg">
+        <ContentContainerStyled bgColor="white" padding="md">
+          <div>
+            <p className="pb-12 border-b-1 text-3xl mx-6 sm:mx-8 md:mx-12 lg:mx-16 text-center">
+              GY Consulting is S. Korea’s leading Homestay-focused Educational
+              Consulting Company
+            </p>
+          </div>
           <div className="max-w-screen-lg mx-8 xs:mx-12 sm:mx-16">
-            <SectionHeading color="blue" marginBottom="large">
+            <SectionHeading
+              color="blue"
+              marginBottom="large"
+              marginTop="medium"
+            >
               Our Mission
             </SectionHeading>
-            <PictureWithHeadingAndText
-              heading="Instilling integrity"
-              objectPosition="center"
-              src="/images/graduate-crowd.jpeg"
-              style="top"
-              subHeading="Creating compassion through competence"
-            >
-              <div className=""></div>
-              <p className="mb-6">
-                Since 2016, GY Consulting, formerly known as Happy Boarding
-                House, has been providing homestay service where mentors live
-                with students who attend the four international schools in Jeju
-                (St. Johnsbury Academy Jeju, Branksome Hall Asia, North London
-                Collegiate School Jeju, Korea International School Jeju). Our
-                mentors and consultants guide and support students through their
-                academic and daily grind of school and provide further
-                assistance in the college admissions process. The co-living
-                environment allows the mentors to provide hands-on care for each
-                of our students. GY Consulting aims to create an atmosphere
-                where students can fully focus on reaching their academic goals.
-              </p>
+            <div className="mb-8">
+              <PictureWithHeadingAndText
+                heading="Instilling integrity"
+                objectPosition="right"
+                src="/images/compass.jpg"
+                style="top"
+                subHeading="Creating compassion through competence"
+              >
+                <div className=""></div>
+                <p className="mb-6">
+                  Since 2016, GY Consulting, formerly known as Happy Boarding
+                  House, has been providing homestay service where mentors live
+                  with students who attend the four international schools in
+                  Jeju (St. Johnsbury Academy Jeju, Branksome Hall Asia, North
+                  London Collegiate School Jeju, Korea International School
+                  Jeju). Our mentors and consultants guide and support students
+                  through their academic and daily grind of school and provide
+                  further assistance in the college admissions process. The
+                  co-living environment allows the mentors to provide hands-on
+                  care for each of our students. GY Consulting aims to create an
+                  atmosphere where students can fully focus on reaching their
+                  academic goals.
+                </p>
 
-              <p className="mb-6">
-                Furthermore, GY Consulting believes in the importance of
-                integrity (through sharing life experiences and ethical
-                compass), passion (for the joys of living each day to the
-                fullest), and a sense of vocation (of what one must do in order
-                to contribute to the greater global community). With our
-                guidance, the students will gain the skills and knowledge they
-                need to be successful during and after high school.
-              </p>
+                <p className="mb-6">
+                  Furthermore, GY Consulting believes in the importance of
+                  integrity (through sharing life experiences and ethical
+                  compass), passion (for the joys of living each day to the
+                  fullest), and a sense of vocation (of what one must do in
+                  order to contribute to the greater global community). With our
+                  guidance, the students will gain the skills and knowledge they
+                  need to be successful during and after high school.
+                </p>
 
-              <p className="">
-                The GY team has assisted numerous students to gain admissions
-                into prestigious universities such as Cornell, Duke, NYU, UCLA,
-                University of Pennsylvania, Carnegie Mellon, UNC-Chapel Hill,
-                Amherst College, Carleton College, Haverford College and more.
-              </p>
-            </PictureWithHeadingAndText>
+                <p className="">
+                  The GY team has assisted numerous students to gain admissions
+                  into prestigious universities such as Cornell, Duke, NYU,
+                  UCLA, University of Pennsylvania, Carnegie Mellon, UNC-Chapel
+                  Hill, Amherst College, Carleton College, Haverford College and
+                  more.
+                </p>
+              </PictureWithHeadingAndText>
+            </div>
           </div>
         </ContentContainerStyled>
         <ContentContainerStyled bgColor="blue" padding="lg">

@@ -25,11 +25,11 @@ export function SectionHeading({
           : ''
       } ${
         marginTop === 'small'
-          ? 'pb-8 md:pt-6'
+          ? 'pt-8 md:pt-6'
           : marginTop === 'medium'
-          ? 'pb-16 md:pt-12'
+          ? 'pt-16 md:pt-12'
           : marginTop === 'large'
-          ? 'pb-24 md:pt-16'
+          ? 'pt-24 md:pt-16'
           : ''
       } px-8 animate-ascendslow`}
     >

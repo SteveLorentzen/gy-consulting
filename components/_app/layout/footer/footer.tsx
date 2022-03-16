@@ -40,14 +40,6 @@ export function Footer() {
               buttonText="Submit"
             />
           </div>
-          <div className="flex flex-col w-full md:w-3/12 items-center order-3 md:order-2 ">
-            <div className="flex flex-col mb-12 md:mb-0">
-              <h5>
-                Some sort of legal statement about all rights being reserved and
-                trademarks and such{' '}
-              </h5>
-            </div>
-          </div>
         </div>
       </div>
     </div>
