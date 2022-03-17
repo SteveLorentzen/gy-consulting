@@ -65,8 +65,6 @@ const components: Partial<PortableTextReactComponents> = {
 }
 
 export function BlogPage({ blogPost }: { blogPost: IBlog }) {
-  console.log(blogPost)
-
   return (
     <article className="py-12">
       <div className="flex flex-col justify-center max-w-screen-lg mx-auto py-24 px-16">
@@ -115,7 +113,6 @@ export const getStaticProps: GetStaticProps = async context => {
 
   const blogPost = await sanity.fetch<IBlog[]>(query, queryParams)
 
-  console.log(context)
   return {
     props: {
       blogPost: blogPost[0],

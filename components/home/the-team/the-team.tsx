@@ -10,9 +10,9 @@ export function TheTeam() {
 
   return (
     <ContentContainerStyled bgColor="white" padding="lg">
-      <SectionHeading color="blue" marginBottom="large">
+      {/* <SectionHeading color="blue" marginBottom="large">
         Meet The Team
-      </SectionHeading>
+      </SectionHeading> */}
       <div className="max-w-screen-xl mx-12 sm:mx-24 md:mx-32 lg:mx-16 text-left">
         <PictureWithHeadingAndText
           heading="World Class"
@@ -28,7 +28,7 @@ export function TheTeam() {
               premium services for your child. You can trust in our passion and
               experience.
             </p>
-            <div className="flex  justify-center mt-8 w-full">
+            <div className="flex  mt-8 w-full">
               <Button
                 buttonText="Learn more about us"
                 buttonAction={() => {

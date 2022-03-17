@@ -8,6 +8,7 @@ import { Nav } from 'components/_app/layout/nav/nav'
 import { NavMobile } from 'components/_app/layout/nav-mobile/nav-mobile'
 
 import { useRouter } from 'next/router'
+import Image from 'next/image'
 
 export function Header() {
   const [headerOpacity, setHeaderOpacity] = React.useState(0)
@@ -47,7 +48,12 @@ export function Header() {
         <div className="flex justify-between items-stretch w-full pl-4  md:pl-6 ">
           <Link href="/">
             <a className="flex items-center  text-white text-5xl font-semibold tracking-wider z-10">
-              GY
+              <Image
+                src="/images/gy-logo.png"
+                width={55}
+                height={40}
+                alt="logo"
+              />
             </a>
           </Link>
 

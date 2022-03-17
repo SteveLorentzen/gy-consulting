@@ -6,6 +6,7 @@ import { AiFillCaretUp } from '@react-icons/all-files/ai/AiFillCaretUp'
 import { TextWithPictureProps } from '../interfaces-and-types/common/interfaces-and-types-common'
 import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import {
   Accordion,
@@ -129,8 +130,6 @@ const strengths = [
 export function ConsultingPage() {
   const context = useAccordionContext()
 
-  console.log(context)
-
   return (
     <ContentContainerWithHeroImage
       src="/images/consulting-window-room.jpg"
@@ -140,6 +139,13 @@ export function ConsultingPage() {
       yScrollValueForSecondaryBackground={700}
       className="consulting-hero"
     >
+      <Head>
+        <title>Consulting</title>
+        <meta
+          name="description"
+          content="Get expert advice on college admissions."
+        />
+      </Head>
       {/* <h1 className="text-7xl w-full text-center my-152">Some Page Content!</h1> */}
       <ContentContainerStyled bgColor="white" padding="lg">
         <section className="max-w-screen-2xl p-4 xxs:p-12">
@@ -169,7 +175,7 @@ export function ConsultingPage() {
         <SectionHeading color="white" marginBottom="large">
           What separates GY from the competition?
         </SectionHeading>
-        <Accordion className="px-2 xxs:px-4 xs:px-12 max-w-screen-2xl w-full ">
+        <Accordion className="px-2 xxs:px-6 xs:px-12 max-w-screen-2xl w-full ">
           {strengths.map(strength => {
             return (
               <Strength
@@ -268,8 +274,10 @@ export function ConsultingPage() {
               </PictureWithHeadingAndText>
             </div>
           </div>
-          <CallToActionBottom />
         </section>
+      </ContentContainerStyled>
+      <ContentContainerStyled bgColor="blue" padding="lg">
+        <CallToActionBottom isBlueBackground />
       </ContentContainerStyled>
     </ContentContainerWithHeroImage>
   )

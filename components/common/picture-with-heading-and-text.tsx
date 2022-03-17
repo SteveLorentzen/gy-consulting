@@ -53,7 +53,7 @@ export function PictureWithHeadingAndText({
           </h3>
         ) : null}
 
-        <p>{children}</p>
+        <div>{children}</div>
       </div>
     </div>
   )

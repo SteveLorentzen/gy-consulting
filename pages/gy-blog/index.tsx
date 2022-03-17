@@ -133,8 +133,6 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
   const [filteredBlogs, setFilteredBlogs] = React.useState(blogs)
   const [timer, setTimer] = React.useState<NodeJS.Timeout | undefined>()
 
-  console.log(blogs[0])
-
   function inputHandler(e: React.SyntheticEvent) {
     const input = (e.target as HTMLInputElement).value
     const debounceTimer = setTimeout(() => {
@@ -194,6 +192,7 @@ export function GYBlogPage({ blogs }: { blogs: IBlogPreview[] }) {
                         layout="fill"
                         objectFit="cover"
                         alt={blog.title}
+                        priority
                       />
                     </div>
 

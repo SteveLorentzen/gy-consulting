@@ -4,6 +4,7 @@ import { HeroImage } from 'components/home/hero-image/hero-image'
 import { TheTeam } from 'components/home/the-team/the-team'
 import Head from 'next/head'
 import { CallToActionBottom } from 'components/common/call-to-action-bottom'
+import { ContentContainerStyled } from 'components/common/content-container-styled'
 
 export function HomePage() {
   return (
@@ -19,9 +20,11 @@ export function HomePage() {
       <WhyGYConsulting />
 
       <TheTeam />
-      <div className="mb-24">
-        <CallToActionBottom />
-      </div>
+      <ContentContainerStyled bgColor="blue" padding="lg">
+        <div>
+          <CallToActionBottom isBlueBackground />
+        </div>
+      </ContentContainerStyled>
     </div>
   )
 }

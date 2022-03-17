@@ -1,6 +1,7 @@
 import * as React from 'react'
 
 import Link from 'next/link'
+import Image from 'next/image'
 
 import { DialogOverlay, DialogContent } from '@reach/dialog'
 
@@ -42,10 +43,15 @@ export function NavMobile() {
         >
           <Link href="/">
             <a
-              className="absolute top-4 left-4  text-white text-5xl font-semibold tracking-wider"
+              className="absolute top-3 left-4  text-white text-5xl font-semibold tracking-wider"
               onClick={() => setShowDialog(false)}
             >
-              GY
+              <Image
+                src="/images/gy-logo.png"
+                width={55}
+                height={40}
+                alt="logo"
+              />
             </a>
           </Link>
           <div
