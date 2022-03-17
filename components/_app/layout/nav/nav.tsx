@@ -20,8 +20,6 @@ export function Nav({ yPosition }: { yPosition: number }) {
     }
   }, [yPosition, scheduleButtonIsVisible])
 
-  console.log(buttonWidth)
-
   return (
     <div className="hidden md:flex justify-end space-between items-center tracking-wider text-xl z-20">
       <div className="md:mr-4 lg:mr-6 xl:mr-8">

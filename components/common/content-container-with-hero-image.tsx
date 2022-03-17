@@ -48,6 +48,7 @@ export function ContentContainerWithHeroImage({
           objectFit="cover"
           alt="seoul-national-university"
           className={className}
+          priority
         />
       </div>
       {src2 && yScrollValueForSecondaryBackground && (

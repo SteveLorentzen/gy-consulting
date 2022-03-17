@@ -36,14 +36,14 @@ export function TextWithPicture({
         } ${imageSide === 'left' ? 'lg:order-2' : 'lg:order-1'}`}
       >
         <div className="w-full lg:w-104">
-          <h4
+          <h2
             className={`text-4xl font-bold tracking-wider mb-8 lg:mb-4 ${
               theme === 'white' ? 'text-cyan-900' : ''
             }`}
           >
             {title}
-          </h4>
-          <p>{children}</p>
+          </h2>
+          <div>{children}</div>
         </div>
       </div>
     </div>

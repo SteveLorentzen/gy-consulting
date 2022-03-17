@@ -1,6 +1,7 @@
 import { Button } from 'components/common/button'
 import { Input } from 'components/common/input'
 import Image from 'next/image'
+import Head from 'next/head'
 import * as React from 'react'
 
 export function LoginPage() {
@@ -8,6 +9,13 @@ export function LoginPage() {
 
   return (
     <div className="flex justify-center items-center w-full min-h-screen px-4 ">
+      <Head>
+        <title>Login</title>
+        <meta
+          name="description"
+          content="Login to get updates about your child's experience"
+        />
+      </Head>
       <div className="absolute top-0 left-0 w-full min-h-screen bg-cyan-800 opacity-60 z-10"></div>
       <div className="absolute top-0 left-0 w-full min-h-screen">
         <div className="relative w-full h-screen">
@@ -17,6 +25,7 @@ export function LoginPage() {
             objectFit="cover"
             alt="college campus"
             className=""
+            priority
           />
         </div>
       </div>

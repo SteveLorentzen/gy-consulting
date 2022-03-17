@@ -4,6 +4,7 @@ import { ContentContainerWithHeroImage } from 'components/common/content-contain
 import { PictureWithHeadingAndText } from 'components/common/picture-with-heading-and-text'
 import { SectionHeading } from 'components/common/section-heading'
 import Image from 'next/image'
+import Head from 'next/head'
 
 const guhnQualifications = [
   'M. A. in English Literature, Busan National University, Busan, South Korea',
@@ -77,11 +78,18 @@ function TeamMember({
   degrees: string[]
 }) {
   return (
-    <div className="flex flex-col xs:flex-row justify-between max-w-sm xs:max-w-screen-md basis-full xl:w-5/12 border-b-1 border-gray-200 mx-8 xs:px-12 py-12">
+    <div className="flex flex-col xs:flex-row justify-between max-w-md xs:max-w-screen-md basis-full xl:w-5/12 bg-gray-100 border-gray-200 mx-8 px-8 xs:px-12 py-8 mb-16 rounded-lg">
+      <Head>
+        <title>About Us</title>
+        <meta
+          name="description"
+          content="Learn about the talented and experienced GY Consulting Team"
+        />
+      </Head>
       <div className="flex flex-col justify-between items-stretch basis-full order-2 xs:order-1">
         <div className="my-4 xs:my-0">
-          <h4 className="text-4xl mb-2">{name}</h4>
-          <h5 className="text-cyan-800 font-bold">{role}</h5>
+          <h3 className="text-4xl mb-2">{name}</h3>
+          <h4 className="text-cyan-800 font-bold">{role}</h4>
         </div>
         <div>
           {degrees.map(degree => {
@@ -124,7 +132,7 @@ export function AboutUsPage() {
               Consulting Company
             </p>
           </div>
-          <div className="max-w-screen-lg mx-8 xs:mx-12 sm:mx-16">
+          <div className="max-w-screen-lg mx-8 xxs:mx-12 sm:mx-16">
             <SectionHeading
               color="blue"
               marginBottom="large"
@@ -205,7 +213,7 @@ export function AboutUsPage() {
               </div>
             </div>
             <div className="text-white pt-6 lg:pt-4">
-              <h3 className="mb-12 text-5xl">Lived experience</h3>
+              <h2 className="mb-12 text-5xl">Lived experience</h2>
               <p className="pb-8">
                 Guhn Kim knows first-hand how much of an impact homestay has on
                 a student’s life. When he attended middle school in the United
@@ -236,7 +244,7 @@ export function AboutUsPage() {
           <SectionHeading color="blue" marginBottom="large">
             The GY Team
           </SectionHeading>
-          <div className="flex w-full flex-wrap justify-center xl:justify-around items-center xl:items-stretch max-w-screen-3xl">
+          <div className="flex w-full flex-wrap justify-center xl:justify-around items-center xl:items-stretch max-w-screen-3xl ">
             {teamMembers.map(teamMember => {
               return (
                 <TeamMember
@@ -249,9 +257,9 @@ export function AboutUsPage() {
               )
             })}
           </div>
-          <div className="mt-24">
-            <CallToActionBottom />
-          </div>
+        </ContentContainerStyled>
+        <ContentContainerStyled bgColor="blue" padding="lg">
+          <CallToActionBottom isBlueBackground />
         </ContentContainerStyled>
       </section>
     </ContentContainerWithHeroImage>

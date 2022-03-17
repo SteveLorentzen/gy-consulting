@@ -15,7 +15,7 @@ export function CallToActionBottom({
         When you&apos;re ready, get your free consultation.
       </h3>
       <Link href="/">
-        <a className="mt-6 py-4 px-8 bg-orange-400 hover:bg-orange-500 text-white rounded-md font-bold">
+        <a className="mt-6 py-4 px-8 bg-orange-400 hover:bg-orange-500 text-white text-2xl  rounded-md font-bold">
           Get a Free Consultation
         </a>
       </Link>
