@@ -88,8 +88,10 @@ function TeamMember({
       </Head>
       <div className="flex flex-col justify-between items-stretch basis-full order-2 xs:order-1">
         <div className="my-4 xs:my-0">
-          <h3 className="text-4xl mb-2">{name}</h3>
-          <h4 className="text-cyan-800 font-bold">{role}</h4>
+          <h3 className="text-4xl mb-3">{name}</h3>
+          <h4 className="text-cyan-800 font-bold opacity-80 uppercase text-xl">
+            {role}
+          </h4>
         </div>
         <div>
           {degrees.map(degree => {

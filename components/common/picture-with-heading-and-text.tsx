@@ -45,7 +45,7 @@ export function PictureWithHeadingAndText({
         <h2 className="text-5xl mb-4">{heading}</h2>
         {subHeading ? (
           <h3
-            className={`text-3xl ${
+            className={`text-2xl uppercase tracking-wide opacity-90 ${
               isBlueBackground ? 'text-white' : 'text-cyan-900'
             } mb-8`}
           >
