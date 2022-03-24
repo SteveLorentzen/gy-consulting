@@ -16,15 +16,6 @@ const guhnQualifications = [
 ]
 
 const teamMembers = [
-  // {
-  //   name: 'Guhn',
-  //   src: '/images/team/',
-  //   role: 'Founder',
-  //   degrees: [
-  //     'M.A. in English Literature, Busan National University, S. Korea',
-  //     'B.A. St. Olaf College, US',
-  //   ],
-  // },
   {
     name: 'Sarah',
     src: '/images/team/sarah.jpg',
@@ -110,7 +101,7 @@ function TeamMember({
             layout="responsive"
             width={250}
             height={350}
-            alt="To be added"
+            alt={name}
           />
         </div>
       </div>
@@ -122,6 +113,7 @@ export function AboutUsPage() {
   return (
     <ContentContainerWithHeroImage
       src="/images/living-room.jpg"
+      altText="A stylish living room chair and table with a bookshelf in the background"
       mainHeading="Global Youth Consulting"
       subHeading=""
       className="about-us-hero"
@@ -145,6 +137,7 @@ export function AboutUsPage() {
             <div className="mb-8">
               <PictureWithHeadingAndText
                 heading="Instilling integrity"
+                altText=" A closeup of a compass against a scenic backdrop"
                 objectPosition="right"
                 src="/images/compass.jpg"
                 style="top"
@@ -207,7 +200,7 @@ export function AboutUsPage() {
               <div className="relative w-full xs:w-120 lg:w-auto basis-1/2 lg:basis-11/12 lg:ml-24 order-1 lg:order-2 mb-8 lg:mb-0">
                 <Image
                   src="/images/guhn-kim-cropped.jpg"
-                  alt=""
+                  alt="A portrait of Guhn Kim, founder of GY Consulting, in a suit and tie."
                   layout="intrinsic"
                   width={600}
                   height={800}

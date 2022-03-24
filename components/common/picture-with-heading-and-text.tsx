@@ -5,12 +5,14 @@ export function PictureWithHeadingAndText({
   heading,
   subHeading,
   src,
+  altText,
   style,
   objectPosition,
   children,
   isBlueBackground,
 }: {
   heading: string
+  altText: string
   subHeading?: string
   src: string
   style: 'side' | 'top'
@@ -34,7 +36,7 @@ export function PictureWithHeadingAndText({
           layout="fill"
           objectFit="cover"
           objectPosition={objectPosition}
-          alt="hands in"
+          alt={altText}
         ></Image>
       </div>
       <div

@@ -50,7 +50,7 @@ export function NavMobile() {
                 src="/images/gy-logo.png"
                 width={55}
                 height={40}
-                alt="logo"
+                alt="GY consulting logo"
               />
             </a>
           </Link>

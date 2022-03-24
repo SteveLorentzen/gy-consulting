@@ -6,9 +6,11 @@ import { CallToActionHero } from 'components/common/call-to-action-hero'
 
 type ContentContainerWithHeroImageProps = {
   mainHeading: string
+  altText: string
   subHeading: string
   src: string
   src2?: string
+  altText2?: string
   yScrollValueForSecondaryBackground?: number
   children: React.ReactNode
   className: string
@@ -17,6 +19,8 @@ type ContentContainerWithHeroImageProps = {
 export function ContentContainerWithHeroImage({
   mainHeading,
   subHeading,
+  altText,
+  altText2 = '',
   src,
   src2,
   yScrollValueForSecondaryBackground,
@@ -46,7 +50,7 @@ export function ContentContainerWithHeroImage({
           src={src}
           layout="fill"
           objectFit="cover"
-          alt="seoul-national-university"
+          alt={altText}
           className={className}
           priority
         />
@@ -61,7 +65,7 @@ export function ContentContainerWithHeroImage({
             src={src2}
             layout="fill"
             objectFit="cover"
-            alt="seoul-national-university"
+            alt={altText2}
             className=""
           />
         </div>

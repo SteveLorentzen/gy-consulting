@@ -11,15 +11,21 @@ import { CallToActionBottom } from 'components/common/call-to-action-bottom'
 
 type ProgramDetailProps = {
   title: string
+  altText: string
   description: string
   src: string
 }
 
-function ProgramDetail({ src, title, description }: ProgramDetailProps) {
+function ProgramDetail({
+  src,
+  altText,
+  title,
+  description,
+}: ProgramDetailProps) {
   return (
     <div className="flex flex-col lg:flex-row basis-full max-w-2xl lg:max-w-none bg-gray-100 rounded-md overflow-hidden mx-4 xs:mx-8 xxs:mx-8 my-12">
       <div className="relative w-full h-96 lg:h-136 xl:h-120  lg:basis-full">
-        <Image src={src} layout="fill" objectFit="cover" alt="" />
+        <Image src={src} layout="fill" objectFit="cover" alt={altText} />
       </div>
       <div className="lg:basis-full">
         <h3 className="flex items-center justify-center w-full h-36 text-center text-cyan-900 font-bold text-3xl px-12">
@@ -74,6 +80,7 @@ function SmallerPictureWithHeadingAndText({
 const homestayDetails: TextWithPictureProps[] = [
   {
     title: 'Academic Progress',
+    altText: 'Two female students examine a text book together in a library',
     children:
       "Our in-house mentor will encourage students to follow a productive schedule, provide academic help when needed, and offer counseling to help your child stay on track.  Check your child's progress on our online dashboard.",
     src: '/images/study-friends.jpg',
@@ -83,6 +90,7 @@ const homestayDetails: TextWithPictureProps[] = [
   },
   {
     title: 'Meal Menus',
+    altText: 'A healthy, tasty looking korean meal with many dishes',
     children:
       'Delicious and nutritious meals will be the source of energy for optimal school life. Photos and menu charts will be updated weekly.',
     src: '/images/korean-meal.jpg',
@@ -92,6 +100,8 @@ const homestayDetails: TextWithPictureProps[] = [
   },
   {
     title: 'Weekly Activities',
+    altText:
+      'Two young women doing upward facing dog yoga pose in a pretty park with yoga mats on the grass',
     children:
       'GY homestay students have regular activities that boost physical and mental health.',
     src: '/images/yoga-park.jpg',
@@ -101,6 +111,8 @@ const homestayDetails: TextWithPictureProps[] = [
   },
   {
     title: 'In-house College Consulting',
+    altText:
+      'A mentor and a client examine a tablet together with smiles on their faces',
     children:
       'Our mentors and consultants will guide your child to do the right thing, at the right time to become competitive candidates for admission to top universities. ',
     src: '/images/consultant-meeting-smiling.jpg',
@@ -113,30 +125,37 @@ const homestayDetails: TextWithPictureProps[] = [
 const programDetails: ProgramDetailProps[] = [
   {
     title: 'Mentor Meetings',
+    altText:
+      "Two young, happy women discuss a student's progress while sitting on a couch drinking coffee",
     description:
       'We will get to know your child in a way no other consulting firms have. Constant interaction between the mentor and student is the key to cultivating a unique student identity with positive character, experience, and life goals that top universities desire in their applicants.',
     src: '/images/couch-discussion.jpg',
   },
   {
     title: 'Consultant Meetings',
+    altText: 'A consultant and client examine a document together on a tablet',
     description:
       'Regular online and offline meetings between your child and consultant provides continuous help throughout their high school years. Each student is provided with all the necessary information to achieve their university admissions goals. ',
     src: '/images/consultant-meetings.jpg',
   },
   {
     title: 'Diagnostics',
+    altText: 'A closeup of a survey being filled out',
     description:
       'GY homestay mentors work with consultants to accurately evaluate your child. From academic performance to emotional and mental health, extensive diagnostics will be the groundwork for formulating optimal timelines/guidelines for your child to follow through with in order to thrive in school.',
     src: '/images/survey.jpg',
   },
   {
     title: 'Study Hall',
+    altText: 'Two teenage boys study together at a table in a library',
     description:
       'Mentors not only provide students help with everyday homework, they also teach students “how to study”. Academic tools such as time management, note taking, organizing information, and maintaining focus are key skills that in-house mentors foster in our homestay students. At GY homestay, your child will become independent, motivated scholars with abilities for lifelong success.',
     src: '/images/study-hall.jpg',
   },
   {
     title: 'Recommended Classes/Activities',
+    altText:
+      'A mentor shows a smiling student how to solve a homework problem at a kitchen table',
     description:
       'Each student will be offered additional guidance according to their individual needs. Your child may take enrichment classes offered by GY teaching staff, or from other partner teachers that will be recommended by GY consultants. GY Homestay recommends after school and summer activities designed to shape your child’s strengths. Enjoy the numerous weekend activities led by the GY team.',
     src: '/images/recommended-activities.jpg',
@@ -147,6 +166,7 @@ export function HomestayPage() {
   return (
     <ContentContainerWithHeroImage
       src="/images/comfy-studying.jpg"
+      altText="A student comfortably lying on a couch reading and relaxing"
       mainHeading="Academic Homestay"
       subHeading=""
       className="homestay-hero"
@@ -171,6 +191,7 @@ export function HomestayPage() {
           </p>
           <PictureWithHeadingAndText
             heading="Stay with one of our Mentors"
+            altText="A portrait of a friendly and professional looking consultant"
             subHeading="Leave your troubles behind"
             objectPosition="center top"
             src="/images/friendly-mentor.jpg"
@@ -218,6 +239,7 @@ export function HomestayPage() {
             return (
               <TextWithPicture
                 key={homestayDetail.title}
+                altText={homestayDetail.altText}
                 src={homestayDetail.src}
                 theme="blue"
                 imageSide={homestayDetail.imageSide}
@@ -250,7 +272,7 @@ export function HomestayPage() {
           <div className="relative w-full lg:w-5/12 lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
             <Image
               src="/images/graduate-clock.jpg"
-              alt="friendly woman in living room"
+              alt="An alarm clock next to a jar with two pencils.  One pencil has a mini graduation cap with tassle on it"
               layout="responsive"
               width={300}
               height={200}
@@ -277,7 +299,7 @@ export function HomestayPage() {
           <div className="relative w-full lg:basis-5/12 h-full lg:ml-12 xl:ml-16 2xl:ml-24 mb-12 lg:mb-0 order-1 lg:order-2">
             <Image
               src="/images/gy-consulting-diagram.png"
-              alt="friendly woman in living room"
+              alt="A triangular diagram illustrating close communication between a parent, mentor and consultant"
               layout="responsive"
               width={230}
               height={200}
@@ -296,6 +318,7 @@ export function HomestayPage() {
             return (
               <ProgramDetail
                 key={programDetail.title}
+                altText={programDetail.altText}
                 src={programDetail.src}
                 title={programDetail.title}
                 description={programDetail.description}
