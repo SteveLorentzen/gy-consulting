@@ -66,6 +66,8 @@ function Strength({
 const services: TextWithPictureProps[] = [
   {
     title: 'GY Academic Homestay Consulting',
+    altText:
+      'Two teenage girls study and do homework together in a comfy living room',
     src: '/images/study-living-room.jpg',
     imageSide: 'left',
     objectPosition: 'center',
@@ -89,6 +91,7 @@ const services: TextWithPictureProps[] = [
   },
   {
     title: 'GY University Admissions Consulting',
+    altText: 'A sign for a college admissions office',
     children:
       'Students who are planning to apply to universities in the US gain incredible strategies and insights on preparing for college admissions. Our expert team guides you throughout your high school years so that you can be confident about your academic and college admissions goals.',
     src: '/images/admissions-sign.jpg',
@@ -133,10 +136,12 @@ export function ConsultingPage() {
   return (
     <ContentContainerWithHeroImage
       src="/images/consulting-window-room.jpg"
+      altText="Two consultants compare notes on paper and tablet"
       mainHeading="Get Expert Preparation"
       subHeading=""
       src2="/images/college-campus-overhead.jpg"
       yScrollValueForSecondaryBackground={700}
+      altText2="An aerial shot of a midwestern US college campus"
       className="consulting-hero"
     >
       <Head>
@@ -154,6 +159,7 @@ export function ConsultingPage() {
           </SectionHeading>
           <PictureWithHeadingAndText
             src="/images/happy-student.jpg"
+            altText="A smiling student holding her laptop, a pen, and a backback"
             style="side"
             heading="Cultivating Leadership"
             subHeading="Building hope for our future"
@@ -205,6 +211,7 @@ export function ConsultingPage() {
           return (
             <TextWithPicture
               key={service.title}
+              altText={service.altText}
               src={service.src}
               theme={service.theme}
               title={service.title}
@@ -225,6 +232,7 @@ export function ConsultingPage() {
             <div className="flex flex-col mb-12 max-w-screen-md p-4 xxs:p-12">
               <PictureWithHeadingAndText
                 src="/images/handshake.jpg"
+                altText="A smiling woman shaking hands with someone"
                 heading="Getting To Know You"
                 subHeading="Free 30-Minute Initial Consultation"
                 objectPosition="right"
@@ -250,6 +258,7 @@ export function ConsultingPage() {
             <div className="flex flex-col max-w-screen-md p-4 xxs:p-12">
               <PictureWithHeadingAndText
                 src="/images/consultant-meeting.jpg"
+                altText="A smiling consultant speaking to a client"
                 heading="Creating a Game Plan"
                 subHeading="1-Hour Strategy Session"
                 objectPosition="right"

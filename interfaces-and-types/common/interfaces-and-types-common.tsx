@@ -1,5 +1,6 @@
 export type TextWithPictureProps = {
   title: string
+  altText: string
   objectPosition: ObjectPosition
   src: string
   theme: 'blue' | 'white'

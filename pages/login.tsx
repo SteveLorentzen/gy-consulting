@@ -23,7 +23,7 @@ export function LoginPage() {
             src="/images/college-building-reflection-crop.jpg"
             layout="fill"
             objectFit="cover"
-            alt="college campus"
+            alt="A beautiful college building with reflecting pool"
             className=""
             priority
           />

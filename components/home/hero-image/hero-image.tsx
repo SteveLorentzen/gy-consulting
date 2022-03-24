@@ -11,7 +11,7 @@ export function HeroImage() {
         <div className="absolute mx-auto left-0 right-0 xs:right-auto bottom-0 w-full sm:w-9/12 md:w-8/12 lg:w-7/12 h-full z-0 sm:-translate-x-24 md:-translate-x-16 lg:-translate-x-12 2xl:-translate-x-0">
           <div className="relative h-full">
             <Image
-              alt="mentor and student"
+              alt="A proud girl in graduation robes wearing hat and tassle holding her college diploma"
               src="/images/graduate-xxl.png"
               layout="fill"
               priority

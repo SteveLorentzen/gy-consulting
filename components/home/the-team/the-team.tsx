@@ -20,6 +20,7 @@ export function TheTeam() {
           src="/images/hands-in.jpg"
           style="side"
           subHeading="Always ready to help"
+          altText="A team putting hands in for a cheer"
         >
           <div>
             <p>

@@ -8,6 +8,7 @@ export function TextWithPicture({
   theme,
   objectPosition,
   children,
+  altText,
 }: TextWithPictureProps) {
   return (
     <div
@@ -24,7 +25,7 @@ export function TextWithPicture({
           src={src}
           layout="fill"
           objectFit="cover"
-          alt={title}
+          alt={altText}
           objectPosition={objectPosition}
         />
       </div>
