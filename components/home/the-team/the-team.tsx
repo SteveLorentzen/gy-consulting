@@ -21,6 +21,7 @@ export function TheTeam() {
           style="side"
           subHeading="Always ready to help"
           altText="A team putting hands in for a cheer"
+          widescreenTextPosition="center"
         >
           <div>
             <p>
