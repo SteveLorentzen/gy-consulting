@@ -12,7 +12,7 @@ export function CallToActionBottom({
           isBlueBackground ? 'text-white' : 'text-cyan-800'
         } font-bold text-center`}
       >
-        When you&apos;re ready, get your free consultation.
+        When you&apos;re ready...
       </h3>
       <Link href="/">
         <a className="mt-6 py-4 px-8 bg-orange-400 hover:bg-orange-500 text-white text-2xl  rounded-md font-bold">

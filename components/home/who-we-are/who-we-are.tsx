@@ -24,11 +24,13 @@ function ServiceCard({
   const router = useRouter()
 
   return (
-    <div className="flex flex-col justify-between items-center md:w-1/3 h-112 xs:h-96  md:h-96 lg:h-88 max-w-sm px-7 py-4 my-12 text-cyan-700 text-2xl md:text-xl">
-      <div className="text-9xl md:text-8xl">{children}</div>
+    <div className="flex flex-col justify-between items-center md:w-1/3 h-112 xs:h-96 md:h-100 lg:h-88 max-w-sm px-7 py-4 my-12 text-cyan-700 text-2xl md:text-xl">
+      <div className="text-9xl md:text-8xl mb-2">{children}</div>
 
       <div className="flex flex-col justify-between text-gray-800 w-104 xxs:w-112 xs:w-136 md:w-full max-w-3xl h-3/5">
-        <h3 className="text-4xl md:text-3xl font-bold mb-4">{title}</h3>
+        <h3 className="text-4xl md:text-3xl mb-4 uppercase text-gray-500">
+          {title}
+        </h3>
         <h3 className="h-2/3">{description}</h3>
       </div>
 
@@ -81,7 +83,7 @@ function Services() {
 export function WhoWeAre() {
   return (
     <div className="w-full max-w-screen-3xl mx-auto">
-      <div className="flex flex-col items-center  px-10  my-16 sm:my-12">
+      <div className="flex flex-col items-center px-10 my-16 sm:my-40">
         <h2 className="text-6xl sm:text-7xl lg:text-7xl text-cyan-800 ">
           Global Youth Consulting
         </h2>

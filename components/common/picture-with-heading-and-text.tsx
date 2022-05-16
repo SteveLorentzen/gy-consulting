@@ -10,6 +10,7 @@ export function PictureWithHeadingAndText({
   objectPosition,
   children,
   isBlueBackground,
+  widescreenTextPosition,
 }: {
   heading: string
   altText: string
@@ -19,6 +20,7 @@ export function PictureWithHeadingAndText({
   objectPosition: ObjectPosition
   children?: React.ReactNode
   isBlueBackground?: boolean
+  widescreenTextPosition?: 'center'
 }) {
   return (
     <div className={`flex flex-col ${style === 'side' ? 'lg:flex-row' : ''}`}>
@@ -42,7 +44,7 @@ export function PictureWithHeadingAndText({
       <div
         className={`basis-full ${style === 'side' ? 'lg:ml-12' : ''} ${
           isBlueBackground ? 'text-white' : ''
-        }`}
+        } ${widescreenTextPosition === 'center' ? 'self-center' : ''}`}
       >
         <h2 className="text-5xl mb-4">{heading}</h2>
         {subHeading ? (
