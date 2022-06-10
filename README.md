@@ -1,3 +1,7 @@
+# Deployed project available to view at:
+
+https://gy-consulting.vercel.app/
+
 # Next.js + Tailwind CSS Example
 
 This example shows how to use [Tailwind CSS](https://tailwindcss.com/)
